@@ -9,32 +9,38 @@ const apps = {
     programs: {
         id: "programs",
         title: "Programs",
-        component: Programs
+        component: Programs,
+        display: true
     },
     workouts: {
         id: "workouts",
         title: "Workouts",
-        component: Workouts
+        component: Workouts,
+        display: true
     },
     recipes: {
         id: "recipes",
         title: "Recipes",
-        component: Recipes
+        component: Recipes,
+        display: true
     },
     dares: {
         id: "dares",
         title: "Dares",
-        component: Dares
+        component: Dares,
+        display: true
     },
     challenges: {
         id: "challenges",
         title: "Challenges",
-        component: Challenges
+        component: Challenges,
+        display: true
     },
     notFound: {
         id: 'notFound',
         title: '404 - Not Found',
-        component: NotFound
+        component: NotFound,
+        display: false
     }
 };
 
