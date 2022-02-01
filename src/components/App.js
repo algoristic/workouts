@@ -43,7 +43,7 @@ class App extends Component {
     render() {
         const { app } = this.state;
         return (
-            <div>{ app && (React.createElement(app.component, [])) }</div>
+            <div className='app-container'>{ app && (React.createElement(app.component, [])) }</div>
         );
     }
 }

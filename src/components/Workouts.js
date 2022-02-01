@@ -2,21 +2,14 @@ import InfoList from './InfoList'
 import InfoObject from './InfoObject'
 
 import workouts from '../assets/workouts.min'
-import { focus, types } from '../assets/display'
-
-const parseTypes = (typeString) => {
-    if(typeString === undefined) {
-        return [];
-    }
-    let arr = typeString.split(",");
-    arr = arr.map((type) => type.trim());
-    arr = arr.map((type) => types[type])
-    return arr;
-};
+import { focus, types, difficulties } from '../assets/display'
 
 const Workout = (slug, workout) => {
-    const workoutTypes = parseTypes(workout.type);
-    return ( <InfoObject key={slug} title={workout.name} details={focus[workout.focus] + ", " + workoutTypes} />);
+    const workoutFocus = focus[workout.focus];
+    const workoutTypes = types.parse(workout.type);
+    const workoutDifficulty = difficulties[workout.difficulty];
+    const details = [workoutFocus, workoutTypes, workoutDifficulty].join(', ');
+    return ( <InfoObject id={slug} key={slug} type='workout' title={workout.name} details={details} />);
 };
 
 const Workouts = () => {
