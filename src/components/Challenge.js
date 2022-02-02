@@ -8,7 +8,7 @@ const Challenge = () => {
     const challenge = challenges[key];
     document.title = challenge.name;
     return (
-        <div className='challenge-container'>
+        <div className='challenge-wrapper'>
             <img src={`/.media/challenges/${key}/thumbnail.jpg`} />
             <pre>{ JSON.stringify(challenge, null, 2) }</pre>
             <iframe style={{display: 'block', margin: 'auto'}}

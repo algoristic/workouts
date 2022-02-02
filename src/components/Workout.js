@@ -8,7 +8,7 @@ const Program = () => {
     const workout = workouts[key];
     document.title = workout.name;
     return (
-        <div className='workout-container'>
+        <div className='workout-wrapper'>
             <img src={`/.media/workouts/${key}/thumbnail.jpg`} />
             <pre>{ JSON.stringify(workout, null, 2) }</pre>
             <img src={`/.media/workouts/${key}/instructions.jpg`} />

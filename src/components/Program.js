@@ -1,3 +1,5 @@
+import PageControl from './PageControl'
+
 import ParameterService from '../service/parameterService'
 
 import programs from '../assets/programs.min'
@@ -15,7 +17,8 @@ const Program = () => {
 
     //TODO 'day'-App erstellen
     return (
-        <div className='program-container'>
+        <div className='program-wrapper'>
+            <PageControl />
             <img src={`/.media/programs/${key}/thumbnail.jpg`} />
             <pre>{ JSON.stringify(program, null, 2) }</pre>
             <div>{ days.map(day => <a href={`?app=day&key=${key}&day=${day}`}>{ day }</a>) }</div>

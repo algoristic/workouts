@@ -4,6 +4,7 @@ import Dares from '../components/Dares'
 import NotFound from '../components/NotFound'
 import Programs from '../components/Programs'
 import Program from '../components/Program'
+import Day from '../components/Day'
 import Recipes from '../components/Recipes'
 import Workouts from '../components/Workouts'
 import Workout from '../components/Workout'
@@ -19,6 +20,11 @@ const apps = {
         id: "program",
         title: "Program",
         component: Program
+    },
+    day: {
+        id: "day",
+        title: "Day",
+        component: Day
     },
     workouts: {
         id: "workouts",
@@ -44,13 +50,13 @@ const apps = {
     },
     recipes: {
         id: "recipes",
-        title: "Recipes [Not Implemented]",
+        title: "🚧 Recipes",
         component: Recipes,
         display: true
     },
     dares: {
         id: "dares",
-        title: "Dares [Not Implemented]",
+        title: "🚧 Dares",
         component: Dares,
         display: true
     },
