@@ -5,8 +5,6 @@ import NotFound from './NotFound'
 import ParameterService from '../service/parameterService'
 import apps from '../assets/apps'
 
-import './App.css';
-
 class App extends Component {
     constructor(props) {
         super(props);
