@@ -11,12 +11,14 @@ const Challenge = () => {
         <div className='challenge-wrapper'>
             <img src={`/.media/challenges/${key}/thumbnail.jpg`} />
             <pre>{ JSON.stringify(challenge, null, 2) }</pre>
-            <iframe style={{display: 'block', margin: 'auto'}}
-                src={`/.media/challenges/${key}/challenge.pdf`}
-                type='application/pdf'
-                frameBorder='0' scrolling='auto'
-                height='1200px' width='720px'>
-            </iframe>
+            {/*
+                <iframe style={{display: 'block', margin: 'auto'}}
+                    src={`/.media/challenges/${key}/challenge.pdf`}
+                    type='application/pdf'
+                    frameBorder='0' scrolling='auto'
+                    height='1200px' width='720px'>
+                </iframe>
+            */}
         </div>
     );
 }

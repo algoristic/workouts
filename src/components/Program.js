@@ -21,13 +21,19 @@ const Program = () => {
             <PageControl />
             <img src={`/.media/programs/${key}/thumbnail.jpg`} />
             <pre>{ JSON.stringify(program, null, 2) }</pre>
-            <div>{ days.map(day => <a href={`?app=day&key=${key}&day=${day}`}>{ day }</a>) }</div>
-            <iframe style={{display: 'block', margin: 'auto'}}
-                src={`/.media/programs/${key}/program.pdf`}
-                type='application/pdf'
-                frameBorder='0' scrolling='auto'
-                height='1200px' width='720px'>
-            </iframe>
+            <div className='program-days-wrapper'>
+                <ul className='program-days'>
+                    { days.map(day => <li><a href={`?app=day&key=${key}&day=${day}`}>{ day }</a></li>) }
+                </ul>
+            </div>
+            {/*
+                <iframe style={{display: 'block', margin: 'auto'}}
+                    src={`/.media/programs/${key}/program.pdf`}
+                    type='application/pdf'
+                    frameBorder='0' scrolling='auto'
+                    height='1200px' width='720px'>
+                </iframe>
+            */}
         </div>
     );
 }
