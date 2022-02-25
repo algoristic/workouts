@@ -29,7 +29,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        let startApp = 'programs';
+        let startApp = 'home';
         const appId = this.appParameter.value();
         if(appId !== undefined) {
             startApp = appId;
@@ -41,7 +41,7 @@ class App extends Component {
     render() {
         const { app } = this.state;
         return (
-            <div className='app-container'>{ app && (React.createElement(app.component, [])) }</div>
+            <div>{ app && (React.createElement(app.component, [])) }</div>
         );
     }
 }

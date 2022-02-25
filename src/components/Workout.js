@@ -1,3 +1,6 @@
+import PageControl from './PageControl'
+import Text from './Text'
+
 import ParameterService from '../service/parameterService'
 
 import workouts from '../assets/workouts.min'
@@ -9,9 +12,12 @@ const Program = () => {
     document.title = workout.name;
     return (
         <div className='workout-wrapper'>
-            <img src={`/.media/workouts/${key}/thumbnail.jpg`} />
+            <PageControl />
+            {/* <img src={`/.media/workouts/${key}/thumbnail.jpg`} /> */}
+            <Text id={key} workout />
+            <Text id={key} workout extracredit />
+            <img className='img-responsive' src={`/.media/workouts/${key}/instructions.jpg`} />
             <pre>{ JSON.stringify(workout, null, 2) }</pre>
-            <img src={`/.media/workouts/${key}/instructions.jpg`} />
         </div>
     );
 }

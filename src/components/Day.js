@@ -5,8 +5,6 @@ import ParameterService from '../service/parameterService'
 
 import programs from '../assets/programs.min'
 
-import './Day.css'
-
 const Day = () => {
     const keyParameter = new ParameterService('key');
     const dayParameter = new ParameterService('day');
@@ -21,7 +19,7 @@ const Day = () => {
                 <DayControl id={key} program={program} day={day} />
             </div>
             <div className='day-workout-wrapper'>
-                <img className='img-responsive day-workout' src={`/.media/programs/${key}/days/day-${day}.jpg`} />
+                <img className='d-block mx-auto img-responsive' src={`/.media/programs/${key}/days/day-${day}.jpg`} />
             </div>
         </div>
     );

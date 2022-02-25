@@ -1,6 +1,7 @@
 import Challenges from '../components/Challenges'
 import Challenge from '../components/Challenge'
 import Dares from '../components/Dares'
+import Home from '../components/Home'
 import NotFound from '../components/NotFound'
 import Programs from '../components/Programs'
 import Program from '../components/Program'
@@ -10,9 +11,14 @@ import Workouts from '../components/Workouts'
 import Workout from '../components/Workout'
 
 const apps = {
+    home: {
+        id: "home",
+        title: "Home",
+        component: Home
+    },
     programs: {
         id: "programs",
-        title: "Programs",
+        title: "🏃 Programs",
         component: Programs,
         display: true
     },
@@ -28,7 +34,7 @@ const apps = {
     },
     workouts: {
         id: "workouts",
-        title: "Workouts",
+        title: "🏋️‍♂️ Workouts",
         component: Workouts,
         display: true
     },
@@ -39,7 +45,7 @@ const apps = {
     },
     challenges: {
         id: "challenges",
-        title: "Challenges",
+        title: "🏆 Challenges",
         component: Challenges,
         display: true
     },
@@ -50,13 +56,13 @@ const apps = {
     },
     recipes: {
         id: "recipes",
-        title: "🚧 Recipes",
+        title: "🥗 Recipes",
         component: Recipes,
         display: true
     },
     dares: {
         id: "dares",
-        title: "🚧 Dares",
+        title: "🏅 Dares",
         component: Dares,
         display: true
     },

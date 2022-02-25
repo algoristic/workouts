@@ -1,13 +1,13 @@
 const InfoObject = ({ id, type, title, details }) => {
     return (
-        <p className='info-object'>
+        <div className='mt-4 col-12 col-md-6 col-lg-4 col-xl-3 col--xxl-2'>
             <a href={`?app=${type}&key=${id}`}>
-                <div className='object-title'>{ title }</div>
-                <div className='object-details'>
-                    <i>{ details }</i>
+                <div className='card'>
+                    <div class="card-header">{ title }</div>
+                    <div class="card-body">{ details }</div>
                 </div>
             </a>
-        </p>
+        </div>
     );
 }
 

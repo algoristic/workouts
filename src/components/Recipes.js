@@ -1,6 +1,11 @@
+import PageControl from './PageControl'
+
 const Recipes = () => {
     return (
-        "recipes"
+        <div className='recipes-wrapper'>
+            <PageControl />
+            <p>🚧 Nothing here yet</p>
+        </div>
     );
 };
 

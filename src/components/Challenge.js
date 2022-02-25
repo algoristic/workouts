@@ -1,3 +1,5 @@
+import PageControl from './PageControl'
+
 import ParameterService from '../service/parameterService'
 
 import challenges from '../assets/challenges.min'
@@ -9,7 +11,8 @@ const Challenge = () => {
     document.title = challenge.name;
     return (
         <div className='challenge-wrapper'>
-            <img src={`/.media/challenges/${key}/thumbnail.jpg`} />
+            <PageControl />
+            <img className='img-responsive' src={`/.media/challenges/${key}/thumbnail.jpg`} />
             <pre>{ JSON.stringify(challenge, null, 2) }</pre>
             {/*
                 <iframe style={{display: 'block', margin: 'auto'}}

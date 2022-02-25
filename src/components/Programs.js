@@ -5,10 +5,9 @@ import programs from '../assets/programs.min'
 import { types, difficulties } from '../assets/display'
 
 const Program = (slug, program) => {
-    const programDays = program.days + ' Days';
-    const programTypes = types.parse(program.type);
-    const programDifficulty = difficulties[program.difficulty];
-    const details = [programDays, programTypes, programDifficulty].join(', ');
+    const details = (
+        <img className='d-block mx-auto img-fluid' src={`/.media/programs/${slug}/thumbnail.jpg`} />
+    );
     return ( <InfoObject key={slug} id={slug} type='program' title={program.name} details={details} /> );
 };
 

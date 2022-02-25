@@ -1,4 +1,6 @@
+import BackTo from './BackTo'
 import PageControl from './PageControl'
+import Text from './Text'
 
 import ParameterService from '../service/parameterService'
 
@@ -11,29 +13,28 @@ const Program = () => {
     document.title = program.name;
 
     const days = [];
-    for(let i=1; i<=program.days; i++) {
+    for(let i = 1; i <= program.days; i++) {
         days.push(i);
     }
 
-    //TODO 'day'-App erstellen
     return (
         <div className='program-wrapper'>
             <PageControl />
-            <img src={`/.media/programs/${key}/thumbnail.jpg`} />
-            <pre>{ JSON.stringify(program, null, 2) }</pre>
-            <div className='program-days-wrapper'>
-                <ul className='program-days'>
-                    { days.map(day => <li><a href={`?app=day&key=${key}&day=${day}`}>{ day }</a></li>) }
-                </ul>
+            <BackTo app='programs' />
+            <div className='container-fluid'>
+                <Text id={key} program />
+                <nav>
+                    <ol className='breadcrumb'>
+                        {
+                            days.map(day => (
+                                <li className='breadcrumb-item'>
+                                    <a href={`?app=day&key=${key}&day=${day}`}>{ day }</a>
+                                </li>
+                            ))
+                        }
+                    </ol>
+                </nav>
             </div>
-            {/*
-                <iframe style={{display: 'block', margin: 'auto'}}
-                    src={`/.media/programs/${key}/program.pdf`}
-                    type='application/pdf'
-                    frameBorder='0' scrolling='auto'
-                    height='1200px' width='720px'>
-                </iframe>
-            */}
         </div>
     );
 }
