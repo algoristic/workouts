@@ -1,0 +1,68 @@
+{
+    "categories": {
+        "types": [
+            {
+                "id": "strength",
+                "name": "Kraft",
+                "icon": "🏋️‍♂️",
+                "color": "primary"
+            },
+            {
+                "id": "cardio",
+                "name": "Ausdauer",
+                "icon": "🏃",
+                "color": "primary"
+            },
+            {
+                "id": "fighting",
+                "name": "Kampf",
+                "icon": "🤼",
+                "color": "primary"
+            },
+            {
+                "id": "hiit",
+                "name": "HIIT",
+                "icon": "🤸",
+                "color": "primary"
+            },
+            {
+                "id": "wellness",
+                "name": "Wellness",
+                "icon": "🧘",
+                "color": "info"
+            }
+        ],
+        "levels": [
+            {
+                "id": "1",
+                "name": "Leicht",
+                "icon": "🏅",
+                "color": "success"
+            },
+            {
+                "id": "2",
+                "name": "Einfach",
+                "icon": "🥉",
+                "color": "info"
+            },
+            {
+                "id": "3",
+                "name": "Normal",
+                "icon": "🥈",
+                "color": "primary"
+            },
+            {
+                "id": "4",
+                "name": "Schwer",
+                "icon": "🥇",
+                "color": "warning"
+            },
+            {
+                "id": "5",
+                "name": "Fortgeschritten",
+                "icon": "🏆",
+                "color": "danger"
+            }
+        ]
+    }
+}
