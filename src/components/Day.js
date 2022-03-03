@@ -19,7 +19,7 @@ const Day = () => {
                 <DayControl id={key} program={program} day={day} />
             </div>
             <div className='day-workout-wrapper'>
-                <img className='d-block mx-auto img-responsive' src={`/.media/programs/${key}/days/day-${day}.jpg`} />
+                <img className='d-block mx-auto img-responsive' src={`http://media.algoristic.com/programs/${key}/days/day-${day}.jpg`} />
             </div>
         </div>
     );

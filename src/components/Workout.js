@@ -16,7 +16,7 @@ const Program = () => {
             {/* <img src={`/.media/workouts/${key}/thumbnail.jpg`} /> */}
             <Text id={key} workout />
             <Text id={key} workout extracredit />
-            <img className='img-responsive' src={`/.media/workouts/${key}/instructions.jpg`} />
+            <img className='img-responsive' src={`http://media.algoristic.com/workouts/${key}/instructions.jpg`} />
             <pre>{ JSON.stringify(workout, null, 2) }</pre>
         </div>
     );

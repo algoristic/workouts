@@ -13,7 +13,7 @@ class PageControl extends Component {
     render() {
         const activeApp = this.appParameter.value();
         return (
-            <nav className='navbar navbar-expand-sm bg-light navbar-light border'>
+            <nav className='navbar navbar-expand bg-light navbar-light border'>
                 <div className='container-fluid justify-content-end'>
                     <ul className='navbar-nav'>
                         { Object.keys(apps)

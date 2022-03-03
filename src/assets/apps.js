@@ -57,14 +57,12 @@ const apps = {
     recipes: {
         id: "recipes",
         title: "🥗 Recipes",
-        component: Recipes,
-        display: true
+        component: Recipes
     },
     dares: {
         id: "dares",
         title: "🏅 Dares",
-        component: Dares,
-        display: true
+        component: Dares
     },
     notFound: {
         id: 'notFound',
