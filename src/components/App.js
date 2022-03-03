@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 
-import NotFound from './NotFound'
-
 import ParameterService from '../service/parameterService'
 import apps from '../assets/apps'
 

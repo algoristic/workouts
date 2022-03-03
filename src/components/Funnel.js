@@ -4,7 +4,7 @@ import ParameterService from '../service/parameterService'
 
 import './Funnel.css'
 
-const Funnel = ({ question, category, next, parameter, pickup }) => {
+const Funnel = ({ question, start, category, next, parameter, pickup }) => {
     const funnel = all.categories[category];
     let parameters = '?';
     parameters += `app=${next}`;
@@ -18,7 +18,7 @@ const Funnel = ({ question, category, next, parameter, pickup }) => {
     return (
         <div className='funnel-wrapper'>
             <div className='category-wrapper'>
-                <div className='category-picker'>
+                <div className='category-picker d-grid'>
                     <div className='display-4 text-center py-5'>{ question }</div>
                     <hr/>
                     <div className='d-grid'>
@@ -36,6 +36,9 @@ const Funnel = ({ question, category, next, parameter, pickup }) => {
                     }
                     </div>
                     <hr/>
+                    {
+                        !start && <a href='?app=start' className='back-btn btn btn-dark btn-block py-4 my-3'>Zurück</a>
+                    }
                 </div>
             </div>
         </div>
