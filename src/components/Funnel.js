@@ -1,33 +1,46 @@
+import Header from './Header'
+import ModeSelect from './ModeSelect'
+import ParameterCollector from '../service/parameterCollector'
 import all from '../assets/categories.json'
-
-import ParameterService from '../service/parameterService'
+import { config } from '../assets/app.config.json'
 
 import './Funnel.css'
 
 const Funnel = ({ question, start, category, next, parameter, pickup }) => {
     const funnel = all.categories[category];
     let parameters = '?';
-    parameters += `app=${next}`;
-    if(pickup !== undefined) {
-        pickup.forEach(param => {
-            const service = new ParameterService(param);
-            const value = service.value();
-            parameters += `&${param}=${value}`;
-        });
+    if(next) {
+        parameters += `app=${next}`;
     }
+    const collector = new ParameterCollector(config.allWorkoutParams);
+    parameters += collector.getSearchString();
     return (
         <div className='funnel-wrapper'>
             <div className='category-wrapper'>
-                <div className='category-picker d-grid'>
-                    <div className='display-4 text-center py-5'>{ question }</div>
+                <div className='d-grid'>
+                    <Header>{ question }</Header>
                     <hr/>
                     <div className='d-grid'>
                     {
                         funnel.map((category) => {
-                            const forward = (parameters + `&${parameter}=${category.id}`);
+                            let forward = '';
+                            if('?' !== parameters.charAt(parameters.length - 1)) {
+                                forward += '&';
+                            }
+                            forward = (parameters + forward + `${parameter}=${category.id}`);
+                            let furtherClasses = '';
+                            if(category.classes) {
+                                furtherClasses = ' ' + category.classes;
+                            }
                             return (
                                 <a key={category.id} href={forward}
-                                    className={`category btn btn-${ category.color } btn-block py-4 my-3`}>
+                                    className={`
+                                        ${ config.buttonClasses }
+                                        ${ config.buttonFontSize }
+                                        ${ config.buttonFontWeight }
+                                        ${ config.buttonPadding }
+                                        ${ furtherClasses }
+                                        btn-${ category.color } my-3`}>
                                     <span className='category-icon'>{ category.icon }</span>
                                     <span className='category-name ms-3'>{ category.name }</span>
                                 </a>
@@ -37,7 +50,7 @@ const Funnel = ({ question, start, category, next, parameter, pickup }) => {
                     </div>
                     <hr/>
                     {
-                        !start && <a href='?app=start' className='back-btn btn btn-dark btn-block py-4 my-3'>Zurück</a>
+                        !start && <ModeSelect />
                     }
                 </div>
             </div>

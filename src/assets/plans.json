@@ -1,0 +1,18 @@
+{
+    "plans": {
+        "extreme-fit": [
+            {
+                "types": ["cardio", "hiit"]
+            },
+            {
+                "types": ["cardio", "hiit"]
+            },
+            {
+                "types": ["strength"]
+            },
+            {
+                "types": ["fight"]
+            }
+        ]
+    }
+}

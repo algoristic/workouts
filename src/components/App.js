@@ -23,7 +23,7 @@ class App extends Component {
         this.setState({
             app: newApp
         });
-        document.title = `App | ${newApp.title}`;
+        document.title = `${newApp.title}`;
     }
 
     componentDidMount() {

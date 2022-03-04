@@ -1,5 +1,19 @@
 {
     "categories": {
+        "start": [
+            {
+                "id": "select",
+                "name": "Manuelle Auswahl",
+                "icon": "👉",
+                "color": "primary"
+            },
+            {
+                "id": "plan",
+                "name": "Trainingsplan",
+                "icon": "📋",
+                "color": "info"
+            }
+        ],
         "types": [
             {
                 "id": "strength",
@@ -11,56 +25,59 @@
                 "id": "cardio",
                 "name": "Ausdauer",
                 "icon": "🏃",
-                "color": "primary"
+                "color": "info"
             },
             {
-                "id": "fighting",
+                "id": "fight",
                 "name": "Kampf",
-                "icon": "🤼",
-                "color": "primary"
+                "icon": "🤜",
+                "color": "danger"
             },
             {
                 "id": "hiit",
                 "name": "HIIT",
                 "icon": "🤸",
-                "color": "primary"
+                "color": "warning"
             },
             {
-                "id": "wellness",
-                "name": "Wellness",
-                "icon": "🧘",
-                "color": "info"
+                "id": "all",
+                "name": "Egal",
+                "icon": "🤷",
+                "color": "secondary",
+                "classes": "mt-3"
             }
         ],
         "levels": [
             {
                 "id": "1",
-                "name": "Leicht",
+                "name": "Normal",
                 "icon": "🏅",
                 "color": "success"
             },
             {
                 "id": "2",
-                "name": "Einfach",
-                "icon": "🥉",
-                "color": "info"
-            },
-            {
-                "id": "3",
-                "name": "Normal",
-                "icon": "🥈",
-                "color": "primary"
-            },
-            {
-                "id": "4",
                 "name": "Schwer",
-                "icon": "🥇",
+                "icon": "🥈",
                 "color": "warning"
             },
             {
-                "id": "5",
-                "name": "Fortgeschritten",
-                "icon": "🏆",
+                "id": "3",
+                "name": "Extrem",
+                "icon": "🥇",
+                "color": "danger"
+            },
+            {
+                "id": "all",
+                "name": "Egal",
+                "icon": "🤷",
+                "color": "secondary"
+            }
+        ],
+        "plans": [
+            {
+                "id": "extreme-fit",
+                "name": "Extreme Fit",
+                "icon": "🔥",
                 "color": "danger"
             }
         ]

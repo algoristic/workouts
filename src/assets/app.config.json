@@ -1,0 +1,15 @@
+{
+    "config": {
+        "buttonClasses": "btn btn-block",
+        "buttonFontSize": "fs-5",
+        "buttonFontWeight": "fw-bold",
+        "buttonPadding": "py-4",
+        "forwardTimeout": 1500,
+        "allWorkoutParams": [
+            "type", "level", "plan", "step"
+        ],
+        "allPlanParams": [
+            "plan"
+        ]
+    }
+}
