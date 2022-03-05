@@ -20,7 +20,7 @@ const Funnel = ({ question, start, category, next, parameter, pickup }) => {
                 <div className='d-grid'>
                     <Header>{ question }</Header>
                     <hr/>
-                    <div className='d-grid'>
+                    <div>
                     {
                         funnel.map((category) => {
                             let forward = '';
@@ -33,17 +33,24 @@ const Funnel = ({ question, start, category, next, parameter, pickup }) => {
                                 furtherClasses = ' ' + category.classes;
                             }
                             return (
-                                <a key={category.id} href={forward}
-                                    className={`
-                                        ${ config.buttonClasses }
-                                        ${ config.buttonFontSize }
-                                        ${ config.buttonFontWeight }
-                                        ${ config.buttonPadding }
-                                        ${ furtherClasses }
-                                        btn-${ category.color } my-3`}>
-                                    <span className='category-icon'>{ category.icon }</span>
-                                    <span className='category-name ms-3'>{ category.name }</span>
-                                </a>
+                                <div className='d-grid'>
+                                    <a key={category.id} href={forward}
+                                        className={`
+                                            ${ config.buttonClasses }
+                                            ${ config.buttonFontSize }
+                                            ${ config.buttonFontWeight }
+                                            ${ config.buttonPadding }
+                                            ${ furtherClasses }
+                                            btn-${ category.color } my-3`}>
+                                        <span className='category-icon'>{ category.icon }</span>
+                                        <span className='category-name ms-3'>{ category.name }</span>
+                                    </a>
+                                    {
+                                        category.subtitle && (
+                                            <p className='text-center text-secondary fst-italic fs-5'>{ category.subtitle }</p>
+                                        )
+                                    }
+                                </div>
                             );
                         })
                     }

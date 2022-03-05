@@ -20,8 +20,6 @@ const WorkoutSelect = () => {
         type = plans[plan][step].types;
     }
 
-    console.log(type);
-    console.log(level);
     let next = '?app=workout' + collector.getSearchString();
     const workout = new WorkoutService(type, level).getWorkout();
     next += `&s=${workout}`;

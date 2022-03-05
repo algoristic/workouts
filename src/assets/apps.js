@@ -1,3 +1,4 @@
+import Finish from '../components/Finish'
 import Level from '../components/Level'
 import NotFound from '../components/NotFound'
 import Select from '../components/Select'
@@ -7,6 +8,11 @@ import Workout from '../components/Workout'
 import WorkoutSelect from '../components/WorkoutSelect'
 
 const apps = {
+    finish: {
+        id: "finish",
+        title: "Finish",
+        component: Finish
+    },
     level: {
         id: "level",
         title: "Level",

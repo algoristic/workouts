@@ -78,7 +78,50 @@
                 "id": "extreme-fit",
                 "name": "Extreme Fit",
                 "icon": "🔥",
-                "color": "danger"
+                "color": "danger",
+                "subtitle": "Generelle Fitness und Abwechslung"
+            },
+            {
+                "id": "guardian",
+                "name": "Guardian",
+                "icon": "🛡",
+                "color": "primary",
+                "subtitle": "Generelle Fitness"
+            },
+            {
+                "id": "assassin",
+                "name": "Assassin",
+                "icon": "🤺",
+                "color": "warning",
+                "subtitle": "Abnehmen und Definition"
+            },
+            {
+                "id": "amazon",
+                "name": "Amazon",
+                "icon": "🤸‍♀️",
+                "color": "info",
+                "subtitle": "Generelle Fitness"
+            },
+            {
+                "id": "fighter",
+                "name": "Fighter",
+                "icon": "🤼",
+                "color": "warning",
+                "subtitle": "Abnehmen und Definition"
+            },
+            {
+                "id": "ninja",
+                "name": "Ninja",
+                "icon": "🥷",
+                "color": "primary",
+                "subtitle": "Abnehmen und Definition"
+            },
+            {
+                "id": "knight",
+                "name": "Knight",
+                "icon": " 🏋️‍♂️",
+                "color": "info",
+                "subtitle": "Krafttraining"
             }
         ]
     }

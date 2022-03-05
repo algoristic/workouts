@@ -1,4 +1,5 @@
 import Header from './Header'
+import DateTimeService from '../service/dateTimeService'
 import ParameterCollector from '../service/parameterCollector'
 import ParameterService from '../service/parameterService'
 import { config } from '../assets/app.config.json'
@@ -27,6 +28,7 @@ const Workout = () => {
         ${ config.buttonFontSize }
         ${ config.buttonFontWeight }
         ${ config.buttonPadding }`;
+    const dateTime = new DateTimeService();
     //build path for workout instructions image
     const workout = new ParameterService('s').value();
     const plan = new ParameterService('plan').value();
@@ -35,11 +37,10 @@ const Workout = () => {
     const path = getPath(decoded);
 
     //build path for next
-    let app = 'start'
+    let app = 'finish'
     let nextParams = [];
     let additional = '';
     if(plan) {
-        app = 'level';
         nextParams = config.allPlanParams;
         const maxSteps = plans[plan].length;
         let nextStep = (1 + parseInt(step));
@@ -48,6 +49,7 @@ const Workout = () => {
         }
         additional = `&step=${nextStep}`;
     }
+    additional += `&t=${dateTime.getNow()}`;
     const paramSearchString = new ParameterCollector(nextParams).getSearchString();
     const nextPath = `?app=${app}` + paramSearchString + additional;
 
@@ -62,18 +64,21 @@ const Workout = () => {
                 <a className={`
                     ${ buttonClasses }
                     btn-success mt-3`} href={ nextPath }>
-                    ✅ Fertig</a>
+                    <span className='btn-icon'>🏁</span>
+                    <span className='btn-text ms-3'>Fertig</span>
+                </a>
                 <a className={`
                     ${ buttonClasses }
                     btn-primary my-3`} href={ rerollPath }>
-                    🔄 Nochmal
+                    <span className='btn-icon'>🔄</span>
+                    <span className='btn-text ms-3'>Anderes Workout</span>
                 </a>
                 <a className={`
                     ${ buttonClasses }
                     btn-secondary mb-3`} href='?app=start'>
-                    ♻️ Anderer Modus?
+                    <span className='btn-icon'>❌</span>
+                    <span className='btn-text ms-3'>Anderer Modus</span>
                 </a>
-
             </div>
         </div>
     );

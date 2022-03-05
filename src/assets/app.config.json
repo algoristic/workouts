@@ -9,7 +9,7 @@
             "type", "level", "plan", "step"
         ],
         "allPlanParams": [
-            "plan"
+            "plan", "step"
         ]
     }
 }

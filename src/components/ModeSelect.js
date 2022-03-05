@@ -9,11 +9,13 @@ const ModeSelect = () => {
         btn-outline-dark`;
     return (
         <div className='btn-group-vertical mt-5 mb-3'>
-            <a className={ buttonClasses } onClick={() => window.history.back()}>
-                ❌ Zurück
-            </a>
+            <button type='button' className={ buttonClasses } onClick={() => window.history.back()}>
+                <span className='btn-icon'>↩</span>
+                <span className='btn-text ms-3'>Zurück</span>
+            </button>
             <a className={`${ buttonClasses } border-top-0`} href='?app=start'>
-                ♻️ Anderer Modus?
+                <span className='btn-icon'>❌</span>
+                <span className='btn-text ms-3'>Anderer Modus?</span>
             </a>
         </div>
     );
