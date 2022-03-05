@@ -6,10 +6,13 @@
         "buttonPadding": "py-4",
         "forwardTimeout": 1500,
         "allWorkoutParams": [
-            "type", "level", "plan", "step"
+            "type", "level", "plan", "step", "program"
         ],
         "allPlanParams": [
             "plan", "step"
+        ],
+        "allProgramParams": [
+            "program", "step"
         ]
     }
 }

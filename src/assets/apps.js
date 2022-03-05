@@ -1,6 +1,7 @@
 import Finish from '../components/Finish'
 import Level from '../components/Level'
 import NotFound from '../components/NotFound'
+import Programs from '../components/Programs'
 import Select from '../components/Select'
 import Start from '../components/Start'
 import TrainingPlan from '../components/TrainingPlan'
@@ -22,6 +23,11 @@ const apps = {
         id: 'notFound',
         title: '404 - Not Found',
         component: NotFound
+    },
+    programs: {
+        id: 'programs',
+        title: 'Programme',
+        component: Programs
     },
     select: {
         id: "select",

@@ -17,11 +17,15 @@ const Finish = () => {
     const today = dateTime.getFromString(now);
     const forward = (today > time);
     const plan = new ParameterService('plan').value();
+    const program = new ParameterService('program').value();
     let collector = new ParameterCollector([]);
     let nextApp = 'start';
     if(plan) {
         nextApp = 'level';
         collector = new ParameterCollector(config.allPlanParams);
+    } else if (program) {
+        nextApp = 'forward';
+        collector = new ParameterCollector(config.allProgramParams);
     }
     const next = `?app=${nextApp}${collector.getSearchString()}`;
     if(forward) {

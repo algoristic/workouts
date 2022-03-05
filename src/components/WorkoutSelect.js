@@ -1,6 +1,7 @@
 import ParameterCollector from '../service/parameterCollector'
 import ParameterService from '../service/parameterService'
 import WorkoutService from '../service/workoutService'
+import { encode } from '../service/encodingService'
 import { config } from '../assets/app.config.json'
 import { plans } from '../assets/plans.json'
 
@@ -9,19 +10,28 @@ const WorkoutSelect = () => {
     let type = new ParameterService('type').value();
     const level = new ParameterService('level').value(); // should be set anyway
 
+    const program = new ParameterService('program').value();
     const plan = new ParameterService('plan').value();
     const stepService = new ParameterService('step');
     let step = stepService.value()
+    let workout = '';
     if(plan) {
         if(!step) {
             step = 0;
-            stepService.value(0);
+            stepService.value(step);
         }
         type = plans[plan][step].types;
+    } else if (program) {
+        if(!step) {
+            step = 1;
+            stepService.value(step);
+        }
+        workout = encode(`p:${program}:${step}`);
     }
-
+    if(!program) {
+        workout = new WorkoutService(type, level).getWorkout();
+    }
     let next = '?app=workout' + collector.getSearchString();
-    const workout = new WorkoutService(type, level).getWorkout();
     next += `&s=${workout}`;
     setTimeout(() => {
         window.location.href = next;

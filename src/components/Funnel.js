@@ -42,7 +42,11 @@ const Funnel = ({ question, start, category, next, parameter, pickup }) => {
                                             ${ config.buttonPadding }
                                             ${ furtherClasses }
                                             btn-${ category.color } my-3`}>
-                                        <span className='category-icon'>{ category.icon }</span>
+                                        {
+                                            category.icon && (
+                                                <span className='category-icon'>{ category.icon }</span>
+                                            )
+                                        }
                                         <span className='category-name ms-3'>{ category.name }</span>
                                     </a>
                                     {

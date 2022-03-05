@@ -4,6 +4,7 @@ import ParameterCollector from '../service/parameterCollector'
 import ParameterService from '../service/parameterService'
 import { config } from '../assets/app.config.json'
 import { plans } from '../assets/plans.json'
+import { programs } from '../assets/programs.json'
 import { decode } from '../service/encodingService'
 
 const getPath = (string) => {
@@ -32,6 +33,7 @@ const Workout = () => {
     //build path for workout instructions image
     const workout = new ParameterService('s').value();
     const plan = new ParameterService('plan').value();
+    const program = new ParameterService('program').value();
     const step = new ParameterService('step').value();
     const decoded = decode(workout);
     const path = getPath(decoded);
@@ -41,11 +43,19 @@ const Workout = () => {
     let nextParams = [];
     let additional = '';
     if(plan) {
-        nextParams = config.allPlanParams;
+        nextParams = ['plan'];
         const maxSteps = plans[plan].length;
         let nextStep = (1 + parseInt(step));
         if(nextStep > (maxSteps - 1)) {
             nextStep = 0;
+        }
+        additional = `&step=${nextStep}`;
+    } else if(program) {
+        nextParams = ['program'];
+        const maxSteps = programs[program];
+        let nextStep = (1 + parseInt(step));
+        if(nextStep > maxSteps) {
+            nextStep = 1;
         }
         additional = `&step=${nextStep}`;
     }
@@ -63,16 +73,20 @@ const Workout = () => {
                 <img className='img-fluid img-thumbnail' alt='Workout' src={path} />
                 <a className={`
                     ${ buttonClasses }
-                    btn-success mt-3`} href={ nextPath }>
+                    btn-success my-3`} href={ nextPath }>
                     <span className='btn-icon'>🏁</span>
                     <span className='btn-text ms-3'>Fertig</span>
                 </a>
-                <a className={`
-                    ${ buttonClasses }
-                    btn-primary my-3`} href={ rerollPath }>
-                    <span className='btn-icon'>🔄</span>
-                    <span className='btn-text ms-3'>Anderes Workout</span>
-                </a>
+                {
+                    !program && (
+                        <a className={`
+                            ${ buttonClasses }
+                            btn-primary mb-3`} href={ rerollPath }>
+                            <span className='btn-icon'>🔄</span>
+                            <span className='btn-text ms-3'>Anderes Workout</span>
+                        </a>
+                    )
+                }
                 <a className={`
                     ${ buttonClasses }
                     btn-secondary mb-3`} href='?app=start'>

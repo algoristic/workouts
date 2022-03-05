@@ -12,6 +12,12 @@
                 "name": "Trainingsplan",
                 "icon": "📋",
                 "color": "info"
+            },
+            {
+                "id": "programs",
+                "name": "Programme",
+                "icon": "🏃.",
+                "color": "secondary"
             }
         ],
         "types": [
@@ -122,6 +128,28 @@
                 "icon": " 🏋️‍♂️",
                 "color": "info",
                 "subtitle": "Krafttraining"
+            }
+        ],
+        "programs": [
+            {
+                "id": "military-fit",
+                "name": "Military Fit",
+                "color": "primary"
+            },
+            {
+                "id": "spartan-trials",
+                "name": "Spartan Trials",
+                "color": "primary"
+            },
+            {
+                "id": "avatar-program",
+                "name": "Avatar Upgrade",
+                "color": "primary"
+            },
+            {
+                "id": "boxer-prime",
+                "name": "Boxer Prime",
+                "color": "primary"
             }
         ]
     }
