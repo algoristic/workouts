@@ -43,7 +43,9 @@ const getPlanControl = (plan, dateTime) => {
     return {
         next: `?app=finish&plan=${plan}&step=${nextStep}&t=${dateTime.getNow()}`,
         reroll: rerollPath,
-        subtitle: `Plan ${name} an Tag ${(step + 1)} - Typ ${getTypeString(type)} und Level ${getLevelString(level)}`
+        subtitle: (
+            <><i>{ name }</i> an Tag { (step + 1) } <br/> Typ <i>{ getTypeString(type) }</i> und Schwierigkeit <i>{ getLevelString(level) }</i></>
+        )
     };
 };
 
@@ -59,7 +61,9 @@ const getProgramControl = (program, dateTime) => {
     const name = programData.filter((_p) => _p.id === program)[0].name;
     return {
         next: `?app=finish&program=${program}&step=${nextStep}&t=${dateTime.getNow()}`,
-        subtitle: `Programm ${name} an Tag ${step}`
+        subtitle: (
+            <><i>{ name }</i> an Tag { step }</>
+        )
     };
 };
 
@@ -71,7 +75,9 @@ const getSelectionControl = (dateTime) => {
     return {
         next: `?app=finish&t=${dateTime.getNow()}`,
         reroll: rerollPath,
-        subtitle: `Typ ${getTypeString(type)} und Level ${getLevelString(level)}`
+        subtitle: (
+            <>Typ <i>{ getTypeString(type) }</i> und Schwierigkeit <i>{ getLevelString(level) }</i></>
+        )
     };
 };
 
@@ -97,7 +103,7 @@ const Workout = () => {
         <div className='workout-wrapper d-flex flex-column align-items-center'>
             <div className='d-flex flex-column' style={{ maxWidth: '576px' }}>
                 <Header>Dein Workout:</Header>
-                <Subtitle text={control.subtitle} fontSize='6' />
+                <Subtitle text={control.subtitle} />
                 <img className='img-fluid img-thumbnail' alt='Workout' src={path} />
                 <Button href={control.next} color='success' icon='🏁' text='Fertig' classes='my-3' />
                 {

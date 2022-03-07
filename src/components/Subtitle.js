@@ -1,6 +1,6 @@
 const Subtitle = ({ text, classes, fontSize }) => {
     if(!fontSize) {
-        fontSize = 'fs-5';
+        fontSize = 'fs-6';
     } else {
         fontSize = `fs-${fontSize}`;
     }

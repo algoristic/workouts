@@ -17,7 +17,9 @@ const getNextPlan = (plan) => {
     const type = plans[plan][step].types;
     return {
         href: `?app=level${collector.getSearchString()}`,
-        text: `Plan ${name} mit Tag ${(step + 1)}: ${getTypeString(type)}`
+        text: (
+            <><i>{ name }</i> mit Tag { (step + 1) }: <i>{ getTypeString(type) }</i></>
+        )
     };
 };
 
@@ -28,7 +30,9 @@ const getNextProgram = (program) => {
     const { programs } = categories;
     return {
         href: `?app=forward${collector.getSearchString()}`,
-        text: `Programm ${programs.filter((_p) => _p.id === program)[0].name} mit Trainingstag Nr. ${step}`
+        text: (
+            <><i>{ programs.filter((_p) => _p.id === program)[0].name }</i> mit Trainingstag Nr. { step }</>
+        )
     };
 };
 
@@ -68,12 +72,12 @@ const Finish = () => {
                 <p className='text-center fs-4'>
                     Du bist für heute fertig! Morgen geht es hier weiter 💪
                 </p>
+                <Subtitle text={<>Als nächstes → { next.text }</>}  />
                 <div className='d-grid mt-5 mb-3'>
                     <Button color='primary' classes='mb-3' icon='🔄' text='Neu laden'
                         onClick={() => window.location.reload(true)}>
                     </Button>
                     <Button color='danger' classes='mb-3' href={next.href} icon='🔥' text='Jetzt schon weiter!' />
-                    <Subtitle text={next.text} />
                 </div>
             </div>
         )
