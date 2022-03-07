@@ -1,11 +1,15 @@
+import Button from './Button'
 import Header from './Header'
+import Subtitle from './Subtitle'
 import DateTimeService from '../service/dateTimeService'
 import ParameterCollector from '../service/parameterCollector'
 import ParameterService from '../service/parameterService'
+import { categories } from '../assets/categories.json'
 import { config } from '../assets/app.config.json'
 import { plans } from '../assets/plans.json'
 import { programs } from '../assets/programs.json'
 import { decode } from '../service/encodingService'
+import { getTypeString, getLevelString } from '../service/typeLevelService'
 
 const getPath = (string) => {
     const arr = string.split(':');
@@ -21,39 +25,38 @@ const getPath = (string) => {
             break;
     }
     return path;
-}
+};
 
 const Workout = () => {
-    const buttonClasses = `
-        ${ config.buttonClasses }
-        ${ config.buttonFontSize }
-        ${ config.buttonFontWeight }
-        ${ config.buttonPadding }`;
     const dateTime = new DateTimeService();
     //build path for workout instructions image
     const workout = new ParameterService('s').value();
     const plan = new ParameterService('plan').value();
     const program = new ParameterService('program').value();
-    const step = new ParameterService('step').value();
+    let step = new ParameterService('step').value();
     const decoded = decode(workout);
     const path = getPath(decoded);
+    const level = new ParameterService('level').value();
+    let type = new ParameterService('type').value();
 
     //build path for next
     let app = 'finish'
     let nextParams = [];
     let additional = '';
+    step = parseInt(step);
     if(plan) {
         nextParams = ['plan'];
         const maxSteps = plans[plan].length;
-        let nextStep = (1 + parseInt(step));
+        let nextStep = (1 + step);
         if(nextStep > (maxSteps - 1)) {
             nextStep = 0;
         }
         additional = `&step=${nextStep}`;
+        type = plans[plan][step].types;
     } else if(program) {
         nextParams = ['program'];
         const maxSteps = programs[program];
-        let nextStep = (1 + parseInt(step));
+        let nextStep = (1 + step);
         if(nextStep > maxSteps) {
             nextStep = 1;
         }
@@ -71,28 +74,17 @@ const Workout = () => {
             <div className='d-flex flex-column' style={{ maxWidth: '576px' }}>
                 <Header>Dein Workout:</Header>
                 <img className='img-fluid img-thumbnail' alt='Workout' src={path} />
-                <a className={`
-                    ${ buttonClasses }
-                    btn-success my-3`} href={ nextPath }>
-                    <span className='btn-icon'>🏁</span>
-                    <span className='btn-text ms-3'>Fertig</span>
-                </a>
+                <Button href={nextPath} color='success' icon='🏁' text='Fertig' classes='my-3' />
                 {
                     !program && (
-                        <a className={`
-                            ${ buttonClasses }
-                            btn-primary mb-3`} href={ rerollPath }>
-                            <span className='btn-icon'>🔄</span>
-                            <span className='btn-text ms-3'>Anderes Workout</span>
-                        </a>
+                        <Button href={rerollPath} color='primary' classes='mb-3' icon='🔄' text='Anderes Workout' />
                     )
                 }
-                <a className={`
-                    ${ buttonClasses }
-                    btn-secondary mb-3`} href='?app=start'>
-                    <span className='btn-icon'>❌</span>
-                    <span className='btn-text ms-3'>Anderer Modus</span>
-                </a>
+                {
+                    !program && (
+                        <Subtitle text={`Typ '${getTypeString(type)}' und Level '${getLevelString(level)}'`} />
+                    )
+                }
             </div>
         </div>
     );

@@ -17,7 +17,7 @@
                 "id": "programs",
                 "name": "Programme",
                 "icon": "🏃.",
-                "color": "secondary"
+                "color": "success"
             }
         ],
         "types": [
@@ -57,7 +57,7 @@
             {
                 "id": "1",
                 "name": "Normal",
-                "icon": "🏅",
+                "icon": "🥉",
                 "color": "success"
             },
             {
@@ -134,22 +134,26 @@
             {
                 "id": "military-fit",
                 "name": "Military Fit",
-                "color": "primary"
+                "color": "danger",
+                "subtitle": "Functional Fitness für hohe Performance"
             },
             {
                 "id": "spartan-trials",
                 "name": "Spartan Trials",
-                "color": "primary"
+                "color": "warning",
+                "subtitle": "Körpergewichtstraining für Kraft und Definition"
             },
             {
                 "id": "avatar-program",
                 "name": "Avatar Upgrade",
-                "color": "primary"
+                "color": "danger",
+                "subtitle": "Körpergewichtstraining für Kraft und Kampf"
             },
             {
                 "id": "boxer-prime",
                 "name": "Boxer Prime",
-                "color": "primary"
+                "color": "danger",
+                "subtitle": "Kraft, Definition und Koordination für Boxer"
             }
         ]
     }

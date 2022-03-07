@@ -1,15 +1,15 @@
+import Button from './Button'
 import Header from './Header'
+import Subtitle from './Subtitle'
 import DateTimeService from '../service/dateTimeService'
 import ParameterCollector from '../service/parameterCollector'
 import ParameterService from '../service/parameterService'
+import { categories } from '../assets/categories.json'
 import { config } from '../assets/app.config.json'
+import { plans } from '../assets/plans.json'
+import { getTypeString } from '../service/typeLevelService'
 
 const Finish = () => {
-    const buttonClasses = `
-        ${ config.buttonClasses }
-        ${ config.buttonFontSize }
-        ${ config.buttonFontWeight }
-        ${ config.buttonPadding }`;
     const dateTime = new DateTimeService();
     const timeParam = new ParameterService('t').value();
     const time = dateTime.getFromString(timeParam);
@@ -18,6 +18,8 @@ const Finish = () => {
     const forward = (today > time);
     const plan = new ParameterService('plan').value();
     const program = new ParameterService('program').value();
+    let step = new ParameterService('step').value();
+    step = parseInt(step);
     let collector = new ParameterCollector([]);
     let nextApp = 'start';
     if(plan) {
@@ -31,6 +33,17 @@ const Finish = () => {
     if(forward) {
         window.location.href = next;
     }
+    let nextStep = undefined;
+    if(!program && !plan) {
+        nextStep = 'Weiter zur Modusauswahl';
+    } else if(plan) {
+        const planName = categories.plans.filter(_p => _p.id===plan)[0].name;
+        const type = plans[plan][step].types;
+        nextStep = `Plan '${planName}' mit Tag ${(step + 1)}: '${getTypeString(type)}'`;
+    } else if(program) {
+        const { programs } = categories;
+        nextStep = `Programm '${programs.filter((_p) => _p.id === program)[0].name}' mit Trainingstag Nr. ${step}`;
+    }
     return (
         !forward && (
             <div className='finish-wrapper'>
@@ -39,18 +52,11 @@ const Finish = () => {
                     Du bist für heute fertig! Morgen geht es hier weiter 💪
                 </p>
                 <div className='d-grid mt-5 mb-3'>
-                    <button type='button' className={`${ buttonClasses } btn-primary mb-3`} onClick={() => window.location.reload(true)}>
-                        <span className='btn-icon'>🔄</span>
-                        <span className='btn-text ms-3'>Neu laden</span>
-                    </button>
-                    <a className={`${ buttonClasses } btn-danger mb-3`} href={ next }>
-                        <span className='btn-icon'>🔥</span>
-                        <span className='btn-text ms-3'>Jetzt schon weiter!</span>
-                    </a>
-                    <a className={`${ buttonClasses } btn-secondary`} href='?app=start'>
-                        <span className='btn-icon'>❌</span>
-                        <span className='btn-text ms-3'>Anderer Modus</span>
-                    </a>
+                    <Button color='primary' classes='mb-3' icon='🔄' text='Neu laden'
+                        onClick={() => window.location.reload(true)}>
+                    </Button>
+                    <Button color='danger' classes='mb-3' href={next} icon='🔥' text='Jetzt schon weiter!' />
+                    <Subtitle text={nextStep} />
                 </div>
             </div>
         )

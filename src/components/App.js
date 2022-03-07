@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import MainMenu from './MainMenu'
 import ParameterService from '../service/parameterService'
 import apps from '../assets/apps'
 
@@ -39,7 +40,10 @@ class App extends Component {
     render() {
         const { app } = this.state;
         return (
-            <div className='app-wrapper container'>{ app && (React.createElement(app.component, [])) }</div>
+            <div className='application-wrapper'>
+                <MainMenu app={app} />
+                <div className='app-wrapper container'>{ app && (React.createElement(app.component, [])) }</div>
+            </div>
         );
     }
 }

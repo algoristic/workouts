@@ -1,5 +1,7 @@
+import Button from './Button'
 import Header from './Header'
 import ModeSelect from './ModeSelect'
+import Subtitle from './Subtitle'
 import ParameterCollector from '../service/parameterCollector'
 import all from '../assets/categories.json'
 import { config } from '../assets/app.config.json'
@@ -34,25 +36,12 @@ const Funnel = ({ question, start, category, next, parameter, pickup }) => {
                             }
                             return (
                                 <div className='d-grid'>
-                                    <a key={category.id} href={forward}
-                                        className={`
-                                            ${ config.buttonClasses }
-                                            ${ config.buttonFontSize }
-                                            ${ config.buttonFontWeight }
-                                            ${ config.buttonPadding }
-                                            ${ furtherClasses }
-                                            btn-${ category.color } my-3`}>
-                                        {
-                                            category.icon && (
-                                                <span className='category-icon'>{ category.icon }</span>
-                                            )
-                                        }
-                                        <span className='category-name ms-3'>{ category.name }</span>
-                                    </a>
+                                    <Button key={category.id} href={forward}
+                                        color={category.color} classes={`my-3 ${furtherClasses}`}
+                                        icon={category.icon} text={category.name}>
+                                    </Button>
                                     {
-                                        category.subtitle && (
-                                            <p className='text-center text-secondary fst-italic fs-5'>{ category.subtitle }</p>
-                                        )
+                                        category.subtitle && (<Subtitle text={category.subtitle} />)
                                     }
                                 </div>
                             );
