@@ -5,31 +5,47 @@ import { encode } from '../service/encodingService'
 import { config } from '../assets/app.config.json'
 import { plans } from '../assets/plans.json'
 
+const getWorkoutByPlan = (plan) => {
+    const stepService = new ParameterService('step');
+    let step = stepService.value();
+    if(!step) {
+        step = 0;
+        stepService.value(step);
+    }
+    const type = plans[plan][step].types;
+    const level = new ParameterService('level').value();
+    return new WorkoutService(type, level).getWorkout();
+};
+
+const getWorkoutByProgram = (program) => {
+    const stepService = new ParameterService('step');
+    let step = stepService.value();
+    if(!step) {
+        step = 1;
+        stepService.value(step);
+    }
+    return encode(`p:${program}:${step}`);
+};
+
+const getWorkoutBySelection = () => {
+    const type = new ParameterService('type').value();
+    const level = new ParameterService('level').value();
+    return new WorkoutService(type, level).getWorkout();
+};
+
 const WorkoutSelect = () => {
     const collector = new ParameterCollector(config.allWorkoutParams);
-    let type = new ParameterService('type').value();
-    const level = new ParameterService('level').value(); // should be set anyway
-
-    const program = new ParameterService('program').value();
     const plan = new ParameterService('plan').value();
-    const stepService = new ParameterService('step');
-    let step = stepService.value()
-    let workout = '';
+    let workout = undefined;
     if(plan) {
-        if(!step) {
-            step = 0;
-            stepService.value(step);
+        workout = getWorkoutByPlan(plan);
+    } else {
+        const program = new ParameterService('program').value();
+        if(program) {
+            workout = getWorkoutByProgram(program);
+        } else {
+            workout = getWorkoutBySelection();
         }
-        type = plans[plan][step].types;
-    } else if (program) {
-        if(!step) {
-            step = 1;
-            stepService.value(step);
-        }
-        workout = encode(`p:${program}:${step}`);
-    }
-    if(!program) {
-        workout = new WorkoutService(type, level).getWorkout();
     }
     let next = '?app=workout' + collector.getSearchString();
     next += `&s=${workout}`;
