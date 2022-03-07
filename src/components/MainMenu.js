@@ -1,3 +1,5 @@
+import { config } from '../assets/app.config.json'
+
 const MainMenu = ({ app }) => {
     return (
         <nav className='navbar navbar-expand-sm bg-dark navbar-dark'>
@@ -12,8 +14,8 @@ const MainMenu = ({ app }) => {
              <div class='collapse navbar-collapse' id='collapsibleNavbar'>
                  <ul className='navbar-nav'>
                      <li className='nav-item'>
-                         <a className={`nav-link ${(app && (app.id === 'start') ? 'disabled' : '')} text-end pe-3 fs-5`}
-                            href='?app=start'>
+                         <a className={`nav-link ${(app && (app.id === config.startApp) ? 'disabled' : '')} text-end pe-3 fs-5`}
+                            href={`?app=${config.startApp}`}>
                             Hauptmenü
                          </a>
                      </li>

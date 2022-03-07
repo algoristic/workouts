@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import MainMenu from './MainMenu'
 import ParameterService from '../service/parameterService'
 import apps from '../assets/apps'
+import { config } from '../assets/app.config.json'
 
 class App extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        let startApp = 'start';
+        let { startApp } = config;
         const appId = this.appParameter.value();
         if(appId !== undefined) {
             startApp = appId;
@@ -42,7 +43,7 @@ class App extends Component {
         return (
             <div className='application-wrapper'>
                 <MainMenu app={app} />
-                <div className='app-wrapper container'>{ app && (React.createElement(app.component, [])) }</div>
+                <div className={`app-wrapper ${ config.appContainer }`}>{ app && (React.createElement(app.component, [])) }</div>
             </div>
         );
     }

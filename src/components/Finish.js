@@ -34,7 +34,7 @@ const getNextProgram = (program) => {
 
 const getNextSelection = () => {
     return {
-        href: '?app=start',
+        href: `?app=${config.startApp}`,
         text: 'Weiter zur Modusauswahl'
     };
 }

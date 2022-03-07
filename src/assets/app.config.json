@@ -1,5 +1,7 @@
 {
     "config": {
+        "startApp": "start",
+        "appContainer": "container",
         "buttonClasses": "btn btn-block",
         "buttonFontSize": "fs-5",
         "buttonFontWeight": "fw-bold",
