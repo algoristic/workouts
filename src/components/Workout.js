@@ -97,11 +97,7 @@ const Workout = () => {
         <div className='workout-wrapper d-flex flex-column align-items-center'>
             <div className='d-flex flex-column' style={{ maxWidth: '576px' }}>
                 <Header>Dein Workout:</Header>
-                {
-                    control.subtitle && (
-                        <Subtitle text={control.subtitle} />
-                    )
-                }
+                <Subtitle text={control.subtitle} />
                 <img className='img-fluid img-thumbnail' alt='Workout' src={path} />
                 <Button href={control.next} color='success' icon='🏁' text='Fertig' classes='my-3' />
                 {
