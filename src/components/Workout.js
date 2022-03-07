@@ -4,6 +4,7 @@ import Subtitle from './Subtitle'
 import DateTimeService from '../service/dateTimeService'
 import ParameterCollector from '../service/parameterCollector'
 import ParameterService from '../service/parameterService'
+import { categories } from '../assets/categories.json'
 import { config } from '../assets/app.config.json'
 import { plans } from '../assets/plans.json'
 import { programs } from '../assets/programs.json'
@@ -36,12 +37,13 @@ const getPlanControl = (plan, dateTime) => {
     if(nextStep > (maxSteps - 1)) {
         nextStep = 0;
     }
+    const name = categories.plans.filter(_p => _p.id === plan)[0].name;
     const rerollCollector = new ParameterCollector(config.allWorkoutParams);
     const rerollPath = '?app=forward' + rerollCollector.getSearchString();
     return {
         next: `?app=finish&plan=${plan}&step=${nextStep}&t=${dateTime.getNow()}`,
         reroll: rerollPath,
-        subtitle: `Typ '${getTypeString(type)}' und Level '${getLevelString(level)}'`
+        subtitle: `Plan '${name}' an Tag ${(step + 1)} - Typ '${getTypeString(type)}' und Level '${getLevelString(level)}'`
     };
 };
 
@@ -53,8 +55,11 @@ const getProgramControl = (program, dateTime) => {
     if(nextStep > maxSteps) {
         nextStep = 1;
     }
+    const programData = categories.programs;
+    const name = programData.filter((_p) => _p.id === program)[0].name;
     return {
-        next: `?app=finish&program=${program}&step=${nextStep}&t=${dateTime.getNow()}`
+        next: `?app=finish&program=${program}&step=${nextStep}&t=${dateTime.getNow()}`,
+        subtitle: `Programm '${name}' an Tag ${step}`
     };
 };
 
@@ -92,16 +97,16 @@ const Workout = () => {
         <div className='workout-wrapper d-flex flex-column align-items-center'>
             <div className='d-flex flex-column' style={{ maxWidth: '576px' }}>
                 <Header>Dein Workout:</Header>
+                {
+                    control.subtitle && (
+                        <Subtitle text={control.subtitle} />
+                    )
+                }
                 <img className='img-fluid img-thumbnail' alt='Workout' src={path} />
                 <Button href={control.next} color='success' icon='🏁' text='Fertig' classes='my-3' />
                 {
                     !program && (
                         <Button href={control.reroll} color='primary' classes='mb-3' icon='🔄' text='Anderes Workout' />
-                    )
-                }
-                {
-                    !program && (
-                        <Subtitle text={control.subtitle} />
                     )
                 }
             </div>
