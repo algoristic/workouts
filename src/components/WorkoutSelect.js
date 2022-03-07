@@ -36,19 +36,16 @@ const getWorkoutBySelection = () => {
 const WorkoutSelect = () => {
     const collector = new ParameterCollector(config.allWorkoutParams);
     const plan = new ParameterService('plan').value();
+    const program = new ParameterService('program').value();
     let workout = undefined;
     if(plan) {
         workout = getWorkoutByPlan(plan);
+    } else if(program) {
+        workout = getWorkoutByProgram(program);
     } else {
-        const program = new ParameterService('program').value();
-        if(program) {
-            workout = getWorkoutByProgram(program);
-        } else {
-            workout = getWorkoutBySelection();
-        }
+        workout = getWorkoutBySelection();
     }
-    let next = '?app=workout' + collector.getSearchString();
-    next += `&s=${workout}`;
+    let next = `?app=workout${collector.getSearchString()}&s=${workout}`;
     setTimeout(() => {
         window.location.href = next;
     }, config.forwardTimeout);
