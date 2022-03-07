@@ -9,6 +9,36 @@ import { config } from '../assets/app.config.json'
 import { plans } from '../assets/plans.json'
 import { getTypeString } from '../service/typeLevelService'
 
+const getNextPlan = (plan) => {
+    const collector = new ParameterCollector(config.allPlanParams);
+    let step = new ParameterService('step').value();
+    step = parseInt(step);
+    const name = categories.plans.filter(_p => _p.id === plan)[0].name;
+    const type = plans[plan][step].types;
+    return {
+        href: `?app=level${collector.getSearchString()}`,
+        text: `Plan '${name}' mit Tag ${(step + 1)}: '${getTypeString(type)}'`
+    };
+};
+
+const getNextProgram = (program) => {
+    const collector = new ParameterCollector(config.allProgramParams);
+    let step = new ParameterService('step').value();
+    step = parseInt(step);
+    const { programs } = categories;
+    return {
+        href: `?app=forward${collector.getSearchString()}`,
+        text: `Programm '${programs.filter((_p) => _p.id === program)[0].name}' mit Trainingstag Nr. ${step}`
+    };
+};
+
+const getNextSelection = () => {
+    return {
+        href: '?app=start',
+        text: 'Weiter zur Modusauswahl'
+    };
+}
+
 const Finish = () => {
     const dateTime = new DateTimeService();
     const timeParam = new ParameterService('t').value();
@@ -16,33 +46,20 @@ const Finish = () => {
     const now = dateTime.getNow();
     const today = dateTime.getFromString(now);
     const forward = (today > time);
+
     const plan = new ParameterService('plan').value();
     const program = new ParameterService('program').value();
-    let step = new ParameterService('step').value();
-    step = parseInt(step);
-    let collector = new ParameterCollector([]);
-    let nextApp = 'start';
+    let next = undefined;
     if(plan) {
-        nextApp = 'level';
-        collector = new ParameterCollector(config.allPlanParams);
-    } else if (program) {
-        nextApp = 'forward';
-        collector = new ParameterCollector(config.allProgramParams);
-    }
-    const next = `?app=${nextApp}${collector.getSearchString()}`;
-    if(forward) {
-        window.location.href = next;
-    }
-    let nextStep = undefined;
-    if(!program && !plan) {
-        nextStep = 'Weiter zur Modusauswahl';
-    } else if(plan) {
-        const planName = categories.plans.filter(_p => _p.id===plan)[0].name;
-        const type = plans[plan][step].types;
-        nextStep = `Plan '${planName}' mit Tag ${(step + 1)}: '${getTypeString(type)}'`;
+        next = getNextPlan(plan);
     } else if(program) {
-        const { programs } = categories;
-        nextStep = `Programm '${programs.filter((_p) => _p.id === program)[0].name}' mit Trainingstag Nr. ${step}`;
+        next = getNextProgram(program);
+    } else {
+        next = getNextSelection();
+    }
+
+    if(forward) {
+        window.location.href = next.href;
     }
     return (
         !forward && (
@@ -55,8 +72,8 @@ const Finish = () => {
                     <Button color='primary' classes='mb-3' icon='🔄' text='Neu laden'
                         onClick={() => window.location.reload(true)}>
                     </Button>
-                    <Button color='danger' classes='mb-3' href={next} icon='🔥' text='Jetzt schon weiter!' />
-                    <Subtitle text={nextStep} />
+                    <Button color='danger' classes='mb-3' href={next.href} icon='🔥' text='Jetzt schon weiter!' />
+                    <Subtitle text={next.text} />
                 </div>
             </div>
         )
