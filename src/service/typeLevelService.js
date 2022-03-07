@@ -18,7 +18,7 @@ const getTypeString = (type) => {
             return res;
         })
         .map((_t) => _t.name)
-        .join(`' oder '`);
+        .join(` oder `);
 };
 
 const getLevelString = (level) => {

@@ -17,7 +17,7 @@ const getNextPlan = (plan) => {
     const type = plans[plan][step].types;
     return {
         href: `?app=level${collector.getSearchString()}`,
-        text: `Plan '${name}' mit Tag ${(step + 1)}: '${getTypeString(type)}'`
+        text: `Plan ${name} mit Tag ${(step + 1)}: ${getTypeString(type)}`
     };
 };
 
@@ -28,7 +28,7 @@ const getNextProgram = (program) => {
     const { programs } = categories;
     return {
         href: `?app=forward${collector.getSearchString()}`,
-        text: `Programm '${programs.filter((_p) => _p.id === program)[0].name}' mit Trainingstag Nr. ${step}`
+        text: `Programm ${programs.filter((_p) => _p.id === program)[0].name} mit Trainingstag Nr. ${step}`
     };
 };
 

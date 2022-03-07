@@ -41,7 +41,7 @@ const Funnel = ({ question, start, category, next, parameter, pickup }) => {
                                         icon={category.icon} text={category.name}>
                                     </Button>
                                     {
-                                        category.subtitle && (<Subtitle text={category.subtitle} />)
+                                        category.subtitle && (<Subtitle text={category.subtitle} classes='mb-5' />)
                                     }
                                 </div>
                             );
