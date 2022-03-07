@@ -11,42 +11,42 @@ import WorkoutSelect from '../components/WorkoutSelect'
 const apps = {
     finish: {
         id: "finish",
-        title: "Finish",
+        title: "Fertig!",
         component: Finish
     },
     level: {
         id: "level",
-        title: "Level",
+        title: "Level auswählen",
         component: Level
     },
     notFound: {
         id: 'notFound',
-        title: '404 - Not Found',
+        title: '404 - Seite nicht gefunden',
         component: NotFound
     },
     programs: {
         id: 'programs',
-        title: 'Programme',
+        title: 'Programm auswählen',
         component: Programs
     },
     select: {
         id: "select",
-        title: "Select",
+        title: "Trainingstyp auswählen",
         component: Select
     },
     start: {
         id: "start",
-        title: "Start",
+        title: "Startseite",
         component: Start
     },
     plan: {
         id: "plan",
-        title: "Trainingsplan",
+        title: "Trainingsplan auswählen",
         component: TrainingPlan
     },
     workout: {
         id: "workout",
-        title: "Workout",
+        title: "Dein Workout",
         component: Workout
     },
     forward: {

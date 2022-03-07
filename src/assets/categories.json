@@ -17,7 +17,7 @@
                 "id": "programs",
                 "name": "Programme",
                 "icon": "🏃.",
-                "color": "success"
+                "color": "warning"
             }
         ],
         "types": [

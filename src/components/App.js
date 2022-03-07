@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 
+import ActiveApp from './ActiveApp'
 import MainMenu from './MainMenu'
 import ParameterService from '../service/parameterService'
 import apps from '../assets/apps'
@@ -43,7 +44,7 @@ class App extends Component {
         return (
             <div className='application-wrapper'>
                 <MainMenu app={app} />
-                <div className={`app-wrapper ${ config.appContainer }`}>{ app && (React.createElement(app.component, [])) }</div>
+                <ActiveApp app={app} />
             </div>
         );
     }
