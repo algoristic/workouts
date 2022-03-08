@@ -1,5 +1,5 @@
 import { encode } from './encodingService'
-import all from '../assets/workouts.json'
+import workouts from '../assets/workouts.config'
 
 const filter = (value, property) => {
     return {
@@ -42,7 +42,7 @@ class WorkoutService {
     }
 
     getWorkout() {
-        let list = all.workouts;
+        let list = workouts;
         this.filters.forEach((filter) => {
             list = filter.apply(list);
         });

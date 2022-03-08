@@ -4,7 +4,7 @@ import Subtitle from './Subtitle'
 import ParameterService from '../service/parameterService'
 import { encode } from '../service/encodingService'
 import categories from '../assets/categories.config'
-import { programs } from '../assets/programs.json'
+import programs from '../assets/programs.config'
 
 const ProgramDays = () => {
     const program = new ParameterService('program').value();

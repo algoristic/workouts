@@ -7,7 +7,7 @@ import ParameterService from '../service/parameterService'
 import categories from '../assets/categories.config'
 import { config } from '../assets/app.config.json'
 import plans from '../assets/plans.config'
-import { programs } from '../assets/programs.json'
+import programs from '../assets/programs.config'
 import { decode } from '../service/encodingService'
 import { getTypeString, getLevelString } from '../service/typeLevelService'
 
