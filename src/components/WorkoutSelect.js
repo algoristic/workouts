@@ -6,19 +6,19 @@ import { config } from '../assets/app.config.json'
 import plans from '../assets/plans.config'
 
 const getWorkoutByPlan = (plan) => {
-    const stepService = new ParameterService('step');
+    const stepService = new ParameterService(config.parameters.step);
     let step = stepService.value();
     if(!step) {
         step = 0;
         stepService.value(step);
     }
     const type = plans[plan][step].types;
-    const level = new ParameterService('level').value();
+    const level = new ParameterService(config.parameters.level).value();
     return new WorkoutService(type, level).getWorkout();
 };
 
 const getWorkoutByProgram = (program) => {
-    const stepService = new ParameterService('step');
+    const stepService = new ParameterService(config.parameters.step);
     let step = stepService.value();
     if(!step) {
         step = 1;
@@ -28,15 +28,15 @@ const getWorkoutByProgram = (program) => {
 };
 
 const getWorkoutBySelection = () => {
-    const type = new ParameterService('type').value();
-    const level = new ParameterService('level').value();
+    const type = new ParameterService(config.parameters.type).value();
+    const level = new ParameterService(config.parameters.level).value();
     return new WorkoutService(type, level).getWorkout();
 };
 
 const WorkoutSelect = () => {
     const collector = new ParameterCollector(config.allWorkoutParams);
-    const plan = new ParameterService('plan').value();
-    const program = new ParameterService('program').value();
+    const plan = new ParameterService(config.parameters.plan).value();
+    const program = new ParameterService(config.parameters.program).value();
     let workout = undefined;
     if(plan) {
         workout = getWorkoutByPlan(plan);
@@ -45,7 +45,7 @@ const WorkoutSelect = () => {
     } else {
         workout = getWorkoutBySelection();
     }
-    let next = `?app=workout${collector.getSearchString()}&s=${workout}`;
+    let next = `?${config.parameters.app}=${config.apps.workout}${collector.getSearchString()}&${config.parameters.workout}=${workout}`;
     setTimeout(() => {
         window.location.href = next;
     }, config.forwardTimeout);

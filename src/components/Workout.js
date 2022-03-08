@@ -28,10 +28,10 @@ const getPath = (string) => {
 };
 
 const getPlanControl = (plan, dateTime) => {
-    const level = new ParameterService('level').value();
-    let step = new ParameterService('step').value();
-    let type = plans[plan][step].types;
+    const level = new ParameterService(config.parameters.level).value();
+    let step = new ParameterService(config.parameters.step).value();
     step = parseInt(step);
+    let type = plans[plan][step].types;
     const maxSteps = plans[plan].length;
     let nextStep = (1 + step);
     if(nextStep > (maxSteps - 1)) {
@@ -39,9 +39,9 @@ const getPlanControl = (plan, dateTime) => {
     }
     const name = categories.plans.filter(_p => _p.id === plan)[0].name;
     const rerollCollector = new ParameterCollector(config.allWorkoutParams);
-    const rerollPath = '?app=forward' + rerollCollector.getSearchString();
+    const rerollPath = `?${config.parameters.app}=${config.apps.forwarding}` + rerollCollector.getSearchString();
     return {
-        next: `?app=finish&plan=${plan}&step=${nextStep}&t=${dateTime.getNow()}`,
+        next: `?${config.parameters.app}=${config.apps.finishing}&${config.parameters.plan}=${plan}&${config.parameters.step}=${nextStep}&${config.parameters.time}=${dateTime.getNow()}`,
         reroll: rerollPath,
         subtitle: (
             <><i>{ name }</i> an Tag { (step + 1) } <br/> Typ <i>{ getTypeString(type) }</i> und Schwierigkeit <i>{ getLevelString(level) }</i></>
@@ -50,7 +50,7 @@ const getPlanControl = (plan, dateTime) => {
 };
 
 const getProgramControl = (program, dateTime) => {
-    let step = new ParameterService('step').value();
+    let step = new ParameterService(config.parameters.step).value();
     step = parseInt(step);
     const maxSteps = programs[program];
     let nextStep = (1 + step);
@@ -60,9 +60,9 @@ const getProgramControl = (program, dateTime) => {
     const programData = categories.programs;
     const name = programData.filter((_p) => _p.id === program)[0].name;
     return {
-        next: `?app=finish&program=${program}&step=${nextStep}&t=${dateTime.getNow()}`,
+        next: `?${config.parameters.app}=${config.apps.finishing}&${config.parameters.program}=${program}&${config.parameters.step}=${nextStep}&${config.parameters.time}=${dateTime.getNow()}`,
         back: {
-            path: `?app=days&program=${program}`,
+            path: `?${config.parameters.app}=${config.apps.programDays}&${config.parameters.program}=${program}`,
             text: (
                 <>Übersicht <i>{ name }</i></>
             )
@@ -74,12 +74,12 @@ const getProgramControl = (program, dateTime) => {
 };
 
 const getSelectionControl = (dateTime) => {
-    const level = new ParameterService('level').value();
-    const type = new ParameterService('type').value();
+    const level = new ParameterService(config.parameters.level).value();
+    const type = new ParameterService(config.parameters.type).value();
     const rerollCollector = new ParameterCollector(config.allWorkoutParams);
-    const rerollPath = '?app=forward' + rerollCollector.getSearchString();
+    const rerollPath = `?${config.parameters.app}=${config.apps.forwarding}` + rerollCollector.getSearchString();
     return {
-        next: `?app=finish&t=${dateTime.getNow()}`,
+        next: `?${config.parameters.app}=${config.apps.finishing}&${config.parameters.time}=${dateTime.getNow()}`,
         reroll: rerollPath,
         subtitle: (
             <>Typ <i>{ getTypeString(type) }</i> und Schwierigkeit <i>{ getLevelString(level) }</i></>
@@ -90,12 +90,12 @@ const getSelectionControl = (dateTime) => {
 const Workout = () => {
     const dateTime = new DateTimeService();
     //build path for workout instructions image
-    const workout = new ParameterService('s').value();
+    const workout = new ParameterService(config.parameters.workout).value();
     const decoded = decode(workout);
     const path = getPath(decoded);
 
-    const plan = new ParameterService('plan').value();
-    const program = new ParameterService('program').value();
+    const plan = new ParameterService(config.parameters.plan).value();
+    const program = new ParameterService(config.parameters.program).value();
     let control = undefined;
     if(plan) {
         control = getPlanControl(plan, dateTime);

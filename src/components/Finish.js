@@ -11,12 +11,12 @@ import { getTypeString } from '../service/typeLevelService'
 
 const getNextPlan = (plan) => {
     const collector = new ParameterCollector(config.allPlanParams);
-    let step = new ParameterService('step').value();
+    let step = new ParameterService(config.parameters.step).value();
     step = parseInt(step);
     const name = categories.plans.filter(_p => _p.id === plan)[0].name;
     const type = plans[plan][step].types;
     return {
-        href: `?app=level${collector.getSearchString()}`,
+        href: `?${config.parameters.app}=${config.apps.levelSelect}${collector.getSearchString()}`,
         text: (
             <><i>{ name }</i> mit Tag { (step + 1) }: <i>{ getTypeString(type) }</i></>
         )
@@ -25,11 +25,11 @@ const getNextPlan = (plan) => {
 
 const getNextProgram = (program) => {
     const collector = new ParameterCollector(config.allProgramParams);
-    let step = new ParameterService('step').value();
+    let step = new ParameterService(config.parameters.step).value();
     step = parseInt(step);
     const { programs } = categories;
     return {
-        href: `?app=forward${collector.getSearchString()}`,
+        href: `?${config.parameters.app}=${config.apps.forwarding}${collector.getSearchString()}`,
         text: (
             <><i>{ programs.filter((_p) => _p.id === program)[0].name }</i> mit Trainingstag Nr. { step }</>
         )
@@ -38,21 +38,21 @@ const getNextProgram = (program) => {
 
 const getNextSelection = () => {
     return {
-        href: `?app=${config.startApp}`,
+        href: `?${config.parameters.app}=${config.apps.start}`,
         text: 'Weiter zur Modusauswahl'
     };
 }
 
 const Finish = () => {
     const dateTime = new DateTimeService();
-    const timeParam = new ParameterService('t').value();
+    const timeParam = new ParameterService(config.parameters.time).value();
     const time = dateTime.getFromString(timeParam);
     const now = dateTime.getNow();
     const today = dateTime.getFromString(now);
     const forward = (today > time);
 
-    const plan = new ParameterService('plan').value();
-    const program = new ParameterService('program').value();
+    const plan = new ParameterService(config.parameters.plan).value();
+    const program = new ParameterService(config.parameters.program).value();
     let next = undefined;
     if(plan) {
         next = getNextPlan(plan);

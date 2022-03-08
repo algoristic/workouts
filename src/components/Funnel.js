@@ -10,7 +10,7 @@ const Funnel = ({ question, start, category, next, parameter, pickup }) => {
     const funnel = categories[category];
     let parameters = '?';
     if(next) {
-        parameters += `app=${next}`;
+        parameters += `${config.parameters.app}=${next}`;
     }
     const collector = new ParameterCollector(config.allWorkoutParams);
     parameters += collector.getSearchString();

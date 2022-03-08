@@ -15,8 +15,8 @@ const MainMenu = ({ app }) => {
                  <div class='collapse navbar-collapse' id='collapsibleNavbar'>
                      <ul className='navbar-nav'>
                          <li className='nav-item'>
-                             <a className={`nav-link ${(app && (app.id === config.startApp) ? 'disabled' : '')} text-end pe-3 fs-5`}
-                                href={`?app=${config.startApp}`}>
+                             <a className={`nav-link ${(app && (app.id === config.apps.start) ? 'disabled' : '')} text-end pe-3 fs-5`}
+                                href={`?${config.parameters.app}=${config.apps.start}`}>
                                 Hauptmenü
                              </a>
                          </li>

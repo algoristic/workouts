@@ -1,6 +1,28 @@
 {
     "config": {
-        "startApp": "start",
+        "apps": {
+            "finishing": "finish",
+            "forwarding": "go",
+            "levelSelect": "level",
+            "notFound": "404",
+            "plans": "plan",
+            "programDays": "days",
+            "programs": "programs",
+            "start": "start",
+            "selection": "select",
+            "typeSelect": "type",
+            "workout": "workout"
+        },
+        "parameters": {
+            "app": "app",
+            "type": "type",
+            "level": "level",
+            "plan": "plan",
+            "step": "increment",
+            "program": "program",
+            "time": "t",
+            "workout": "w"
+        },
         "appContainer": "container",
         "buttonClasses": "btn btn-block",
         "buttonFontSize": "fs-5",

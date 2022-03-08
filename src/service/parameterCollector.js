@@ -1,11 +1,13 @@
 import ParameterService from './parameterService'
+import { config } from '../assets/app.config.json'
 
 class ParameterCollector {
     constructor(list) {
         this.params = [];
         if(list !== undefined) {
             this.params = list.map((parameter) => {
-                return new ParameterService(parameter);
+                const name = config.parameters[parameter];
+                return new ParameterService(name);
             });
         }
     }

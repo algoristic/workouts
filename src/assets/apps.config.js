@@ -9,54 +9,56 @@ import TrainingPlan from '../components/TrainingPlan'
 import Workout from '../components/Workout'
 import WorkoutSelect from '../components/WorkoutSelect'
 
+import { config } from './app.config.json'
+
 const apps = [
     {
-        id: "finish",
+        id: config.apps.finishing,
         title: "Fertig!",
         component: Finish
     },
     {
-        id: "level",
+        id: config.apps.levelSelect,
         title: "Level auswählen",
         component: Level
     },
     {
-        id: 'notFound',
+        id: config.apps.notFound,
         title: '404 - Seite nicht gefunden',
         component: NotFound
     },
     {
-        id: 'days',
+        id: config.apps.programDays,
         title: 'Programm',
         component: ProgramDays
     },
     {
-        id: 'programs',
+        id: config.apps.programs,
         title: 'Programm auswählen',
         component: ProgramSelect
     },
     {
-        id: "select",
+        id: config.apps.selection,
         title: "Trainingstyp auswählen",
         component: Select
     },
     {
-        id: "start",
+        id: config.apps.start,
         title: "Startseite",
         component: Start
     },
     {
-        id: "plan",
+        id: config.apps.plans,
         title: "Trainingsplan auswählen",
         component: TrainingPlan
     },
     {
-        id: "workout",
+        id: config.apps.workout,
         title: "Dein Workout",
         component: Workout
     },
     {
-        id: "forward",
+        id: config.apps.forwarding,
         title: "Bitte warten...",
         component: WorkoutSelect
     }

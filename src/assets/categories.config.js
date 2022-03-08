@@ -1,13 +1,15 @@
+import { config } from './app.config.json'
+
 const categories = {
     "start": [
         {
-            "id": "select",
+            "id": config.apps.selection,
             "name": "Manuelle Auswahl",
             "icon": "👉",
             "color": "primary"
         },
         {
-            "id": "plan",
+            "id": config.apps.plans,
             "name": "Trainingsplan",
             "icon": "📋",
             "color": "warning"
@@ -20,7 +22,7 @@ const categories = {
             "hide": true
         },
         {
-            "id": "programs",
+            "id": config.apps.programs,
             "name": "Programme",
             "icon": "️🏃",
             "color": "danger"

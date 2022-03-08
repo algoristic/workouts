@@ -6,10 +6,14 @@ import ParameterService from '../service/parameterService'
 import apps from '../assets/apps.config'
 import { config } from '../assets/app.config.json'
 
+const getApp = (id) => {
+    return apps.filter(_app => _app.id === id)[0];
+};
+
 class App extends Component {
     constructor(props) {
         super(props);
-        this.appParameter = new ParameterService('app');
+        this.appParameter = new ParameterService(config.parameters.app);
         this.state = {
             app: undefined
         };
@@ -19,9 +23,9 @@ class App extends Component {
     }
 
     mountApp(app) {
-        let newApp = apps.filter(_app => _app.id === app)[0];
+        let newApp = getApp(app);
         if(newApp === undefined) {
-            newApp = apps.notFound;
+            newApp = getApp(config.apps.notFound);
         }
         this.setState({
             app: newApp
@@ -30,12 +34,12 @@ class App extends Component {
     }
 
     componentDidMount() {
-        let { startApp } = config;
+        let { start } = config.apps;
         const appId = this.appParameter.value();
         if(appId !== undefined) {
-            startApp = appId;
+            start = appId;
         }
-        this.mountApp(startApp);
+        this.mountApp(start);
 
     }
 
