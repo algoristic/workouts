@@ -3,7 +3,7 @@ import ModeSelect from './ModeSelect'
 import Subtitle from './Subtitle'
 import ParameterService from '../service/parameterService'
 import { encode } from '../service/encodingService'
-import { categories } from '../assets/categories.json'
+import categories from '../assets/categories.config'
 import { programs } from '../assets/programs.json'
 
 const ProgramDays = () => {

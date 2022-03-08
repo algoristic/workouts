@@ -9,57 +9,57 @@ import TrainingPlan from '../components/TrainingPlan'
 import Workout from '../components/Workout'
 import WorkoutSelect from '../components/WorkoutSelect'
 
-const apps = {
-    finish: {
+const apps = [
+    {
         id: "finish",
         title: "Fertig!",
         component: Finish
     },
-    level: {
+    {
         id: "level",
         title: "Level auswählen",
         component: Level
     },
-    notFound: {
+    {
         id: 'notFound',
         title: '404 - Seite nicht gefunden',
         component: NotFound
     },
-    days: {
+    {
         id: 'days',
         title: 'Programm',
         component: ProgramDays
     },
-    programs: {
+    {
         id: 'programs',
         title: 'Programm auswählen',
         component: ProgramSelect
     },
-    select: {
+    {
         id: "select",
         title: "Trainingstyp auswählen",
         component: Select
     },
-    start: {
+    {
         id: "start",
         title: "Startseite",
         component: Start
     },
-    plan: {
+    {
         id: "plan",
         title: "Trainingsplan auswählen",
         component: TrainingPlan
     },
-    workout: {
+    {
         id: "workout",
         title: "Dein Workout",
         component: Workout
     },
-    forward: {
+    {
         id: "forward",
         title: "Bitte warten...",
         component: WorkoutSelect
     }
-};
+];
 
 export default apps;

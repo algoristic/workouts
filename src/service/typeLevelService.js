@@ -1,4 +1,4 @@
-import { categories } from '../assets/categories.json'
+import categories from '../assets/categories.config'
 
 const getTypeString = (type) => {
     const { types } = categories;

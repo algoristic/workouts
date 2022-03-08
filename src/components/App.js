@@ -3,7 +3,7 @@ import { Component } from 'react'
 import ActiveApp from './ActiveApp'
 import MainMenu from './MainMenu'
 import ParameterService from '../service/parameterService'
-import apps from '../assets/apps'
+import apps from '../assets/apps.config'
 import { config } from '../assets/app.config.json'
 
 class App extends Component {
@@ -19,7 +19,7 @@ class App extends Component {
     }
 
     mountApp(app) {
-        let newApp = apps[app];
+        let newApp = apps.filter(_app => _app.id === app)[0];
         if(newApp === undefined) {
             newApp = apps.notFound;
         }

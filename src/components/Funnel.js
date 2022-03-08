@@ -3,11 +3,11 @@ import Header from './Header'
 import ModeSelect from './ModeSelect'
 import Subtitle from './Subtitle'
 import ParameterCollector from '../service/parameterCollector'
-import all from '../assets/categories.json'
+import categories from '../assets/categories.config'
 import { config } from '../assets/app.config.json'
 
 const Funnel = ({ question, start, category, next, parameter, pickup }) => {
-    const funnel = all.categories[category];
+    const funnel = categories[category];
     let parameters = '?';
     if(next) {
         parameters += `app=${next}`;
