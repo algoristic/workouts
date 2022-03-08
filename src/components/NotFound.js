@@ -1,6 +1,10 @@
+import Header from './Header'
+
 const NotFound = () => {
     return (
-        "404"
+        <>
+            <Header>404 - Seite nicht gefunden 🤷</Header>
+        </>
     );
 };
 
