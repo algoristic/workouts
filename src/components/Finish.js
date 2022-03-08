@@ -6,7 +6,7 @@ import ParameterCollector from '../service/parameterCollector'
 import ParameterService from '../service/parameterService'
 import categories from '../assets/categories.config'
 import { config } from '../assets/app.config.json'
-import { plans } from '../assets/plans.json'
+import plans from '../assets/plans.config'
 import { getTypeString } from '../service/typeLevelService'
 
 const getNextPlan = (plan) => {

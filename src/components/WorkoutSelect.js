@@ -3,7 +3,7 @@ import ParameterService from '../service/parameterService'
 import WorkoutService from '../service/workoutService'
 import { encode } from '../service/encodingService'
 import { config } from '../assets/app.config.json'
-import { plans } from '../assets/plans.json'
+import plans from '../assets/plans.config'
 
 const getWorkoutByPlan = (plan) => {
     const stepService = new ParameterService('step');
