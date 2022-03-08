@@ -45,7 +45,9 @@ const WorkoutSelect = () => {
     } else {
         workout = getWorkoutBySelection();
     }
-    let next = `?${config.parameters.app}=${config.apps.workout}${collector.getSearchString()}&${config.parameters.workout}=${workout}`;
+    let next = `?${config.parameters.app}=${config.apps.workout}`;
+    next += collector.getSearchString();
+    next += `&${config.parameters.workout}=${workout}`;
     setTimeout(() => {
         window.location.href = next;
     }, config.forwardTimeout);

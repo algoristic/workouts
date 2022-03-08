@@ -39,9 +39,15 @@ const getPlanControl = (plan, dateTime) => {
     }
     const name = categories.plans.filter(_p => _p.id === plan)[0].name;
     const rerollCollector = new ParameterCollector(config.allWorkoutParams);
-    const rerollPath = `?${config.parameters.app}=${config.apps.forwarding}` + rerollCollector.getSearchString();
+    let rerollPath = `?${config.parameters.app}=${config.apps.forwarding}`;
+    rerollPath += rerollCollector.getSearchString();
+
+    let nextPath = `?${config.parameters.app}=${config.apps.finishing}`;
+    nextPath += `&${config.parameters.plan}=${plan}`;
+    nextPath += `&${config.parameters.step}=${nextStep}`;
+    nextPath += `&${config.parameters.time}=${dateTime.getNow()}`;
     return {
-        next: `?${config.parameters.app}=${config.apps.finishing}&${config.parameters.plan}=${plan}&${config.parameters.step}=${nextStep}&${config.parameters.time}=${dateTime.getNow()}`,
+        next: nextPath,
         reroll: rerollPath,
         subtitle: (
             <><i>{ name }</i> an Tag { (step + 1) } <br/> Typ <i>{ getTypeString(type) }</i> und Schwierigkeit <i>{ getLevelString(level) }</i></>
@@ -59,17 +65,22 @@ const getProgramControl = (program, dateTime) => {
     }
     const programData = categories.programs;
     const name = programData.filter((_p) => _p.id === program)[0].name;
+
+    let nextPath = `?${config.parameters.app}=${config.apps.finishing}`;
+    nextPath += `&${config.parameters.program}=${program}`;
+    nextPath += `&${config.parameters.step}=${nextStep}`;
+    nextPath += `&${config.parameters.time}=${dateTime.getNow()}`;
+
+    let backPath = `?${config.parameters.app}=${config.apps.programDays}`;
+    backPath += `&${config.parameters.program}=${program}`;
+
     return {
-        next: `?${config.parameters.app}=${config.apps.finishing}&${config.parameters.program}=${program}&${config.parameters.step}=${nextStep}&${config.parameters.time}=${dateTime.getNow()}`,
+        next: nextPath,
         back: {
-            path: `?${config.parameters.app}=${config.apps.programDays}&${config.parameters.program}=${program}`,
-            text: (
-                <>Übersicht <i>{ name }</i></>
-            )
+            path: backPath,
+            text: (<>Übersicht <i>{ name }</i></>)
         },
-        subtitle: (
-            <><i>{ name }</i> an Tag { step }</>
-        )
+        subtitle: (<><i>{ name }</i> an Tag { step }</>)
     };
 };
 
@@ -77,9 +88,15 @@ const getSelectionControl = (dateTime) => {
     const level = new ParameterService(config.parameters.level).value();
     const type = new ParameterService(config.parameters.type).value();
     const rerollCollector = new ParameterCollector(config.allWorkoutParams);
-    const rerollPath = `?${config.parameters.app}=${config.apps.forwarding}` + rerollCollector.getSearchString();
+    let rerollPath = '?';
+    rerollPath += `${config.parameters.app}=${config.apps.forwarding}`;
+    rerollPath += rerollCollector.getSearchString();
+
+    let nextPath = `?${config.parameters.app}=${config.apps.finishing}`;
+    nextPath += `&${config.parameters.time}=${dateTime.getNow()}`;
+
     return {
-        next: `?${config.parameters.app}=${config.apps.finishing}&${config.parameters.time}=${dateTime.getNow()}`,
+        next: nextPath,
         reroll: rerollPath,
         subtitle: (
             <>Typ <i>{ getTypeString(type) }</i> und Schwierigkeit <i>{ getLevelString(level) }</i></>

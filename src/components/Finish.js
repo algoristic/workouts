@@ -15,8 +15,12 @@ const getNextPlan = (plan) => {
     step = parseInt(step);
     const name = categories.plans.filter(_p => _p.id === plan)[0].name;
     const type = plans[plan][step].types;
+
+    let nextPath = `?${config.parameters.app}=${config.apps.levelSelect}`;
+    nextPath += collector.getSearchString();
+
     return {
-        href: `?${config.parameters.app}=${config.apps.levelSelect}${collector.getSearchString()}`,
+        href: nextPath,
         text: (
             <><i>{ name }</i> mit Tag { (step + 1) }: <i>{ getTypeString(type) }</i></>
         )
@@ -28,8 +32,12 @@ const getNextProgram = (program) => {
     let step = new ParameterService(config.parameters.step).value();
     step = parseInt(step);
     const { programs } = categories;
+
+    let nextPath = `?${config.parameters.app}=${config.apps.forwarding}`;
+    nextPath += collector.getSearchString();
+
     return {
-        href: `?${config.parameters.app}=${config.apps.forwarding}${collector.getSearchString()}`,
+        href: nextPath,
         text: (
             <><i>{ programs.filter((_p) => _p.id === program)[0].name }</i> mit Trainingstag Nr. { step }</>
         )
