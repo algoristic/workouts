@@ -1,6 +1,5 @@
 import Button from './Button'
 import Header from './Header'
-import ModeSelect from './ModeSelect'
 import Subtitle from './Subtitle'
 import DateTimeService from '../service/dateTimeService'
 import ParameterCollector from '../service/parameterCollector'
