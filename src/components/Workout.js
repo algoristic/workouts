@@ -51,7 +51,6 @@ const getPlanControl = (plan, dateTime) => {
 };
 
 const getProgramControl = (program, dateTime) => {
-    const back = new ParameterService('back').value();
     let step = new ParameterService('step').value();
     step = parseInt(step);
     const maxSteps = programs[program];
@@ -63,7 +62,12 @@ const getProgramControl = (program, dateTime) => {
     const name = programData.filter((_p) => _p.id === program)[0].name;
     return {
         next: `?app=finish&program=${program}&step=${nextStep}&t=${dateTime.getNow()}`,
-        back: back,
+        back: {
+            path: `?app=days&program=${program}`,
+            text: (
+                <>Übersicht <i>{ name }</i></>
+            )
+        },
         subtitle: (
             <><i>{ name }</i> an Tag { step }</>
         )
@@ -123,7 +127,7 @@ const Workout = () => {
                 }
                 {
                     control.back && (
-                        <ModeSelect />
+                        <Button href={control.back.path} color='primary' classes='mb-3' icon='↩' text={control.back.text} />
                     )
                 }
             </div>
