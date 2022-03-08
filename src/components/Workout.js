@@ -51,6 +51,7 @@ const getPlanControl = (plan, dateTime) => {
 };
 
 const getProgramControl = (program, dateTime) => {
+    const back = new ParameterService('back').value();
     let step = new ParameterService('step').value();
     step = parseInt(step);
     const maxSteps = programs[program];
@@ -62,19 +63,16 @@ const getProgramControl = (program, dateTime) => {
     const name = programData.filter((_p) => _p.id === program)[0].name;
     return {
         next: `?app=finish&program=${program}&step=${nextStep}&t=${dateTime.getNow()}`,
+        back: back,
         subtitle: (
             <><i>{ name }</i> an Tag { step }</>
         )
     };
 };
 
-const getSingleWorkoutControl = () => {
-    return {
-        back: true
-    };
-};
-
-const getSelectionControl = (dateTime, level, type) => {
+const getSelectionControl = (dateTime) => {
+    const level = new ParameterService('level').value();
+    const type = new ParameterService('type').value();
     const rerollCollector = new ParameterCollector(config.allWorkoutParams);
     const rerollPath = '?app=forward' + rerollCollector.getSearchString();
     return {
@@ -101,13 +99,7 @@ const Workout = () => {
     } else if(program) {
         control = getProgramControl(program, dateTime);
     } else {
-        const level = new ParameterService('level').value();
-        const type = new ParameterService('type').value();
-        if(!level || !type) {
-            control = getSingleWorkoutControl()
-        } else {
-            control = getSelectionControl(dateTime, level, type);
-        }
+        control = getSelectionControl(dateTime);
     }
     return (
         <div className='workout-wrapper d-flex flex-column align-items-center'>
@@ -131,7 +123,7 @@ const Workout = () => {
                 }
                 {
                     control.back && (
-                        <ModeSelect classes='mt-3' />
+                        <ModeSelect />
                     )
                 }
             </div>

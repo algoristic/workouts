@@ -16,13 +16,14 @@
             {
                 "id": "programs",
                 "name": "Programme",
-                "icon": "🏃.",
-                "color": "warning"
+                "icon": "🏃",
+                "color": "warning",
+                "hide": true
             },
             {
                 "id": "watch",
-                "name": "Programm ansehen",
-                "icon": "️🔍",
+                "name": "Programme",
+                "icon": "️🏃",
                 "color": "danger"
             }
         ],

@@ -21,7 +21,7 @@ const Funnel = ({ question, start, category, next, parameter, pickup }) => {
                 <hr/>
                 <div>
                 {
-                    funnel.map((category) => {
+                    funnel.filter(category => !category.hide).map(category => {
                         let forward = '';
                         if('?' !== parameters.charAt(parameters.length - 1)) {
                             forward += '&';
