@@ -31,15 +31,10 @@ const apps = {
         title: 'Programm',
         component: ProgramDays
     },
-    watch: {
-        id: 'watch',
-        title: 'Programm auswählen',
-        component: ProgramSelect
-    },
     programs: {
         id: 'programs',
         title: 'Programm auswählen',
-        component: Programs
+        component: ProgramSelect
     },
     select: {
         id: "select",

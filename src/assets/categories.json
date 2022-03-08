@@ -11,7 +11,7 @@
                 "id": "plan",
                 "name": "Trainingsplan",
                 "icon": "📋",
-                "color": "info"
+                "color": "warning"
             },
             {
                 "id": "programs",
@@ -21,7 +21,7 @@
                 "hide": true
             },
             {
-                "id": "watch",
+                "id": "programs",
                 "name": "Programme",
                 "icon": "️🏃",
                 "color": "danger"
