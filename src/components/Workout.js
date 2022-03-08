@@ -1,5 +1,6 @@
 import Button from './Button'
 import Header from './Header'
+import ModeSelect from './ModeSelect'
 import Subtitle from './Subtitle'
 import DateTimeService from '../service/dateTimeService'
 import ParameterCollector from '../service/parameterCollector'
@@ -67,9 +68,13 @@ const getProgramControl = (program, dateTime) => {
     };
 };
 
-const getSelectionControl = (dateTime) => {
-    const level = new ParameterService('level').value();
-    let type = new ParameterService('type').value();
+const getSingleWorkoutControl = () => {
+    return {
+        back: true
+    };
+};
+
+const getSelectionControl = (dateTime, level, type) => {
     const rerollCollector = new ParameterCollector(config.allWorkoutParams);
     const rerollPath = '?app=forward' + rerollCollector.getSearchString();
     return {
@@ -96,19 +101,37 @@ const Workout = () => {
     } else if(program) {
         control = getProgramControl(program, dateTime);
     } else {
-        control = getSelectionControl(dateTime);
+        const level = new ParameterService('level').value();
+        const type = new ParameterService('type').value();
+        if(!level || !type) {
+            control = getSingleWorkoutControl()
+        } else {
+            control = getSelectionControl(dateTime, level, type);
+        }
     }
-
     return (
         <div className='workout-wrapper d-flex flex-column align-items-center'>
             <div className='d-flex flex-column' style={{ maxWidth: '576px' }}>
                 <Header>Dein Workout:</Header>
-                <Subtitle text={control.subtitle} />
+                {
+                    control.subtitle && (
+                        <Subtitle text={control.subtitle} />
+                    )
+                }
                 <img className='img-fluid img-thumbnail' alt='Workout' src={path} />
-                <Button href={control.next} color='success' icon='🏁' text='Fertig' classes='my-3' />
+                {
+                    control.next && (
+                        <Button href={control.next} color='success' icon='🏁' text='Fertig' classes='my-3' />
+                    )
+                }
                 {
                     !program && (
                         <Button href={control.reroll} color='primary' classes='mb-3' icon='🔄' text='Anderes Workout' />
+                    )
+                }
+                {
+                    control.back && (
+                        <ModeSelect classes='mt-3' />
                     )
                 }
             </div>

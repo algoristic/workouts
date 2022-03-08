@@ -1,6 +1,8 @@
 import Finish from '../components/Finish'
 import Level from '../components/Level'
 import NotFound from '../components/NotFound'
+import ProgramDays from '../components/ProgramDays'
+import ProgramSelect from '../components/ProgramSelect'
 import Programs from '../components/Programs'
 import Select from '../components/Select'
 import Start from '../components/Start'
@@ -23,6 +25,16 @@ const apps = {
         id: 'notFound',
         title: '404 - Seite nicht gefunden',
         component: NotFound
+    },
+    days: {
+        id: 'days',
+        title: 'Programm',
+        component: ProgramDays
+    },
+    watch: {
+        id: 'watch',
+        title: 'Programm auswählen',
+        component: ProgramSelect
     },
     programs: {
         id: 'programs',

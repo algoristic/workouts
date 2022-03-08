@@ -18,6 +18,12 @@
                 "name": "Programme",
                 "icon": "🏃.",
                 "color": "warning"
+            },
+            {
+                "id": "watch",
+                "name": "Programm ansehen",
+                "icon": "️🔍",
+                "color": "danger"
             }
         ],
         "types": [
