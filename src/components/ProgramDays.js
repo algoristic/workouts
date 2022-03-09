@@ -1,5 +1,6 @@
 import Header from './Header'
 import Back from './Back'
+import Image from './Image'
 import Subtitle from './Subtitle'
 import ParameterService from '../service/parameterService'
 import { encode } from '../service/encodingService'
@@ -21,13 +22,14 @@ const ProgramDays = () => {
                 [...Array(days).keys()].map(i => {
                     const day = (i + 1);
                     const workout = encode(`p:${program}:${day}`);
+                    let href = `?${config.parameters.app}=${config.apps.workout}`;
+                    href += `&${config.parameters.program}=${program}`;
+                    href += `&${config.parameters.step}=${day}`;
+                    href += `&${config.parameters.workout}=${workout}`;
                     return (
                         <div className='col-12 col-md-6 col-lg-4 col-xxl-3 mb-3'>
-                            <a href={`?${config.parameters.app}=${config.apps.workout}&${config.parameters.program}=${program}&${config.parameters.step}=${day}&${config.parameters.workout}=${workout}`}>
-                                <img src={`/.media/programs/${program}/days/day-${day}.jpg`}
-                                    alt={`${name} - Tag ${day}`}
-                                    className='img-fluid img-thumbnail'>
-                                </img>
+                            <a href={ href }>
+                                <Image url={`/.media/programs/${program}/days/day-${day}.jpg`} alt={`${name} - Tag ${day}`} />
                             </a>
                         </div>
                     );

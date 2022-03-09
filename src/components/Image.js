@@ -16,7 +16,7 @@ class Image extends Component {
                 let { currentTarget:{ response } } = e;
                 const urlCreator = window.URL || window.webkitURL;
                 const url = urlCreator.createObjectURL(response);
-                this.setState({ imageUrl: url });
+                this.setState({ src: url });
             }
 
             const xhr = new XMLHttpRequest();
@@ -33,11 +33,7 @@ class Image extends Component {
         const { alt } = this.props;
         const { src } = this.state;
         return (
-            <>
-            {
-                src && (<img className={ config.style.imageClasses } alt={ alt } src={ src } />)
-            }
-            </>
+            <>{ src && (<img className={ config.style.imageClasses } alt={ alt } src={ src } />) }</>
         );
     }
 };

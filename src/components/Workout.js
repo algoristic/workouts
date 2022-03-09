@@ -1,7 +1,6 @@
-import { Component } from 'react'
-
 import Button from './Button'
 import Header from './Header'
+import Image from './Image'
 import Subtitle from './Subtitle'
 import DateTimeService from '../service/dateTimeService'
 import ParameterCollector from '../service/parameterCollector'
@@ -12,6 +11,22 @@ import plans from '../assets/plans.config'
 import programs from '../assets/programs.config'
 import { decode } from '../service/encodingService'
 import { getTypeString, getLevelString } from '../service/typeLevelService'
+
+const getPath = (string) => {
+    const arr = string.split(':');
+    let path = '';
+    switch(arr[0]) {
+        case 'p':
+            path = `/.media/programs/${arr[1]}/days/day-${arr[2]}.jpg`
+            break;
+        case 'w':
+            path = `/.media/workouts/${arr[1]}/instructions.jpg`;
+            break;
+        default:
+            break;
+    }
+    return path;
+};
 
 const getPlanControl = (plan, dateTime) => {
     const level = new ParameterService(config.parameters.level).value();
@@ -74,7 +89,8 @@ const getSelectionControl = (dateTime) => {
     const level = new ParameterService(config.parameters.level).value();
     const type = new ParameterService(config.parameters.type).value();
     const rerollCollector = new ParameterCollector(config.parameters.allWorkout);
-    let rerollPath = `?${config.parameters.app}=${config.apps.forwarding}`;
+    let rerollPath = '?';
+    rerollPath += `${config.parameters.app}=${config.apps.forwarding}`;
     rerollPath += rerollCollector.getSearchString();
 
     let nextPath = `?${config.parameters.app}=${config.apps.finishing}`;
@@ -89,110 +105,51 @@ const getSelectionControl = (dateTime) => {
     };
 };
 
-class Workout extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            control: undefined,
-            program: undefined,
-            imageUrl: undefined
-        };
+const Workout = () => {
+    const dateTime = new DateTimeService();
+    //build path for workout instructions image
+    const workout = new ParameterService(config.parameters.workout).value();
+    const decoded = decode(workout);
+    const path = getPath(decoded);
 
-        this.response = this.response.bind(this);
-        this.getPath = this.getPath.bind(this);
+    const plan = new ParameterService(config.parameters.plan).value();
+    const program = new ParameterService(config.parameters.program).value();
+    let control = undefined;
+    if(plan) {
+        control = getPlanControl(plan, dateTime);
+    } else if(program) {
+        control = getProgramControl(program, dateTime);
+    } else {
+        control = getSelectionControl(dateTime);
     }
-
-    response(e) {
-        let { currentTarget:{ response } } = e;
-        var urlCreator = window.URL || window.webkitURL;
-        var imageUrl = urlCreator.createObjectURL(response);
-        this.setState({
-            imageUrl: imageUrl
-        });
-    }
-
-    getPath(string) {
-        let url;
-        const arr = string.split(':');
-        const determinator = arr[0];
-        const name = arr[1];
-        if(determinator === 'p') {
-            const step = arr[2];
-            url = `/.media/programs/${name}/days/day-${step}.jpg`;
-        } else { // determinator == w
-            url = `/.media/workouts/${name}/instructions.jpg`;
-        }
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", url);
-        xhr.responseType = "blob";
-        xhr.onload = this.response;
-        xhr.send();
-
-        return url;
-    };
-
-    componentDidMount() {
-        //build path for workout instructions image
-        const workout = new ParameterService(config.parameters.workout).value();
-        const decoded = decode(workout);
-        this.getPath(decoded);
-
-        const dateTime = new DateTimeService();
-        const plan = new ParameterService(config.parameters.plan).value();
-        const program = new ParameterService(config.parameters.program).value();
-        let control = undefined;
-        if(plan) {
-            control = getPlanControl(plan, dateTime);
-        } else if(program) {
-            control = getProgramControl(program, dateTime);
-        } else {
-            control = getSelectionControl(dateTime);
-        }
-        this.setState({
-            program: program,
-            control: control
-        });
-    }
-
-    render() {
-        const { control, program, imageUrl } = this.state;
-        return (
-            <div className='workout-wrapper d-flex flex-column align-items-center'>
-                <div className='d-flex flex-column' style={{ maxWidth: '576px' }}>
-                    <Header>Dein Workout:</Header>
-                    {
-                        control && (
-                            <>
-                            {
-                                control.subtitle && (
-                                    <Subtitle text={control.subtitle} />
-                                )
-                            }
-                            {
-                                imageUrl && (<img className='img-fluid img-thumbnail' alt='Workout' src={imageUrl} />)
-                            }
-                            {
-                                control.next && (
-                                    <Button href={control.next} color='success' icon='🏁' text='Fertig' classes='my-3' />
-                                )
-                            }
-                            {
-                                !program && (
-                                    <Button href={control.reroll} color='primary' classes='mb-3' icon='🔄' text='Anderes Workout' />
-                                )
-                            }
-                            {
-                                control.back && (
-                                    <Button href={control.back.path} color='primary' classes='mb-3' icon='↩' text={control.back.text} />
-                                )
-                            }
-                            </>
-                        )
-                    }
-                </div>
+    return (
+        <div className='workout-wrapper d-flex flex-column align-items-center'>
+            <div className='d-flex flex-column' style={{ maxWidth: '576px' }}>
+                <Header>Dein Workout:</Header>
+                {
+                    control.subtitle && (
+                        <Subtitle text={control.subtitle} />
+                    )
+                }
+                <Image alt='Workout' url={path} />
+                {
+                    control.next && (
+                        <Button href={control.next} color='success' icon='🏁' text='Fertig' classes='my-3' />
+                    )
+                }
+                {
+                    !program && (
+                        <Button href={control.reroll} color='primary' classes='mb-3' icon='🔄' text='Anderes Workout' />
+                    )
+                }
+                {
+                    control.back && (
+                        <Button href={control.back.path} color='primary' classes='mb-3' icon='↩' text={control.back.text} />
+                    )
+                }
             </div>
-        );
-    }
-}
+        </div>
+    );
+};
 
 export default Workout;
