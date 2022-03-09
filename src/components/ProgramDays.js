@@ -27,7 +27,7 @@ const ProgramDays = () => {
                     href += `&${config.parameters.step}=${day}`;
                     href += `&${config.parameters.workout}=${workout}`;
                     return (
-                        <div className='col-12 col-md-6 col-lg-4 col-xxl-3 mb-3'>
+                        <div className='col-12 col-md-6 col-lg-4 col-xxl-3 mb-3 text-center'>
                             <a href={ href }>
                                 <Image url={`/.media/programs/${program}/days/day-${day}.jpg`} alt={`${name} - Tag ${day}`} />
                             </a>

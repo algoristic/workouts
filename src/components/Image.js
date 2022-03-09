@@ -35,7 +35,7 @@ class Image extends Component {
         return (
             <>
             {  src && <img className={ config.style.imageClasses } alt={ alt } src={ src } /> }
-            { !src && <div className='spinner-border text-secondary' /> }
+            { !src && <div className='spinner-border text-secondary my-5' /> }
             </>
         );
     }

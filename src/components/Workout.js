@@ -131,7 +131,9 @@ const Workout = () => {
                         <Subtitle text={control.subtitle} />
                     )
                 }
-                <Image alt='Workout' url={path} />
+                <div className='text-center'>
+                    <Image alt='Workout' url={path} />
+                </div>
                 {
                     control.next && (
                         <Button href={control.next} color='success' icon='🏁' text='Fertig' classes='my-3' />
