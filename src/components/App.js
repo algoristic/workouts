@@ -40,7 +40,6 @@ class App extends Component {
             start = appId;
         }
         this.mountApp(start);
-
     }
 
     render() {

@@ -5,7 +5,7 @@ const Back = ({ classes, to }) => {
     if(to) {
         href = to;
     } else {
-        href = 'javascript:window.history.back()'
+        href = 'javascript:window.history.back()';
     }
     return (
         <Button color='outline-dark' classes={`mb-3 ${ classes }`} icon='↩' text='Zurück'
