@@ -1,11 +1,13 @@
+import { config } from '../assets/app.config.json'
+
 const Subtitle = ({ text, classes, fontSize }) => {
     if(!fontSize) {
         fontSize = 'fs-6';
     } else {
-        fontSize = `fs-${fontSize}`;
+        fontSize = `fs-${ fontSize }`;
     }
     return (
-        <p className={`text-center text-secondary ${fontSize} ${classes}`}>
+        <p className={`${ config.style.subtitleClasses } ${ fontSize } ${ classes }`}>
             { text }
         </p>
     );

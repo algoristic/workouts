@@ -1,6 +1,8 @@
+import { config } from '../assets/app.config.json'
+
 const Header = ({ children }) => {
     return (
-        <div className='display-4 text-center py-5'>{ children }</div>
+        <div className={ config.style.headerClasses }>{ children }</div>
     );
 }
 

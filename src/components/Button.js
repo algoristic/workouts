@@ -17,11 +17,7 @@ const ActionButton = ({ classes, onClick, children }) => {
 };
 
 const Button = ({ text, icon, color, classes, href, onClick }) => {
-    let buttonClasses = `
-        ${ config.buttonClasses }
-        ${ config.buttonFontSize }
-        ${ config.buttonFontWeight }
-        ${ config.buttonPadding }`;
+    let buttonClasses = config.style.buttonClasses;
     if(color) {
         buttonClasses += ` btn-${color}`;
     }
