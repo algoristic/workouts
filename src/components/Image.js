@@ -33,7 +33,10 @@ class Image extends Component {
         const { alt } = this.props;
         const { src } = this.state;
         return (
-            <>{ src && (<img className={ config.style.imageClasses } alt={ alt } src={ src } />) }</>
+            <>
+            {  src && <img className={ config.style.imageClasses } alt={ alt } src={ src } /> }
+            { !src && <div className='spinner-border text-secondary' /> }
+            </>
         );
     }
 };
