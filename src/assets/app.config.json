@@ -33,8 +33,10 @@
             "subtitleClasses": "text-center text-secondary",
             "navbarStyleClasses": "navbar-expand-sm bg-dark navbar-dark",
             "navbarClasses": "container-fluid text-end",
-            "navbarButtonClasses": "text-end pe-3 fs-5"
+            "navbarButtonClasses": "text-end pe-3 fs-5",
+            "imageClasses": "img-fluid img-thumbnail"
         },
-        "forwardTimeout": 1500
+        "forwardTimeout": 1500,
+        "obfuscateUrl": true
     }
 }
