@@ -34,7 +34,7 @@ const getWorkoutBySelection = () => {
 };
 
 const WorkoutSelect = () => {
-    const collector = new ParameterCollector(config.allWorkoutParams);
+    const collector = new ParameterCollector(config.parameters.allWorkout);
     const plan = new ParameterService(config.parameters.plan).value();
     const program = new ParameterService(config.parameters.program).value();
     let workout = undefined;

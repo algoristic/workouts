@@ -10,7 +10,7 @@ import plans from '../assets/plans.config'
 import { getTypeString } from '../service/typeLevelService'
 
 const getNextPlan = (plan) => {
-    const collector = new ParameterCollector(config.allPlanParams);
+    const collector = new ParameterCollector(config.parameters.allPlan);
     let step = new ParameterService(config.parameters.step).value();
     step = parseInt(step);
     const name = categories.plans.filter(_p => _p.id === plan)[0].name;
@@ -28,7 +28,7 @@ const getNextPlan = (plan) => {
 };
 
 const getNextProgram = (program) => {
-    const collector = new ParameterCollector(config.allProgramParams);
+    const collector = new ParameterCollector(config.parameters.allProgram);
     let step = new ParameterService(config.parameters.step).value();
     step = parseInt(step);
     const { programs } = categories;

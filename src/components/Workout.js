@@ -38,7 +38,7 @@ const getPlanControl = (plan, dateTime) => {
         nextStep = 0;
     }
     const name = categories.plans.filter(_p => _p.id === plan)[0].name;
-    const rerollCollector = new ParameterCollector(config.allWorkoutParams);
+    const rerollCollector = new ParameterCollector(config.parameters.allWorkout);
     let rerollPath = `?${config.parameters.app}=${config.apps.forwarding}`;
     rerollPath += rerollCollector.getSearchString();
 
@@ -87,7 +87,7 @@ const getProgramControl = (program, dateTime) => {
 const getSelectionControl = (dateTime) => {
     const level = new ParameterService(config.parameters.level).value();
     const type = new ParameterService(config.parameters.type).value();
-    const rerollCollector = new ParameterCollector(config.allWorkoutParams);
+    const rerollCollector = new ParameterCollector(config.parameters.allWorkout);
     let rerollPath = '?';
     rerollPath += `${config.parameters.app}=${config.apps.forwarding}`;
     rerollPath += rerollCollector.getSearchString();

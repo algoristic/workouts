@@ -21,7 +21,10 @@
             "step": "increment",
             "program": "program",
             "time": "t",
-            "workout": "w"
+            "workout": "w",
+            "allPlan": ["plan", "step"],
+            "allProgram": ["program", "step"],
+            "allWorkout": ["type", "level", "plan", "step", "program"]
         },
         "style": {
             "appContainer": "container",
@@ -32,15 +35,6 @@
             "navbarClasses": "container-fluid text-end",
             "navbarButtonClasses": "text-end pe-3 fs-5"
         },
-        "forwardTimeout": 1500,
-        "allWorkoutParams": [
-            "type", "level", "plan", "step", "program"
-        ],
-        "allPlanParams": [
-            "plan", "step"
-        ],
-        "allProgramParams": [
-            "program", "step"
-        ]
+        "forwardTimeout": 1500
     }
 }

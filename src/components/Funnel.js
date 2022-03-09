@@ -1,18 +1,18 @@
 import Button from './Button'
 import Header from './Header'
-import ModeSelect from './ModeSelect'
+import Back from './Back'
 import Subtitle from './Subtitle'
 import ParameterCollector from '../service/parameterCollector'
 import categories from '../assets/categories.config'
 import { config } from '../assets/app.config.json'
 
-const Funnel = ({ question, start, category, next, parameter, pickup }) => {
+const Funnel = ({ question, start, category, next, parameter }) => {
     const funnel = categories[category];
     let parameters = '?';
     if(next) {
         parameters += `${config.parameters.app}=${next}`;
     }
-    const collector = new ParameterCollector(config.allWorkoutParams);
+    const collector = new ParameterCollector(config.parameters.allWorkout);
     parameters += collector.getSearchString();
     return (
         <div className='category-wrapper'>
@@ -47,7 +47,7 @@ const Funnel = ({ question, start, category, next, parameter, pickup }) => {
                 </div>
                 <hr/>
                 {
-                    !start && <ModeSelect />
+                    !start && <Back />
                 }
             </div>
         </div>

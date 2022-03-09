@@ -1,5 +1,5 @@
 import Header from './Header'
-import ModeSelect from './ModeSelect'
+import Back from './Back'
 import Subtitle from './Subtitle'
 import ParameterService from '../service/parameterService'
 import { encode } from '../service/encodingService'
@@ -35,7 +35,7 @@ const ProgramDays = () => {
             }
             </div>
             <div className='d-grid'>
-                <ModeSelect />
+                <Back to={`?${config.parameters.app}=${config.apps.programs}`} />
             </div>
         </>
     );
