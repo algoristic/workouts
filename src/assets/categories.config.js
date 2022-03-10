@@ -64,21 +64,31 @@ const categories = {
     "levels": [
         {
             "id": "1",
-            "name": "Normal",
+            "name": "Leicht",
             "icon": "🥉",
-            "color": "success"
+            "color": "info",
+            "subtitle": "Ein leichtes Training, das fit hält und schnell erledigt ist."
         },
         {
             "id": "2",
-            "name": "Schwer",
+            "name": "Normal",
             "icon": "🥈",
-            "color": "warning"
+            "color": "success",
+            "subtitle": "Ein normales Training, das zu schaffen sein sollte."
         },
         {
             "id": "3",
-            "name": "Extrem",
+            "name": "Schwer",
             "icon": "🥇",
-            "color": "danger"
+            "color": "warning",
+            "subtitle": "Anspruchsvolles Training, das auch mal etwas länger dauert."
+        },
+        {
+            "id": "4",
+            "name": "Extrem",
+            "icon": "🏆",
+            "color": "danger",
+            "subtitle": "Training an der äußersten Belastungsgrenze und darüber hinaus!"
         },
         {
             "id": "all",
