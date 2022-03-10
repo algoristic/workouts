@@ -10,22 +10,28 @@ class Image extends Component {
     }
 
     componentDidMount() {
-        let { url } = this.props;
-        if(config.obfuscateUrl) {
-            const fn = (e) => {
-                let { currentTarget:{ response } } = e;
-                const urlCreator = window.URL || window.webkitURL;
-                const url = urlCreator.createObjectURL(response);
+        let { url, timeout } = this.props;
+        const load = () => {
+            if(config.obfuscateUrl) {
+                const fn = (e) => {
+                    let { currentTarget:{ response } } = e;
+                    const urlCreator = window.URL || window.webkitURL;
+                    const url = urlCreator.createObjectURL(response);
+                    this.setState({ src: url });
+                };
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", url);
+                xhr.responseType = "blob";
+                xhr.onload = fn;
+                xhr.send();
+            } else {
                 this.setState({ src: url });
             }
-
-            const xhr = new XMLHttpRequest();
-            xhr.open("GET", url);
-            xhr.responseType = "blob";
-            xhr.onload = fn;
-            xhr.send();
+        };
+        if(timeout) {
+            setTimeout(load, timeout);
         } else {
-            this.setState({ src: url });
+            load();
         }
     }
 

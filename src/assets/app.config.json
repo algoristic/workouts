@@ -37,6 +37,7 @@
             "imageClasses": "img-fluid img-thumbnail"
         },
         "forwardTimeout": 1500,
+        "galleryTimeout": 100,
         "obfuscateUrl": true
     }
 }

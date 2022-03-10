@@ -13,6 +13,10 @@ const ProgramDays = () => {
     const programData = categories.programs;
     const name = programData.filter((_p) => _p.id === program)[0].name;
     const days = programs[program];
+    let timeout = undefined;
+    if(config.galleryTimeout) {
+        timeout = 0;
+    }
     return (
         <>
             <Header>{ name }</Header>
@@ -26,10 +30,16 @@ const ProgramDays = () => {
                     href += `&${config.parameters.program}=${program}`;
                     href += `&${config.parameters.step}=${day}`;
                     href += `&${config.parameters.workout}=${workout}`;
+
+                    if(config.galleryTimeout) {
+                        timeout += config.galleryTimeout;
+                    }
                     return (
                         <div className='col-12 col-md-6 col-lg-4 col-xxl-3 mb-3 text-center'>
                             <a href={ href }>
-                                <Image url={`/.media/programs/${program}/days/day-${day}.jpg`} alt={`${name} - Tag ${day}`} />
+                                <Image url={`/.media/programs/${program}/days/day-${day}.jpg`}
+                                    alt={`${name} - Tag ${day}`} timeout={timeout}>
+                                </Image>
                             </a>
                         </div>
                     );

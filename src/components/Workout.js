@@ -132,7 +132,7 @@ const Workout = () => {
                     )
                 }
                 <div className='text-center'>
-                    <Image alt='Workout' url={path} />
+                    <Image alt='Workout' timeout={config.galleryTimeout} url={path} />
                 </div>
                 {
                     control.next && (
