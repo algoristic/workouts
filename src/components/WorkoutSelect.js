@@ -15,8 +15,9 @@ const getWorkoutByPlan = (plan) => {
         stepService.value(step);
     }
     const type = plans[plan][step].types;
+    const exclude = plans[plan][step].exclude;
     const level = new ParameterService(config.parameters.level).value();
-    return new WorkoutService(type, level).getWorkout();
+    return new WorkoutService(type, level, exclude).getWorkout();
 };
 
 const getWorkoutByProgram = (program) => {

@@ -1,13 +1,8 @@
 const workouts = [
     {
         "id": "p:military-fit:1",
-        "types": ["cardio", "hiit"],
-        "level": "1"
-    },
-    {
-        "id": "p:military-fit:1",
         "types": ["strength"],
-        "level": "2"
+        "level": ["1", "2"]
     },
     {
         "id": "p:military-fit:2",
@@ -22,7 +17,12 @@ const workouts = [
     {
         "id": "p:military-fit:4",
         "types": ["cardio"],
-        "level": "2"
+        "level": ["1", "2"]
+    },
+    {
+        "id": "p:military-fit:4",
+        "types": ["cardio", "fight"],
+        "level": ["1", "2"]
     },
     {
         "id": "p:military-fit:5",
@@ -37,7 +37,7 @@ const workouts = [
     {
         "id": "p:military-fit:7",
         "types": ["fight"],
-        "level": "2"
+        "level": ["1", "2"]
     },
     {
         "id": "p:military-fit:8",
@@ -51,8 +51,13 @@ const workouts = [
     },
     {
         "id": "p:military-fit:10",
+        "types": ["hiit", "fight"],
+        "level": ["1", "2"]
+    },
+    {
+        "id": "p:military-fit:10",
         "types": ["hiit"],
-        "level": "2"
+        "level": ["1", "2"]
     },
     {
         "id": "p:military-fit:11",

@@ -5,7 +5,8 @@ import ProgramDays from '../components/ProgramDays'
 import ProgramSelect from '../components/ProgramSelect'
 import Select from '../components/Select'
 import Start from '../components/Start'
-import TrainingPlan from '../components/TrainingPlan'
+import PlanOverview from '../components/PlanOverview'
+import TrainingPlans from '../components/TrainingPlans'
 import Workout from '../components/Workout'
 import WorkoutSelect from '../components/WorkoutSelect'
 
@@ -48,9 +49,14 @@ const apps = [
         component: Start
     },
     {
+        id: config.apps.plan,
+        title: "Übersicht Trainingsplan",
+        component: PlanOverview
+    },
+    {
         id: config.apps.plans,
         title: "Trainingsplan auswählen",
-        component: TrainingPlan
+        component: TrainingPlans
     },
     {
         id: config.apps.workout,

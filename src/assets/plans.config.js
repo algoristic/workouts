@@ -1,7 +1,8 @@
 const plans = {
     "extreme-fit": [
         {
-            "types": ["cardio", "hiit"]
+            "types": ["cardio", "hiit"],
+            "exclude": ["fight"]
         },
         {
             "types": ["cardio", "hiit"]
@@ -26,13 +27,15 @@ const plans = {
     ],
     "assassin": [
         {
-            "types": ["cardio", "hiit"]
+            "types": ["cardio", "hiit"],
+            "exclude": "fight"
         },
         {
             "types": ["fight"]
         },
         {
-            "types": ["cardio", "hiit"]
+            "types": ["cardio", "hiit"],
+            "exclude": "fight"
         },
         {
             "types": ["cardio", "hiit"]

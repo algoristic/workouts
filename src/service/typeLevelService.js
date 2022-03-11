@@ -1,6 +1,6 @@
 import categories from '../assets/categories.config'
 
-const getTypeString = (type) => {
+const getTypeString = (type, joiner) => {
     const { types } = categories;
     return types.filter((_t) => {
             let res = false;
@@ -18,7 +18,7 @@ const getTypeString = (type) => {
             return res;
         })
         .map((_t) => _t.name)
-        .join(` oder `);
+        .join(` ${joiner ? joiner : 'oder'} `);
 };
 
 const getLevelString = (level) => {

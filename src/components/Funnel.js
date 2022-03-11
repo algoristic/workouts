@@ -18,7 +18,7 @@ const Funnel = ({ question, start, category, next, parameter, backTo }) => {
         <div className='category-wrapper'>
             <div className='d-grid'>
                 <Header>{ question }</Header>
-                <hr/>
+                <hr />
                 <div>
                 {
                     funnel.filter(category => !category.hide).map(category => {
@@ -45,7 +45,7 @@ const Funnel = ({ question, start, category, next, parameter, backTo }) => {
                     })
                 }
                 </div>
-                <hr/>
+                <hr />
                 {
                     !start && <Back to={backTo ? `?${config.parameters.app}=${backTo}` : undefined} />
                 }

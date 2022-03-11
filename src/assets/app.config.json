@@ -5,7 +5,8 @@
             "forwarding": "go",
             "levelSelect": "level",
             "notFound": "404",
-            "plans": "plan",
+            "plans": "plans",
+            "plan": "plan",
             "programDays": "days",
             "programs": "programs",
             "start": "start",
@@ -38,6 +39,7 @@
         },
         "forwardTimeout": 1500,
         "galleryTimeout": 100,
-        "obfuscateUrl": true
+        "obfuscateUrl": true,
+        "displayExcluded": false
     }
 }

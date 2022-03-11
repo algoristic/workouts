@@ -47,9 +47,17 @@ const getPlanControl = (plan, dateTime) => {
     nextPath += `&${config.parameters.plan}=${plan}`;
     nextPath += `&${config.parameters.step}=${nextStep}`;
     nextPath += `&${config.parameters.time}=${dateTime.getNow()}`;
+
+    let backPath = `?${config.parameters.app}=${config.apps.plan}`;
+    backPath += `&${config.parameters.plan}=${plan}`;
+
     return {
         next: nextPath,
         reroll: rerollPath,
+        back: {
+            path: backPath,
+            text: (<>Übersicht <i>{ name }</i></>)
+        },
         subtitle: (
             <><i>{ name }</i> an Tag { (step + 1) } <br/> Typ <i>{ getTypeString(type) }</i> und Schwierigkeit <i>{ getLevelString(level) }</i></>
         )
@@ -141,7 +149,7 @@ const Workout = () => {
                 }
                 {
                     !program && (
-                        <Button href={control.reroll} color='primary' classes='mb-3' icon='🔄' text='Anderes Workout' />
+                        <Button href={control.reroll} color='secondary' classes='mb-3' icon='🎲' text='Anderes Workout' />
                     )
                 }
                 {

@@ -1,7 +1,7 @@
 import { encode } from './encodingService'
 import workouts from '../assets/workouts.config'
 
-const filter = (value, property) => {
+const filter = (value, property, revert) => {
     return {
         apply: (list) => {
             if(value === 'all') {
@@ -17,19 +17,21 @@ const filter = (value, property) => {
                         for(let i=0; i<toCheck.length; i++) {
                             for(let k=0; k<value.length; k++) {
                                 if(toCheck[i] === value[k]) {
-                                    return true;
+                                    return xor(true, revert);
                                 }
                             }
                         }
-                        return false;
+                        return xor(false, revert);
                     } else {
-                        return toCheck.includes(value);
+                        let res = toCheck.includes(value);
+                        return xor(res, revert);
                     }
                 } else {
                     if(Array.isArray(value)) {
-                        return value.includes(toCheck);
+                        let res = value.includes(toCheck);
+                        return xor(res, revert);
                     } else {
-                        return (toCheck === value);
+                        return xor((toCheck === value), revert);
                     }
                 }
             });
@@ -37,11 +39,33 @@ const filter = (value, property) => {
     }
 };
 
+const ignore = (type) => {
+    return {
+        apply: (list) => {
+            if(Array.isArray(type)) {
+                type.forEach(_t => {
+                    list = filter(_t, 'types', true).apply(list);
+                });
+                return list;
+            } else {
+                return filter(type, 'types', true).apply(list);
+            }
+        }
+    };
+};
+
+const xor = (a, b) => {
+    return (!a !== !b);
+};
+
 class WorkoutService {
-    constructor(types, level) {
+    constructor(types, level, exclude) {
         this.filters = [];
         this.filters.push(filter(level, 'level'));
         this.filters.push(filter(types, 'types'));
+        if(exclude) {
+            this.filters.push(ignore(exclude));
+        }
     }
 
     getWorkout() {
