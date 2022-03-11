@@ -8,7 +8,10 @@ const filter = (value, property) => {
                 return list;
             }
             return list.filter((element) => {
-                const toCheck = element[property];
+                let toCheck = element[property];
+                if(Array.isArray(toCheck)) {
+                    toCheck = toCheck[Math.floor(Math.random() * toCheck.length)];
+                }
                 if(Array.isArray(toCheck)) {
                     if(Array.isArray(value)) {
                         for(let i=0; i<toCheck.length; i++) {
@@ -37,8 +40,8 @@ const filter = (value, property) => {
 class WorkoutService {
     constructor(types, level) {
         this.filters = [];
-        this.filters.push(filter(types, 'types'));
         this.filters.push(filter(level, 'level'));
+        this.filters.push(filter(types, 'types'));
     }
 
     getWorkout() {

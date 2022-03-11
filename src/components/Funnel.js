@@ -6,7 +6,7 @@ import ParameterCollector from '../service/parameterCollector'
 import categories from '../assets/categories.config'
 import { config } from '../assets/app.config.json'
 
-const Funnel = ({ question, start, category, next, parameter }) => {
+const Funnel = ({ question, start, category, next, parameter, backTo }) => {
     const funnel = categories[category];
     let parameters = '?';
     if(next) {
@@ -47,7 +47,7 @@ const Funnel = ({ question, start, category, next, parameter }) => {
                 </div>
                 <hr/>
                 {
-                    !start && <Back />
+                    !start && <Back to={backTo ? `?${config.parameters.app}=${backTo}` : undefined} />
                 }
             </div>
         </div>
