@@ -1,7 +1,7 @@
 const workouts = [
     {
         "id": "p:military-fit:1",
-        "types": ["strength", "fight"],
+        "types": ["cardio", "hiit"],
         "level": "1"
     },
     {

@@ -1,3 +1,5 @@
+import { Component } from 'react'
+
 import ParameterCollector from '../service/parameterCollector'
 import ParameterService from '../service/parameterService'
 import WorkoutService from '../service/workoutService'
@@ -33,32 +35,38 @@ const getWorkoutBySelection = () => {
     return new WorkoutService(type, level).getWorkout();
 };
 
-const WorkoutSelect = () => {
-    const collector = new ParameterCollector(config.parameters.allWorkout);
-    const plan = new ParameterService(config.parameters.plan).value();
-    const program = new ParameterService(config.parameters.program).value();
-    let workout = undefined;
-    if(plan) {
-        workout = getWorkoutByPlan(plan);
-    } else if(program) {
-        workout = getWorkoutByProgram(program);
-    } else {
-        workout = getWorkoutBySelection();
+class WorkoutSelect extends Component {
+    componentDidMount() {
+        const collector = new ParameterCollector(config.parameters.allWorkout);
+        const plan = new ParameterService(config.parameters.plan).value();
+        const program = new ParameterService(config.parameters.program).value();
+        let workout = undefined;
+        if(plan) {
+            workout = getWorkoutByPlan(plan);
+        } else if(program) {
+            workout = getWorkoutByProgram(program);
+        } else {
+            workout = getWorkoutBySelection();
+        }
+        let next = `?${config.parameters.app}=${config.apps.workout}`;
+        next += collector.getSearchString();
+        next += `&${config.parameters.workout}=${workout}`;
+        setTimeout(() => {
+            window.location.href = next;
+        }, config.forwardTimeout);
     }
-    let next = `?${config.parameters.app}=${config.apps.workout}`;
-    next += collector.getSearchString();
-    next += `&${config.parameters.workout}=${workout}`;
-    setTimeout(() => {
-        window.location.href = next;
-    }, config.forwardTimeout);
-    return (
-        <div className='d-flex justify-content-center align-items-center' style={{ height: '100vh' }}>
-            <div className='text-center'>
-                <div className='h4 mb-5'>🚀 Bitte warten...</div>
-                <div className='spinner-grow text-primary'></div>
+
+    render() {
+
+        return (
+            <div className='d-flex justify-content-center align-items-center' style={{ height: '100vh' }}>
+                <div className='text-center'>
+                    <div className='h4 mb-5'>🚀 Bitte warten...</div>
+                    <div className='spinner-grow text-primary'></div>
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 };
 
 export default WorkoutSelect;

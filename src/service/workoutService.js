@@ -7,11 +7,11 @@ const filter = (value, property) => {
             if(value === 'all') {
                 return list;
             }
+            if(Array.isArray(value)) {
+                value = value[Math.floor(Math.random() * value.length)];
+            }
             return list.filter((element) => {
                 let toCheck = element[property];
-                if(Array.isArray(toCheck)) {
-                    toCheck = toCheck[Math.floor(Math.random() * toCheck.length)];
-                }
                 if(Array.isArray(toCheck)) {
                     if(Array.isArray(value)) {
                         for(let i=0; i<toCheck.length; i++) {
