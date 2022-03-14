@@ -56,11 +56,9 @@
         "galleryTimeout": 100,
         "obfuscateUrl": true,
         "displayExcluded": false,
-        "schemas": {
-            "programIdSchema": "p:{program}:{day}",
-            "programPathSchema": "/.media/programs/{program}/days/day-{day}.jpg",
-            "workoutIdSchema": "w:{workout}",
-            "workoutPathSchema": "/.media/workouts/{workout}/instructions.jpg"
-        }
+        "encode": true,
+        "mediaBase": "/.media/",
+        "programId": "programs/{program}/days/day-{day}.jpg",
+        "workoutId": "workouts/{workout}/instructions.jpg"
     }
 }
