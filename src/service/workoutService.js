@@ -1,10 +1,14 @@
 import { encode } from './encodingService'
 import workouts from '../assets/workouts.config'
 
+import { config } from '../assets/app.config.json'
+
+const { values:{ types: all } } = config;
+
 const filter = (value, property, revert) => {
     return {
         apply: (list) => {
-            if(value === 'all') {
+            if(value === all) {
                 return list;
             }
             if(Array.isArray(value)) {

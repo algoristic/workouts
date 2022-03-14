@@ -27,6 +27,21 @@
             "allProgram": ["program", "step"],
             "allWorkout": ["type", "level", "plan", "step", "program"]
         },
+        "values": {
+            "types": {
+                "strength": "strength",
+                "cardio": "cardio",
+                "hiit": "hiit",
+                "fight": "fight",
+                "all": "all"
+            },
+            "levels": {
+                "easy": "1",
+                "normal": "2",
+                "hard": "3",
+                "extreme": "4"
+            }
+        },
         "style": {
             "appContainer": "container",
             "buttonClasses": "btn btn-block fs-5 fw-bold py-4",

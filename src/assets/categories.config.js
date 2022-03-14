@@ -1,15 +1,20 @@
 import { config } from './app.config.json'
 
+const { apps:{ selection, plans, programs } } = config;
+const { values } = config;
+const { types:{ strength, cardio, hiit, fight, all } } = values;
+const { levels:{ easy, normal, hard, extreme } } = values;
+
 const categories = {
     "start": [
         {
-            "id": config.apps.selection,
+            "id": selection,
             "name": "Manuelle Auswahl",
             "icon": "👉",
             "color": "primary"
         },
         {
-            "id": config.apps.plans,
+            "id": plans,
             "name": "Trainingsplan",
             "icon": "📋",
             "color": "warning"
@@ -22,7 +27,7 @@ const categories = {
             "hide": true
         },
         {
-            "id": config.apps.programs,
+            "id": programs,
             "name": "Programme",
             "icon": "️🏃",
             "color": "danger"
@@ -30,31 +35,31 @@ const categories = {
     ],
     "types": [
         {
-            "id": "strength",
+            "id": strength,
             "name": "Kraft",
             "icon": "🏋️‍♂️",
             "color": "primary"
         },
         {
-            "id": "cardio",
+            "id": cardio,
             "name": "Ausdauer",
             "icon": "🏃",
             "color": "info"
         },
         {
-            "id": "fight",
+            "id": fight,
             "name": "Kampf",
             "icon": "🤜",
             "color": "danger"
         },
         {
-            "id": "hiit",
+            "id": hiit,
             "name": "HIIT",
             "icon": "🤸",
             "color": "warning"
         },
         {
-            "id": "all",
+            "id": all,
             "name": "Egal",
             "icon": "🤷",
             "color": "secondary",
@@ -63,28 +68,28 @@ const categories = {
     ],
     "levels": [
         {
-            "id": "1",
+            "id": easy,
             "name": "Leicht",
             "icon": "🥉",
             "color": "info",
             "subtitle": "Ein leichtes Training, das fit hält und schnell erledigt ist."
         },
         {
-            "id": "2",
+            "id": normal,
             "name": "Normal",
             "icon": "🥈",
             "color": "success",
             "subtitle": "Ein normales Training, das zu schaffen sein sollte."
         },
         {
-            "id": "3",
+            "id": hard,
             "name": "Schwer",
             "icon": "🥇",
             "color": "warning",
             "subtitle": "Anspruchsvolles Training, das auch mal etwas länger dauert."
         },
         {
-            "id": "4",
+            "id": extreme,
             "name": "Extrem",
             "icon": "🏆",
             "color": "danger",

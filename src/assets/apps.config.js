@@ -12,62 +12,64 @@ import WorkoutSelect from '../components/WorkoutSelect'
 
 import { config } from './app.config.json'
 
-const apps = [
+const { apps } = config;
+
+const allApps = [
     {
-        id: config.apps.finishing,
+        id: apps.finishing,
         title: "Fertig!",
         component: Finish
     },
     {
-        id: config.apps.levelSelect,
+        id: apps.levelSelect,
         title: "Level auswählen",
         component: Level
     },
     {
-        id: config.apps.notFound,
+        id: apps.notFound,
         title: '404 - Seite nicht gefunden',
         component: NotFound
     },
     {
-        id: config.apps.programDays,
+        id: apps.programDays,
         title: 'Programm',
         component: ProgramDays
     },
     {
-        id: config.apps.programs,
+        id: apps.programs,
         title: 'Programm auswählen',
         component: ProgramSelect
     },
     {
-        id: config.apps.selection,
+        id: apps.selection,
         title: "Trainingstyp auswählen",
         component: Select
     },
     {
-        id: config.apps.start,
+        id: apps.start,
         title: "Startseite",
         component: Start
     },
     {
-        id: config.apps.plan,
+        id: apps.plan,
         title: "Übersicht Trainingsplan",
         component: PlanOverview
     },
     {
-        id: config.apps.plans,
+        id: apps.plans,
         title: "Trainingsplan auswählen",
         component: TrainingPlans
     },
     {
-        id: config.apps.workout,
+        id: apps.workout,
         title: "Dein Workout",
         component: Workout
     },
     {
-        id: config.apps.forwarding,
+        id: apps.forwarding,
         title: "Bitte warten...",
         component: WorkoutSelect
     }
 ];
 
-export default apps;
+export default allApps;
