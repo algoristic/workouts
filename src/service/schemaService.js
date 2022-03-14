@@ -2,24 +2,20 @@ import { config } from '../assets/app.config.json'
 
 const { schemas:{ programIdSchema, programPathSchema, workoutIdSchema, workoutPathSchema } } = config;
 
-const escape = (string) => {
-    return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-}
-
 const program = (id, day) => {
-    return programIdSchema.replace('${program}', id).replace('${day}', day);
+    return programIdSchema.replace('{program}', id).replace('{day}', day);
 };
 
 const workout = (id) => {
-    return workoutIdSchema.replace('${workout}', id);
+    return workoutIdSchema.replace('{workout}', id);
 };
 
 const programPath = (id, day) => {
-    return programPathSchema.replace('${program}', id).replace('${day}', day);
+    return programPathSchema.replace('{program}', id).replace('{day}', day);
 };
 
 const workoutPath = (id) => {
-    return workoutPathSchema.replace('${workout}', id);
+    return workoutPathSchema.replace('{workout}', id);
 };
 
 const resolvePath = (string) => {

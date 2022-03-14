@@ -1,8 +1,8 @@
-import { program, workout } from '../service/schemaService'
+import { workout } from '../service/schemaService'
 
 import { config } from './app.config.json'
 
-const { values:{ types:{ strength, cardio, hiit, fight, all } } } = config;
+const { values:{ types:{ strength, cardio, hiit, fight } } } = config;
 
 const plans = {
     "extreme-fit": [

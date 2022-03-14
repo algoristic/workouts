@@ -3,7 +3,7 @@ import { program, workout } from '../service/schemaService'
 import { config } from './app.config.json'
 
 const { values } = config;
-const { types:{ strength, cardio, hiit, fight, all } } = values;
+const { types:{ strength, cardio, hiit, fight } } = values;
 const { levels:{ easy, normal, hard, extreme } } = values;
 
 //programs

@@ -7,7 +7,6 @@ import ParameterService from '../service/parameterService'
 import categories from '../assets/categories.config'
 import { config } from '../assets/app.config.json'
 import plans from '../assets/plans.config'
-import workouts from '../assets/workouts.config'
 import {
     getTypeString,
     getPlanString,

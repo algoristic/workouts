@@ -57,10 +57,10 @@
         "obfuscateUrl": true,
         "displayExcluded": false,
         "schemas": {
-            "programIdSchema": "p:${program}:${day}",
-            "programPathSchema": "/.media/programs/${program}/days/day-${day}.jpg",
-            "workoutIdSchema": "w:${workout}",
-            "workoutPathSchema": "/.media/workouts/${workout}/instructions.jpg"
+            "programIdSchema": "p:{program}:{day}",
+            "programPathSchema": "/.media/programs/{program}/days/day-{day}.jpg",
+            "workoutIdSchema": "w:{workout}",
+            "workoutPathSchema": "/.media/workouts/{workout}/instructions.jpg"
         }
     }
 }
