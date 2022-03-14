@@ -6,7 +6,7 @@ import ParameterCollector from '../service/parameterCollector'
 import categories from '../assets/categories.config'
 import { config } from '../assets/app.config.json'
 
-const Funnel = ({ question, start, category, next, parameter, backTo }) => {
+const Funnel = ({ question, start, category, next, parameter, onSelect, backTo }) => {
     const funnel = categories[category];
     let parameters = '?';
     if(next) {
@@ -22,18 +22,24 @@ const Funnel = ({ question, start, category, next, parameter, backTo }) => {
                 <div>
                 {
                     funnel.filter(category => !category.hide).map(category => {
-                        let forward = '';
-                        if('?' !== parameters.charAt(parameters.length - 1)) {
-                            forward += '&';
+                        let href = undefined;
+                        let onClick = undefined;
+                        if(!onSelect) {
+                            href = '';
+                            if('?' !== parameters.charAt(parameters.length - 1)) {
+                                href += '&';
+                            }
+                            href = (parameters + href + `${parameter}=${category.id}`);
+                        } else {
+                            onClick = () => onSelect(category)
                         }
-                        forward = (parameters + forward + `${parameter}=${category.id}`);
                         let furtherClasses = '';
                         if(category.classes) {
                             furtherClasses = ' ' + category.classes;
                         }
                         return (
                             <div className='d-grid'>
-                                <Button key={category.id} href={forward}
+                                <Button key={category.id} href={href} onClick={onClick}
                                     color={category.color} classes={`my-3 ${furtherClasses}`}
                                     icon={category.icon} text={category.name}>
                                 </Button>
