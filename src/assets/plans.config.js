@@ -8,7 +8,7 @@ const plans = {
             "types": ["cardio", "hiit"]
         },
         {
-            "types": ["strength"]
+            "workout": "w:pt-pyramid-workout"
         },
         {
             "types": ["fight"]

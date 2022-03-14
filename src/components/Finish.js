@@ -7,22 +7,41 @@ import ParameterService from '../service/parameterService'
 import categories from '../assets/categories.config'
 import { config } from '../assets/app.config.json'
 import plans from '../assets/plans.config'
-import { getTypeString } from '../service/typeLevelService'
+import workouts from '../assets/workouts.config'
+import {
+    getTypeString,
+    getPlanString,
+    getWorkoutString
+} from '../service/typeLevelService'
 
 const getNextPlan = (plan) => {
     const collector = new ParameterCollector(config.parameters.allPlan);
     let step = new ParameterService(config.parameters.step).value();
     step = parseInt(step);
-    const name = categories.plans.filter(_p => _p.id === plan)[0].name;
-    const type = plans[plan][step].types;
+    const name = getPlanString(plan);
+    const day = plans[plan][step];
+    const type = day.types;
+    let typeName = undefined
 
-    let nextPath = `?${config.parameters.app}=${config.apps.levelSelect}`;
-    nextPath += collector.getSearchString();
+    const workout = day.workout;
+    let workoutName = undefined;
+
+    let nextPath = undefined;
+    if(type) {
+        nextPath = `?${config.parameters.app}=${config.apps.levelSelect}`;
+        nextPath += collector.getSearchString();
+        typeName = getTypeString(type);
+    } else if(workout) {
+        nextPath = `?${config.parameters.app}=${config.apps.forwarding}`;
+        nextPath += `&${config.parameters.plan}=${plan}`;
+        nextPath += `&${config.parameters.step}=${step}`;
+        workoutName = getWorkoutString(workout);
+    }
 
     return {
         href: nextPath,
         text: (
-            <><i>{ name }</i> mit Tag { (step + 1) }: <i>{ getTypeString(type) }</i></>
+            <><i>{ name }</i> mit Tag { (step + 1) }: <i>{ workoutName ? workoutName : typeName }</i></>
         )
     };
 };

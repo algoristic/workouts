@@ -10,7 +10,12 @@ import { config } from '../assets/app.config.json'
 import plans from '../assets/plans.config'
 import programs from '../assets/programs.config'
 import { decode } from '../service/encodingService'
-import { getTypeString, getLevelString } from '../service/typeLevelService'
+import {
+    getTypeString,
+    getLevelString,
+    getPlanString,
+    getWorkoutString
+} from '../service/typeLevelService'
 
 const getPath = (string) => {
     const arr = string.split(':');
@@ -32,13 +37,14 @@ const getPlanControl = (plan, dateTime) => {
     const level = new ParameterService(config.parameters.level).value();
     let step = new ParameterService(config.parameters.step).value();
     step = parseInt(step);
-    let type = plans[plan][step].types;
+    const day = plans[plan][step];
+    const { types, workout } = day;
     const maxSteps = plans[plan].length;
     let nextStep = (1 + step);
     if(nextStep > (maxSteps - 1)) {
         nextStep = 0;
     }
-    const name = categories.plans.filter(_p => _p.id === plan)[0].name;
+    const name = getPlanString(plan);
     const rerollCollector = new ParameterCollector(config.parameters.allWorkout);
     let rerollPath = `?${config.parameters.app}=${config.apps.forwarding}`;
     rerollPath += rerollCollector.getSearchString();
@@ -51,6 +57,12 @@ const getPlanControl = (plan, dateTime) => {
     let backPath = `?${config.parameters.app}=${config.apps.plan}`;
     backPath += `&${config.parameters.plan}=${plan}`;
 
+    let description = undefined;
+    if(workout) {
+        description = (<><i>{ getWorkoutString(workout) }</i></>);
+    } else if (types && level) {
+        description = (<>Typ <i>{ getTypeString(types) }</i> und Schwierigkeit <i>{ getLevelString(level) }</i></>);
+    }
     return {
         next: nextPath,
         reroll: rerollPath,
@@ -59,7 +71,10 @@ const getPlanControl = (plan, dateTime) => {
             text: (<>Übersicht <i>{ name }</i></>)
         },
         subtitle: (
-            <><i>{ name }</i> an Tag { (step + 1) } <br/> Typ <i>{ getTypeString(type) }</i> und Schwierigkeit <i>{ getLevelString(level) }</i></>
+            <>
+                <i>{ name }</i> an Tag { (step + 1) }<br/>
+                { description }
+            </>
         )
     };
 };

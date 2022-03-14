@@ -68,6 +68,12 @@ const workouts = [
         "id": "p:military-fit:12",
         "types": ["hiit"],
         "level": "4"
+    },
+    {
+        "id": "w:pt-pyramid-workout",
+        "name": "PT Pyramid",
+        "types": "strength",
+        "level": ["2", "3"]
     }
 ];
 

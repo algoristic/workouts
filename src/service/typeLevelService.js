@@ -1,4 +1,5 @@
 import categories from '../assets/categories.config'
+import workouts from '../assets/workouts.config'
 
 const getTypeString = (type, joiner) => {
     const { types } = categories;
@@ -26,7 +27,17 @@ const getLevelString = (level) => {
     return levels.filter((_l) => _l.id === level)[0].name;
 };
 
+const getPlanString = (id) => {
+    return categories.plans.filter(plan => plan.id === id)[0].name;
+};
+
+const getWorkoutString = (id) => {
+    return workouts.filter(workout => workout.id === id)[0].name;
+};
+
 export {
     getTypeString,
-    getLevelString
+    getLevelString,
+    getPlanString,
+    getWorkoutString
 }

@@ -14,10 +14,14 @@ const getWorkoutByPlan = (plan) => {
         step = 0;
         stepService.value(step);
     }
-    const type = plans[plan][step].types;
-    const exclude = plans[plan][step].exclude;
-    const level = new ParameterService(config.parameters.level).value();
-    return new WorkoutService(type, level, exclude).getWorkout();
+    const day = plans[plan][step];
+    const { types, workout, exclude } = day;
+    if(workout) {
+        return encode(workout);
+    } else {
+        const level = new ParameterService(config.parameters.level).value();
+        return new WorkoutService(types, level, exclude).getWorkout();
+    }
 };
 
 const getWorkoutByProgram = (program) => {
