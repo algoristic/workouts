@@ -46,8 +46,11 @@ const getPlanControl = (plan, dateTime) => {
     }
     const name = getPlanString(plan);
     const rerollCollector = new ParameterCollector(config.parameters.allWorkout);
-    let rerollPath = `?${config.parameters.app}=${config.apps.forwarding}`;
-    rerollPath += rerollCollector.getSearchString();
+    let rerollPath = undefined;
+    if(!workout) {
+        rerollPath = `?${config.parameters.app}=${config.apps.forwarding}`;
+        rerollPath += rerollCollector.getSearchString();
+    }
 
     let nextPath = `?${config.parameters.app}=${config.apps.finishing}`;
     nextPath += `&${config.parameters.plan}=${plan}`;

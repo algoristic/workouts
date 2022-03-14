@@ -2,7 +2,7 @@ import Header from './Header'
 import Back from './Back'
 import Button from './Button'
 import ParameterService from '../service/parameterService'
-import { getTypeString } from '../service/typeLevelService'
+import { getTypeString, getWorkoutString } from '../service/typeLevelService'
 import categories from '../assets/categories.config'
 import plans from '../assets/plans.config'
 import { config } from '../assets/app.config.json'
@@ -22,23 +22,31 @@ const PlanOverview = () => {
                 {
                     plans[plan].map(day => {
                         increment++;
-                        let href = `?${config.parameters.app}=${config.apps.levelSelect}`;
+                        const { types, workout, exclude } = day;
+                        let description = undefined;
+                        let href = undefined;
+                        if(types) {
+                            href = `?${config.parameters.app}=${config.apps.levelSelect}`;
+                            description = getTypeString(types);
+                        } else if (workout) {
+                            href = `?${config.parameters.app}=${config.apps.forwarding}`;
+                            description = getWorkoutString(workout);
+                        }
                         href += `&${config.parameters.plan}=${plan}`;
                         href += `&${config.parameters.step}=${increment}`;
 
                         let colorIndex;
-                        const typeString = getTypeString(day.types);
-                        if(typesArray.includes(typeString)) {
-                            colorIndex = typesArray.indexOf(typeString);
+                        if(typesArray.includes(description)) {
+                            colorIndex = typesArray.indexOf(description);
                         } else {
-                            typesArray.push(typeString);
+                            typesArray.push(description);
                             colorIndex = (typesArray.length - 1);
                         }
                         const color = colors[colorIndex];
 
-                        let text = `Tag ${increment + 1}: ${typeString}`;
-                        if(config.displayExcluded && day.exclude) {
-                            text += ` (ohne ${getTypeString(day.exclude, 'und')})`;
+                        let text = `Tag ${increment + 1}: ${description}`;
+                        if(config.displayExcluded && exclude) {
+                            text += ` (ohne ${getTypeString(exclude, 'und')})`;
                         }
                         return (
                             <Button href={ href } color={ color } classes='my-3' text={ text } />
