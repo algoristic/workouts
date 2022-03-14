@@ -27,6 +27,7 @@ const resolvePath = (string) => {
         IDEE: die Methoden program() und workout() speichern beim ersten Aufruf
         die IDs im localStorage unter den Objekten "workouts" und "programs".
         Der string hier wird dann für alle Objekte abgeglichen via string.include().
+        Ist natürlich scheiße - dafür sollte ich mir wirklich etwas besseres ausdenken...
     */
     const parts = string.split(':');
     const determinator = parts[0];
