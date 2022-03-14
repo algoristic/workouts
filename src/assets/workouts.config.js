@@ -1,82 +1,89 @@
+import { program, workout } from '../service/schemaService'
+
 import { config } from './app.config.json'
 
 const { values } = config;
 const { types:{ strength, cardio, hiit, fight, all } } = values;
 const { levels:{ easy, normal, hard, extreme } } = values;
 
+//programs
+const militaryFit = "military-fit";
+//workouts
+const ptPyramid = "pt-pyramid-workout";
+
 const workouts = [
     {
-        "id": "p:military-fit:1",
+        "id": program(militaryFit, 1),
         "types": strength,
         "level": [easy, normal]
     },
     {
-        "id": "p:military-fit:2",
+        "id": program(militaryFit, 2),
         "types": strength,
         "level": hard
     },
     {
-        "id": "p:military-fit:3",
+        "id": program(militaryFit, 3),
         "types": strength,
         "level": extreme
     },
     {
-        "id": "p:military-fit:4",
+        "id": program(militaryFit, 4),
         "types": cardio,
         "level": [easy, normal]
     },
     {
-        "id": "p:military-fit:4",
+        "id": program(militaryFit, 4),
         "types": [cardio, fight],
         "level": [easy, normal]
     },
     {
-        "id": "p:military-fit:5",
+        "id": program(militaryFit, 5),
         "types": cardio,
         "level": hard
     },
     {
-        "id": "p:military-fit:6",
+        "id": program(militaryFit, 6),
         "types": cardio,
         "level": extreme
     },
     {
-        "id": "p:military-fit:7",
+        "id": program(militaryFit, 7),
         "types": fight,
         "level": [easy, normal]
     },
     {
-        "id": "p:military-fit:8",
+        "id": program(militaryFit, 8),
         "types": fight,
         "level": hard
     },
     {
-        "id": "p:military-fit:9",
+        "id": program(militaryFit, 9),
         "types": fight,
         "level": extreme
     },
     {
-        "id": "p:military-fit:10",
+        "id": program(militaryFit, 10),
         "types": [hiit, fight],
         "level": [easy, normal]
     },
     {
-        "id": "p:military-fit:10",
+        "id": program(militaryFit, 10),
         "types": hiit,
         "level": [easy, normal]
     },
     {
-        "id": "p:military-fit:11",
+        "id": program(militaryFit, 11),
         "types": hiit,
         "level": hard
     },
     {
-        "id": "p:military-fit:12",
+        "id": program(militaryFit, 12),
         "types": hiit,
         "level": extreme
     },
     {
-        "id": "w:pt-pyramid-workout",
+        "id": workout(ptPyramid),
         "name": "PT Pyramid",
         "types": strength,
         "level": [normal, hard]

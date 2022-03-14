@@ -3,6 +3,7 @@ import Back from './Back'
 import Image from './Image'
 import Subtitle from './Subtitle'
 import ParameterService from '../service/parameterService'
+import { program as programId, programPath } from '../service/schemaService'
 import { encode } from '../service/encodingService'
 import categories from '../assets/categories.config'
 import programs from '../assets/programs.config'
@@ -25,7 +26,9 @@ const ProgramDays = () => {
             {
                 [...Array(days).keys()].map(i => {
                     const day = (i + 1);
-                    const workout = encode(`p:${program}:${day}`);
+                    const id = programId(program, day);
+                    const workout = encode(id);
+                    const path = programPath(program, day);
                     let href = `?${config.parameters.app}=${config.apps.workout}`;
                     href += `&${config.parameters.program}=${program}`;
                     href += `&${config.parameters.step}=${day}`;
@@ -37,7 +40,7 @@ const ProgramDays = () => {
                     return (
                         <div className='col-12 col-md-6 col-lg-4 col-xxl-3 mb-3 text-center'>
                             <a href={ href }>
-                                <Image url={`/.media/programs/${program}/days/day-${day}.jpg`}
+                                <Image url={path}
                                     alt={`${name} - Tag ${day}`} timeout={timeout}>
                                 </Image>
                             </a>
