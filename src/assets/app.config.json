@@ -48,7 +48,7 @@
             "buttonClasses": "btn btn-block fs-5 fw-bold py-4",
             "headerClasses": "display-4 text-center py-5",
             "subtitleClasses": "text-center text-secondary",
-            "navbarStyleClasses": "navbar-expand-sm bg-dark navbar-dark",
+            "navbarStyleClasses": "navbar-expand-sm bg-dark navbar-dark rounded-bottom",
             "navbarClasses": "container-fluid text-end",
             "navbarButtonClasses": "text-end pe-3 fs-5",
             "imageClasses": "img-fluid img-thumbnail"
