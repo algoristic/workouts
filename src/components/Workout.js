@@ -5,6 +5,7 @@ import Subtitle from './Subtitle'
 import DateTimeService from '../service/dateTimeService'
 import ParameterCollector from '../service/parameterCollector'
 import ParameterService from '../service/parameterService'
+import { resolvePath } from '../service/schemaService'
 import categories from '../assets/categories.config'
 import { config } from '../assets/app.config.json'
 import plans from '../assets/plans.config'
@@ -16,22 +17,6 @@ import {
     getPlanString,
     getWorkoutString
 } from '../service/typeLevelService'
-
-const getPath = (string) => {
-    const arr = string.split(':');
-    let path = '';
-    switch(arr[0]) {
-        case 'p':
-            path = `/.media/programs/${arr[1]}/days/day-${arr[2]}.jpg`
-            break;
-        case 'w':
-            path = `/.media/workouts/${arr[1]}/instructions.jpg`;
-            break;
-        default:
-            break;
-    }
-    return path;
-};
 
 const getPlanControl = (plan, dateTime) => {
     const level = new ParameterService(config.parameters.level).value();
@@ -136,7 +121,7 @@ const Workout = () => {
     //build path for workout instructions image
     const workout = new ParameterService(config.parameters.workout).value();
     const decoded = decode(workout);
-    const path = getPath(decoded);
+    const path = resolvePath(decoded);
 
     const plan = new ParameterService(config.parameters.plan).value();
     const program = new ParameterService(config.parameters.program).value();

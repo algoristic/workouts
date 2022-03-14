@@ -28,6 +28,18 @@ const resolvePath = (string) => {
         die IDs im localStorage unter den Objekten "workouts" und "programs".
         Der string hier wird dann für alle Objekte abgeglichen via string.include().
     */
+    const parts = string.split(':');
+    const determinator = parts[0];
+    const identifier = parts[1];
+    const quantifier = parts[2];
+    switch(determinator) {
+        case 'p':
+            return programPath(identifier, quantifier)
+        case 'w':
+            return workoutPath(identifier);
+        default:
+            return undefined;
+    }
 };
 
 export {
