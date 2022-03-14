@@ -11,15 +11,17 @@ const workout = (id) => {
 };
 
 const programPath = (id, day) => {
-    return (mediaBase + program(id, day));
+    const path = program(id, day);
+    return `${mediaBase}/${path}.jpg`;
 };
 
 const workoutPath = (id) => {
-    return (mediaBase + workout(id));
+    const path = workout(id);
+    return `${mediaBase}/${path}.jpg`;
 };
 
 const resolvePath = (string) => {
-    return (mediaBase + string);
+    return `${mediaBase}/${string}.jpg`;
 };
 
 export {
