@@ -15,78 +15,78 @@ const workouts = [
     {
         "id": program(militaryFit, 1),
         "types": strength,
-        "level": [easy, normal]
+        "levels": [easy, normal]
     },
     {
         "id": program(militaryFit, 2),
         "types": strength,
-        "level": hard
+        "levels": hard
     },
     {
         "id": program(militaryFit, 3),
         "types": strength,
-        "level": extreme
+        "levels": extreme
     },
     {
         "id": program(militaryFit, 4),
         "types": cardio,
-        "level": [easy, normal]
+        "levels": [easy, normal]
     },
     {
         "id": program(militaryFit, 4),
         "types": [cardio, fight],
-        "level": [easy, normal]
+        "levels": [easy, normal]
     },
     {
         "id": program(militaryFit, 5),
         "types": cardio,
-        "level": hard
+        "levels": hard
     },
     {
         "id": program(militaryFit, 6),
         "types": cardio,
-        "level": extreme
+        "levels": extreme
     },
     {
         "id": program(militaryFit, 7),
         "types": fight,
-        "level": [easy, normal]
+        "levels": [easy, normal]
     },
     {
         "id": program(militaryFit, 8),
         "types": fight,
-        "level": hard
+        "levels": hard
     },
     {
         "id": program(militaryFit, 9),
         "types": fight,
-        "level": extreme
+        "levels": extreme
     },
     {
         "id": program(militaryFit, 10),
         "types": [hiit, fight],
-        "level": [easy, normal]
+        "levels": [easy, normal]
     },
     {
         "id": program(militaryFit, 10),
         "types": hiit,
-        "level": [easy, normal]
+        "levels": [easy, normal]
     },
     {
         "id": program(militaryFit, 11),
         "types": hiit,
-        "level": hard
+        "levels": hard
     },
     {
         "id": program(militaryFit, 12),
         "types": hiit,
-        "level": extreme
+        "levels": extreme
     },
     {
         "id": workout(ptPyramid),
         "name": "PT Pyramid",
         "types": strength,
-        "level": [normal, hard]
+        "levels": [normal, hard]
     }
 ];
 

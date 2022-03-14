@@ -2,7 +2,7 @@ import { config } from './app.config.json'
 
 const { apps:{ selection, plans, programs } } = config;
 const { values } = config;
-const { types:{ strength, cardio, hiit, fight, all } } = values;
+const { types:{ strength, cardio, hiit, fight } } = values;
 const { levels:{ easy, normal, hard, extreme } } = values;
 
 const categories = {
@@ -59,7 +59,7 @@ const categories = {
             "color": "warning"
         },
         {
-            "id": all,
+            "id": values.types.all,
             "name": "Egal",
             "icon": "🤷",
             "color": "secondary",
@@ -96,7 +96,7 @@ const categories = {
             "subtitle": "Training an der äußersten Belastungsgrenze und darüber hinaus!"
         },
         {
-            "id": "all",
+            "id": values.levels.all,
             "name": "Egal",
             "icon": "🤷",
             "color": "secondary"

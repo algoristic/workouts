@@ -3,12 +3,12 @@ import workouts from '../assets/workouts.config'
 
 import { config } from '../assets/app.config.json'
 
-const { values:{ types: all } } = config;
+const { values } = config;
 
 const filter = (value, property, revert) => {
     return {
         apply: (list) => {
-            if(value === all) {
+            if(value === (values[property].all)) {
                 return list;
             }
             if(Array.isArray(value)) {
@@ -65,7 +65,7 @@ const xor = (a, b) => {
 class WorkoutService {
     constructor(types, level, exclude) {
         this.filters = [];
-        this.filters.push(filter(level, 'level'));
+        this.filters.push(filter(level, 'levels'));
         this.filters.push(filter(types, 'types'));
         if(exclude) {
             this.filters.push(ignore(exclude));
