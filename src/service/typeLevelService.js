@@ -32,7 +32,12 @@ const getPlanString = (id) => {
 };
 
 const getWorkoutString = (id) => {
-    return workouts.filter(workout => workout.id === id)[0].name;
+    let filtered = workouts.filter(workout => workout.id === id);
+    if(filtered.length > 0) {
+        return filtered[0].name;
+    } else {
+        return '';
+    }
 };
 
 export {
