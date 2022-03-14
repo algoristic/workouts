@@ -23,17 +23,11 @@ const workoutPath = (id) => {
 };
 
 const resolvePath = (string) => {
-    const programRegex = escape(programIdSchema).replace(escape('${program}'), '[a-zA-Z-]*').replace(escape('${day}'), '\d+');
-    const workoutRegex = escape(workoutIdSchema).replace(escape('${workout}'), '[a-zA-Z-]*');
-    // FIXME - doesnt work
-    // also: how to identify actual workoutId or programId or programDay by knowing if workout or program?
-    if(string.match(workoutRegex)) {
-        console.log('workout');
-    } else if(string.match(programRegex)) {
-        console.log('program');
-    } else {
-        return undefined;
-    }
+    /*
+        IDEE: die Methoden program() und workout() speichern beim ersten Aufruf
+        die IDs im localStorage unter den Objekten "workouts" und "programs".
+        Der string hier wird dann für alle Objekte abgeglichen via string.include().
+    */
 };
 
 export {
