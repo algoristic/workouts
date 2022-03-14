@@ -1,82 +1,86 @@
+import { config } from './app.config.json'
+
+const { values:{ types:{ strength, cardio, hiit, fight, all } } } = config;
+
 const plans = {
     "extreme-fit": [
         {
-            "types": ["cardio", "hiit"],
-            "exclude": ["fight"]
+            "types": [cardio, hiit],
+            "exclude": [fight]
         },
         {
-            "types": ["cardio", "hiit"]
+            "types": [cardio, hiit]
         },
         {
             "workout": "w:pt-pyramid-workout"
         },
         {
-            "types": ["fight"]
+            "types": [fight]
         }
     ],
     "guardian": [
         {
-            "types": ["strength"]
+            "types": [strength]
         },
         {
-            "types": ["cardio"]
+            "types": [cardio]
         },
         {
-            "types": ["strength"]
+            "types": [strength]
         }
     ],
     "assassin": [
         {
-            "types": ["cardio", "hiit"],
-            "exclude": "fight"
+            "types": [cardio, hiit],
+            "exclude": fight
         },
         {
-            "types": ["fight"]
+            "types": [fight]
         },
         {
-            "types": ["cardio", "hiit"],
-            "exclude": "fight"
+            "types": [cardio, hiit],
+            "exclude": fight
         },
         {
-            "types": ["cardio", "hiit"]
+            "types": [cardio, hiit]
         }
     ],
     "amazon": [
         {
-            "types": ["strength"]
+            "types": [strength]
         },
         {
-            "types": ["cardio"]
+            "types": [cardio]
         }
     ],
     "fighter": [
         {
-            "types": ["fight"]
+            "types": [fight]
         },
         {
-            "types": ["hiit"]
+            "types": [hiit]
         },
         {
-            "types": ["strength"]
+            "types": [strength]
         },
         {
-            "types": ["fight"]
+            "types": [fight]
         }
     ],
     "ninja": [
         {
-            "types": ["cardio"]
+            "types": [cardio]
         },
         {
-            "types": ["cardio"]
+            "types": [cardio]
         },
         {
-            "types": ["cardio", "fight"]
+            "types": [cardio, fight]
         }
     ],
     "knight": [
         {
-            "types": ["strength"]
+            "types": [strength]
         }
     ]
 };
