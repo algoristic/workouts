@@ -17,7 +17,8 @@ const plans = {
             "workout": workout("pt-pyramid-workout")
         },
         {
-            "types": [fight]
+            "types": [fight],
+            "exclude": strength
         }
     ],
     "guardian": [
