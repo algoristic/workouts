@@ -66,7 +66,7 @@ class WorkoutSelect extends Component {
         return (
             <div className='d-flex justify-content-center align-items-center' style={{ height: '100vh' }}>
                 <div className='text-center'>
-                    <div className='h4 mb-5'>🚀 Bitte warten...</div>
+                    <div className='h4 mb-5'>⏳ Bitte warten...</div>
                     <div className='spinner-grow text-primary'></div>
                 </div>
             </div>
