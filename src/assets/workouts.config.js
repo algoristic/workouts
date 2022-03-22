@@ -1,96 +1,25 @@
-import { program, workout } from '../service/schemaService'
+import avatar from './workouts/avatar'
+import boxerPrime from './workouts/boxerPrime'
+import daysOfStrength from './workouts/daysOfStrength'
+import fightersCodex from './workouts/fightersCodex'
+import fireheart from './workouts/fireheart'
+import militaryFit from './workouts/militaryFit'
+import spartanTrials from './workouts/spartanTrials'
+import strengthProtocol from './workouts/strengthProtocol'
 
-import { config } from './app.config.json'
+import workouts from './workouts/singleWorkouts'
 
-const { values } = config;
-const { types:{ strength, cardio, hiit, fight } } = values;
-const { levels:{ easy, normal, hard, extreme } } = values;
-
-//programs
-const militaryFit = (day) => {
-    return program("military-fit", day);
-};
-
-//workouts
-const ptPyramid = "pt-pyramid-workout";
-
-const workouts = [
-    {
-        "id": militaryFit(1),
-        "types": strength,
-        "levels": [easy, normal]
-    },
-    {
-        "id": militaryFit(2),
-        "types": strength,
-        "levels": hard
-    },
-    {
-        "id": militaryFit(3),
-        "types": strength,
-        "levels": extreme
-    },
-    {
-        "id": militaryFit(4),
-        "types": cardio,
-        "levels": [easy, normal]
-    },
-    {
-        "id": militaryFit(4),
-        "types": [cardio, fight],
-        "levels": [easy, normal]
-    },
-    {
-        "id": militaryFit(5),
-        "types": cardio,
-        "levels": hard
-    },
-    {
-        "id": militaryFit(6),
-        "types": cardio,
-        "levels": extreme
-    },
-    {
-        "id": militaryFit(7),
-        "types": fight,
-        "levels": [easy, normal]
-    },
-    {
-        "id": militaryFit(8),
-        "types": fight,
-        "levels": hard
-    },
-    {
-        "id": militaryFit(9),
-        "types": fight,
-        "levels": extreme
-    },
-    {
-        "id": militaryFit(10),
-        "types": [hiit, fight],
-        "levels": [easy, normal]
-    },
-    {
-        "id": militaryFit(10),
-        "types": hiit,
-        "levels": [easy, normal]
-    },
-    {
-        "id": militaryFit(11),
-        "types": hiit,
-        "levels": hard
-    },
-    {
-        "id": militaryFit(12),
-        "types": hiit,
-        "levels": extreme
-    },
-    {
-        "id": workout(ptPyramid),
-        "name": "PT Pyramid",
-        "types": strength,
-        "levels": [normal, hard]
-    }
+const programs = [
+    avatar,
+    boxerPrime,
+    daysOfStrength,
+    fightersCodex,
+    fireheart,
+    militaryFit,
+    spartanTrials,
+    strengthProtocol
 ];
 
-export default workouts;
+const all = [programs, workouts].flat();
+
+export default all;
