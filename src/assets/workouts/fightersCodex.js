@@ -120,8 +120,8 @@ const workouts = [
     },
     {
         "id": fightersCodex(23),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": extreme
     },
     {
         "id": fightersCodex(24),
@@ -140,8 +140,8 @@ const workouts = [
     },
     {
         "id": fightersCodex(27),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": extreme
     },
     {
         "id": fightersCodex(28),

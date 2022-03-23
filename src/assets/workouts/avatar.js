@@ -35,8 +35,8 @@ const workouts = [
     },
     {
         "id": avatar(6),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": extreme
     },
     {
         "id": avatar(7),
@@ -80,8 +80,8 @@ const workouts = [
     },
     {
         "id": avatar(15),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": extreme
     },
     {
         "id": avatar(16),
@@ -110,8 +110,8 @@ const workouts = [
     },
     {
         "id": avatar(21),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": extreme
     },
     {
         "id": avatar(22),
