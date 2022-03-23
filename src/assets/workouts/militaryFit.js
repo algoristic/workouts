@@ -20,8 +20,8 @@ const workouts = [
     },
     {
         "id": militaryFit(3),
-        "types": none,
-        "levels": none
+        "types": strength,
+        "levels": hard
     },
     {
         "id": militaryFit(4),
@@ -105,8 +105,8 @@ const workouts = [
     },
     {
         "id": militaryFit(20),
-        "types": none,
-        "levels": none
+        "types": strength,
+        "levels": hard
     },
     {
         "id": militaryFit(21),
@@ -125,8 +125,8 @@ const workouts = [
     },
     {
         "id": militaryFit(24),
-        "types": none,
-        "levels": none
+        "types": strength,
+        "levels": hard
     },
     {
         "id": militaryFit(25),
@@ -145,8 +145,8 @@ const workouts = [
     },
     {
         "id": militaryFit(28),
-        "types": none,
-        "levels": none
+        "types": strength,
+        "levels": hard
     },
     {
         "id": militaryFit(29),
@@ -155,8 +155,8 @@ const workouts = [
     },
     {
         "id": militaryFit(30),
-        "types": none,
-        "levels": none
+        "types": strength,
+        "levels": hard
     }
 ];
 

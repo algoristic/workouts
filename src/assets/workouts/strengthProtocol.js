@@ -125,8 +125,8 @@ const workouts = [
     },
     {
         "id": strengthProtocol(24),
-        "types": none,
-        "levels": none
+        "types": strength,
+        "levels": hard
     },
     {
         "id": strengthProtocol(25),
@@ -150,8 +150,8 @@ const workouts = [
     },
     {
         "id": strengthProtocol(29),
-        "types": none,
-        "levels": none
+        "types": strength,
+        "levels": hard
     },
     {
         "id": strengthProtocol(30),

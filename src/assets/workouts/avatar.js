@@ -50,8 +50,8 @@ const workouts = [
     },
     {
         "id": avatar(9),
-        "types": none,
-        "levels": none
+        "types": strength,
+        "levels": hard
     },
     {
         "id": avatar(10),
@@ -130,8 +130,8 @@ const workouts = [
     },
     {
         "id": avatar(25),
-        "types": none,
-        "levels": none
+        "types": strength,
+        "levels": hard
     },
     {
         "id": avatar(26),

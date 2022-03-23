@@ -60,6 +60,21 @@ const workouts = [
         "id": workout("navy-seal-workout"),
         "types": strength,
         "levels": normal
+    },
+    {
+        "id": workout("swat-workout"),
+        "types": strength,
+        "levels": hard
+    },
+    {
+        "id": workout("special-forces-workout"),
+        "types": strength,
+        "levels": hard
+    },
+    {
+        "id": workout("boxer-endurance-workout"),
+        "types": [strength, fight],
+        "levels": hard
     }
 ];
 

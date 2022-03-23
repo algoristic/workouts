@@ -50,8 +50,8 @@ const workouts = [
     },
     {
         "id": boxerPrime(9),
-        "types": none,
-        "levels": none
+        "types": [strength, fight],
+        "levels": hard
     },
     {
         "id": boxerPrime(10),

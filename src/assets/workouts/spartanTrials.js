@@ -120,8 +120,8 @@ const workouts = [
     },
     {
         "id": spartanTrials(23),
-        "types": none,
-        "levels": none
+        "types": strength,
+        "levels": hard
     },
     {
         "id": spartanTrials(24),
@@ -140,8 +140,8 @@ const workouts = [
     },
     {
         "id": spartanTrials(27),
-        "types": none,
-        "levels": none
+        "types": strength,
+        "levels": hard
     },
     {
         "id": spartanTrials(28),
