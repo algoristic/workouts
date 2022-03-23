@@ -30,8 +30,8 @@ const workouts = [
     },
     {
         "id": avatar(5),
-        "types": none,
-        "levels": none
+        "types": [hiit, fight],
+        "levels": extreme
     },
     {
         "id": avatar(6),
@@ -115,8 +115,8 @@ const workouts = [
     },
     {
         "id": avatar(22),
-        "types": none,
-        "levels": none
+        "types": hiit,
+        "levels": extreme
     },
     {
         "id": avatar(23),
@@ -140,8 +140,8 @@ const workouts = [
     },
     {
         "id": avatar(27),
-        "types": none,
-        "levels": none
+        "types": [hiit, fight],
+        "levels": extreme
     },
     {
         "id": avatar(28),
