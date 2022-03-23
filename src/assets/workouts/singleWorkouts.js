@@ -75,6 +75,16 @@ const workouts = [
         "id": workout("boxer-endurance-workout"),
         "types": [strength, fight],
         "levels": hard
+    },
+    {
+        "id": workout("fight-night-workout"),
+        "types": [hiit, fight],
+        "levels": normal
+    },
+    {
+        "id": workout("boxer-speed-workout"),
+        "types": [hiit, fight],
+        "levels": normal
     }
 ];
 

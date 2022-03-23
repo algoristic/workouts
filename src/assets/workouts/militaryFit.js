@@ -45,8 +45,8 @@ const workouts = [
     },
     {
         "id": militaryFit(8),
-        "types": none,
-        "levels": none
+        "types": hiit,
+        "levels": normal
     },
     {
         "id": militaryFit(9),

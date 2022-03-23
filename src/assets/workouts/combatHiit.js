@@ -5,158 +5,158 @@ const { values } = config;
 const { types:{ strength, cardio, hiit, fight } } = values;
 const { levels:{ easy, normal, hard, extreme } } = values;
 
-const avatar = (day) => program("avatar-program", day);
+const combatHiit = (day) => program("combat-hiit", day);
 
 const workouts = [
     {
-        "id": avatar(1),
+        "id": combatHiit(1),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(2),
+        "id": combatHiit(2),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(3),
+        "id": combatHiit(3),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(4),
+        "id": combatHiit(4),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(5),
-        "types": [hiit, fight],
-        "levels": extreme
-    },
-    {
-        "id": avatar(6),
+        "id": combatHiit(5),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(7),
+        "id": combatHiit(6),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(8),
+        "id": combatHiit(7),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(9),
-        "types": strength,
-        "levels": hard
+        "id": combatHiit(8),
+        "types": none,
+        "levels": none
     },
     {
-        "id": avatar(10),
+        "id": combatHiit(9),
+        "types": none,
+        "levels": none
+    },
+    {
+        "id": combatHiit(10),
+        "types": none,
+        "levels": none
+    },
+    {
+        "id": combatHiit(11),
         "types": [hiit, fight],
         "levels": normal
     },
     {
-        "id": avatar(11),
+        "id": combatHiit(12),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(12),
+        "id": combatHiit(13),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(13),
+        "id": combatHiit(14),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(14),
+        "id": combatHiit(15),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(15),
+        "id": combatHiit(16),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(16),
+        "id": combatHiit(17),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(17),
-        "types": hiit,
-        "levels": hard
-    },
-    {
-        "id": avatar(18),
+        "id": combatHiit(18),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(19),
+        "id": combatHiit(19),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(20),
+        "id": combatHiit(20),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(21),
+        "id": combatHiit(21),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(22),
-        "types": hiit,
-        "levels": extreme
-    },
-    {
-        "id": avatar(23),
-        "types": [strength, fight],
-        "levels": normal
-    },
-    {
-        "id": avatar(24),
+        "id": combatHiit(22),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(25),
-        "types": strength,
-        "levels": hard
-    },
-    {
-        "id": avatar(26),
+        "id": combatHiit(23),
         "types": none,
         "levels": none
     },
     {
-        "id": avatar(27),
+        "id": combatHiit(24),
+        "types": none,
+        "levels": none
+    },
+    {
+        "id": combatHiit(25),
+        "types": none,
+        "levels": none
+    },
+    {
+        "id": combatHiit(26),
+        "types": none,
+        "levels": none
+    },
+    {
+        "id": combatHiit(27),
+        "types": none,
+        "levels": none
+    },
+    {
+        "id": combatHiit(28),
+        "types": none,
+        "levels": none
+    },
+    {
+        "id": combatHiit(29),
+        "types": none,
+        "levels": none
+    },
+    {
+        "id": combatHiit(30),
         "types": [hiit, fight],
-        "levels": extreme
-    },
-    {
-        "id": avatar(28),
-        "types": none,
-        "levels": none
-    },
-    {
-        "id": avatar(29),
-        "types": none,
-        "levels": none
-    },
-    {
-        "id": avatar(30),
-        "types": none,
-        "levels": none
+        "levels": normal
     }
 ];
 

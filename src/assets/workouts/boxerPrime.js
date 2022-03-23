@@ -35,8 +35,8 @@ const workouts = [
     },
     {
         "id": boxerPrime(6),
-        "types": none,
-        "levels": none
+        "types": [hiit, fight],
+        "levels": normal
     },
     {
         "id": boxerPrime(7),
@@ -90,8 +90,8 @@ const workouts = [
     },
     {
         "id": boxerPrime(17),
-        "types": none,
-        "levels": none
+        "types": [hiit, fight],
+        "levels": normal
     },
     {
         "id": boxerPrime(18),

@@ -3,6 +3,7 @@ const programs = {
     "30-days-of-strength": 30,
     "avatar-program": 30,
     "boxer-prime": 30,
+    "combat-hiit": 30,
     "fighters-codex": 30
     "fireheart-program": 30,
     "military-fit": 30,

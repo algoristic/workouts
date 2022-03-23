@@ -1,5 +1,6 @@
 import avatar from './workouts/avatar'
 import boxerPrime from './workouts/boxerPrime'
+import combatHiit from './workouts/combatHiit'
 import daysOfHiitAdvanced from './workouts/daysOfHiitAdvanced'
 import daysOfStrength from './workouts/daysOfStrength'
 import fightersCodex from './workouts/fightersCodex'
@@ -13,6 +14,7 @@ import workouts from './workouts/singleWorkouts'
 const programs = [
     avatar,
     boxerPrime,
+    combatHiit,
     daysOfHiitAdvanced,
     daysOfStrength,
     fightersCodex,
