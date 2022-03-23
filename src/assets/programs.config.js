@@ -1,4 +1,5 @@
 const programs = {
+    "30-days-of-hiit-advanced": 30,
     "30-days-of-strength": 30,
     "avatar-program": 30,
     "boxer-prime": 30,
