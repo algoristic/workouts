@@ -15,13 +15,13 @@ const workouts = [
     },
     {
         "id": daysOfHiitAdvanced(2),
-        "types": none,
-        "levels": none
+        "types": hiit,
+        "levels": easy
     },
     {
         "id": daysOfHiitAdvanced(3),
-        "types": none,
-        "levels": none
+        "types": hiit,
+        "levels": easy
     },
     {
         "id": daysOfHiitAdvanced(4),
@@ -35,8 +35,8 @@ const workouts = [
     },
     {
         "id": daysOfHiitAdvanced(6),
-        "types": none,
-        "levels": none
+        "types": hiit,
+        "levels": easy
     },
     {
         "id": daysOfHiitAdvanced(7),
@@ -50,13 +50,13 @@ const workouts = [
     },
     {
         "id": daysOfHiitAdvanced(9),
-        "types": none,
-        "levels": none
+        "types": hiit,
+        "levels": easy
     },
     {
         "id": daysOfHiitAdvanced(10),
-        "types": none,
-        "levels": none
+        "types": hiit,
+        "levels": easy
     },
     {
         "id": daysOfHiitAdvanced(11),
@@ -65,8 +65,8 @@ const workouts = [
     },
     {
         "id": daysOfHiitAdvanced(12),
-        "types": none,
-        "levels": none
+        "types": [hiit, fight],
+        "levels": easy
     },
     {
         "id": daysOfHiitAdvanced(13),
@@ -80,8 +80,8 @@ const workouts = [
     },
     {
         "id": daysOfHiitAdvanced(15),
-        "types": none,
-        "levels": none
+        "types": hiit,
+        "levels": easy
     },
     {
         "id": daysOfHiitAdvanced(16),
@@ -90,13 +90,13 @@ const workouts = [
     },
     {
         "id": daysOfHiitAdvanced(17),
-        "types": none,
-        "levels": none
+        "types": hiit,
+        "levels": easy
     },
     {
         "id": daysOfHiitAdvanced(18),
-        "types": none,
-        "levels": none
+        "types": hiit,
+        "levels": easy
     },
     {
         "id": daysOfHiitAdvanced(19),
@@ -115,8 +115,8 @@ const workouts = [
     },
     {
         "id": daysOfHiitAdvanced(22),
-        "types": none,
-        "levels": none
+        "types": hiit,
+        "levels": easy
     },
     {
         "id": daysOfHiitAdvanced(23),
@@ -125,13 +125,13 @@ const workouts = [
     },
     {
         "id": daysOfHiitAdvanced(24),
-        "types": none,
-        "levels": none
+        "types": hiit,
+        "levels": easy
     },
     {
         "id": daysOfHiitAdvanced(25),
-        "types": none,
-        "levels": none
+        "types": hiit,
+        "levels": easy
     },
     {
         "id": daysOfHiitAdvanced(26),

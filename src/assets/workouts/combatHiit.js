@@ -35,13 +35,13 @@ const workouts = [
     },
     {
         "id": combatHiit(6),
-        "types": none,
-        "levels": none
+        "types": [hiit, fight],
+        "levels": easy
     },
     {
         "id": combatHiit(7),
-        "types": none,
-        "levels": none
+        "types": [hiit, fight],
+        "levels": easy
     },
     {
         "id": combatHiit(8),
@@ -55,8 +55,8 @@ const workouts = [
     },
     {
         "id": combatHiit(10),
-        "types": none,
-        "levels": none
+        "types": [hiit, fight],
+        "levels": easy
     },
     {
         "id": combatHiit(11),
@@ -75,8 +75,8 @@ const workouts = [
     },
     {
         "id": combatHiit(14),
-        "types": none,
-        "levels": none
+        "types": [hiit, fight],
+        "levels": easy
     },
     {
         "id": combatHiit(15),
@@ -95,8 +95,8 @@ const workouts = [
     },
     {
         "id": combatHiit(18),
-        "types": none,
-        "levels": none
+        "types": hiit,
+        "levels": easy
     },
     {
         "id": combatHiit(19),
@@ -120,13 +120,13 @@ const workouts = [
     },
     {
         "id": combatHiit(23),
-        "types": none,
-        "levels": none
+        "types": [hiit, fight],
+        "levels": easy
     },
     {
         "id": combatHiit(24),
-        "types": none,
-        "levels": none
+        "types": hiit,
+        "levels": easy
     },
     {
         "id": combatHiit(25),
@@ -140,13 +140,13 @@ const workouts = [
     },
     {
         "id": combatHiit(27),
-        "types": none,
-        "levels": none
+        "types": [hiit, fight],
+        "levels": easy
     },
     {
         "id": combatHiit(28),
-        "types": none,
-        "levels": none
+        "types": hiit,
+        "levels": easy
     },
     {
         "id": combatHiit(29),
