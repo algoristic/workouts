@@ -95,8 +95,8 @@ const workouts = [
     },
     {
         "id": avatar(18),
-        "types": none,
-        "levels": none
+        "types": [strength, fight],
+        "levels": extreme
     },
     {
         "id": avatar(19),

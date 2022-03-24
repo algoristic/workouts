@@ -15,8 +15,8 @@ const workouts = [
     },
     {
         "id": boxerPrime(2),
-        "types": none,
-        "levels": none
+        "types": [strength, fight],
+        "levels": extreme
     },
     {
         "id": boxerPrime(3),
@@ -25,8 +25,8 @@ const workouts = [
     },
     {
         "id": boxerPrime(4),
-        "types": none,
-        "levels": none
+        "types": [strength, fight],
+        "levels": extreme
     },
     {
         "id": boxerPrime(5),
@@ -80,8 +80,8 @@ const workouts = [
     },
     {
         "id": boxerPrime(15),
-        "types": none,
-        "levels": none
+        "types": [strength, fight],
+        "levels": extreme
     },
     {
         "id": boxerPrime(16),
@@ -100,13 +100,13 @@ const workouts = [
     },
     {
         "id": boxerPrime(19),
-        "types": none,
-        "levels": none
+        "types": [strength, fight],
+        "levels": extreme
     },
     {
         "id": boxerPrime(20),
-        "types": none,
-        "levels": none
+        "types": [strength, fight],
+        "levels": extreme
     },
     {
         "id": boxerPrime(21),
@@ -125,8 +125,8 @@ const workouts = [
     },
     {
         "id": boxerPrime(24),
-        "types": none,
-        "levels": none
+        "types": [strength, fight],
+        "levels": extreme
     },
     {
         "id": boxerPrime(25),
@@ -150,8 +150,8 @@ const workouts = [
     },
     {
         "id": boxerPrime(29),
-        "types": none,
-        "levels": none
+        "types": [strength, fight],
+        "levels": extreme
     },
     {
         "id": boxerPrime(30),
