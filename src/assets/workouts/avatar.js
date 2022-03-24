@@ -10,13 +10,13 @@ const avatar = (day) => program("avatar-program", day);
 const workouts = [
     {
         "id": avatar(1),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": hard
     },
     {
         "id": avatar(2),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": hard
     },
     {
         "id": avatar(3),
@@ -40,8 +40,8 @@ const workouts = [
     },
     {
         "id": avatar(7),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": hard
     },
     {
         "id": avatar(8),
@@ -75,8 +75,8 @@ const workouts = [
     },
     {
         "id": avatar(14),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": hard
     },
     {
         "id": avatar(15),
@@ -100,8 +100,8 @@ const workouts = [
     },
     {
         "id": avatar(19),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": hard
     },
     {
         "id": avatar(20),
@@ -135,8 +135,8 @@ const workouts = [
     },
     {
         "id": avatar(26),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": hard
     },
     {
         "id": avatar(27),
@@ -150,13 +150,13 @@ const workouts = [
     },
     {
         "id": avatar(29),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": hard
     },
     {
         "id": avatar(30),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": hard
     }
 ];
 

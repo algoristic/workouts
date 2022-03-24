@@ -60,8 +60,8 @@ const workouts = [
     },
     {
         "id": fightersCodex(11),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": hard
     },
     {
         "id": fightersCodex(12),
@@ -95,8 +95,8 @@ const workouts = [
     },
     {
         "id": fightersCodex(18),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": hard
     },
     {
         "id": fightersCodex(19),
@@ -150,8 +150,8 @@ const workouts = [
     },
     {
         "id": fightersCodex(29),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": hard
     },
     {
         "id": fightersCodex(30),

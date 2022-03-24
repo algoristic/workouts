@@ -95,6 +95,11 @@ const workouts = [
         "id": workout("cardio-box-workout"),
         "types": [cardio, fight],
         "levels": easy
+    },
+    {
+        "id": workout("ninja-warrior-workout"),
+        "types": cardio,
+        "levels": hard
     }
 ];
 
