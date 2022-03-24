@@ -70,8 +70,8 @@ const workouts = [
     },
     {
         "id": militaryFit(13),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": militaryFit(14),

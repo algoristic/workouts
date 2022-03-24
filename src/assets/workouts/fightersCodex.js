@@ -10,8 +10,8 @@ const fightersCodex = (day) => program("fighters-codex", day);
 const workouts = [
     {
         "id": fightersCodex(1),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fightersCodex(2),
@@ -25,13 +25,13 @@ const workouts = [
     },
     {
         "id": fightersCodex(4),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fightersCodex(5),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fightersCodex(6),
@@ -40,13 +40,13 @@ const workouts = [
     },
     {
         "id": fightersCodex(7),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fightersCodex(8),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fightersCodex(9),
@@ -65,18 +65,18 @@ const workouts = [
     },
     {
         "id": fightersCodex(12),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fightersCodex(13),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fightersCodex(14),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fightersCodex(15),
@@ -85,13 +85,13 @@ const workouts = [
     },
     {
         "id": fightersCodex(16),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fightersCodex(17),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fightersCodex(18),
@@ -105,18 +105,18 @@ const workouts = [
     },
     {
         "id": fightersCodex(20),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fightersCodex(21),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fightersCodex(22),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fightersCodex(23),
@@ -125,13 +125,13 @@ const workouts = [
     },
     {
         "id": fightersCodex(24),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fightersCodex(25),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fightersCodex(26),
@@ -145,8 +145,8 @@ const workouts = [
     },
     {
         "id": fightersCodex(28),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fightersCodex(29),
@@ -155,8 +155,8 @@ const workouts = [
     },
     {
         "id": fightersCodex(30),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     }
 ];
 

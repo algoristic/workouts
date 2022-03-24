@@ -20,8 +20,8 @@ const workouts = [
     },
     {
         "id": fireheart(3),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fireheart(4),
@@ -35,13 +35,13 @@ const workouts = [
     },
     {
         "id": fireheart(6),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fireheart(7),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fireheart(8),
@@ -50,13 +50,13 @@ const workouts = [
     },
     {
         "id": fireheart(9),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fireheart(10),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fireheart(11),
@@ -65,23 +65,23 @@ const workouts = [
     },
     {
         "id": fireheart(12),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fireheart(13),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fireheart(14),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fireheart(15),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fireheart(16),
@@ -95,8 +95,8 @@ const workouts = [
     },
     {
         "id": fireheart(18),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fireheart(19),
@@ -125,8 +125,8 @@ const workouts = [
     },
     {
         "id": fireheart(24),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fireheart(25),
@@ -140,8 +140,8 @@ const workouts = [
     },
     {
         "id": fireheart(27),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": fireheart(28),
@@ -155,8 +155,8 @@ const workouts = [
     },
     {
         "id": fireheart(30),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     }
 ];
 

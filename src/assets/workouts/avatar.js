@@ -25,8 +25,8 @@ const workouts = [
     },
     {
         "id": avatar(4),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": avatar(5),
@@ -45,8 +45,8 @@ const workouts = [
     },
     {
         "id": avatar(8),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": avatar(9),
@@ -65,8 +65,8 @@ const workouts = [
     },
     {
         "id": avatar(12),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": avatar(13),
@@ -85,8 +85,8 @@ const workouts = [
     },
     {
         "id": avatar(16),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": avatar(17),
@@ -105,8 +105,8 @@ const workouts = [
     },
     {
         "id": avatar(20),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": avatar(21),
@@ -125,8 +125,8 @@ const workouts = [
     },
     {
         "id": avatar(24),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": avatar(25),
@@ -145,8 +145,8 @@ const workouts = [
     },
     {
         "id": avatar(28),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": avatar(29),

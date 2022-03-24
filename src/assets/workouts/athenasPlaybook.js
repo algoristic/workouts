@@ -20,13 +20,13 @@ const workouts = [
     },
     {
         "id": athenasPlaybook(3),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": athenasPlaybook(4),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": athenasPlaybook(5),
@@ -35,8 +35,8 @@ const workouts = [
     },
     {
         "id": athenasPlaybook(6),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": athenasPlaybook(7),
@@ -45,8 +45,8 @@ const workouts = [
     },
     {
         "id": athenasPlaybook(8),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": athenasPlaybook(9),
@@ -60,13 +60,13 @@ const workouts = [
     },
     {
         "id": athenasPlaybook(11),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": athenasPlaybook(12),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": athenasPlaybook(13),
@@ -80,18 +80,18 @@ const workouts = [
     },
     {
         "id": athenasPlaybook(15),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": athenasPlaybook(16),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": athenasPlaybook(17),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": athenasPlaybook(18),
@@ -100,13 +100,13 @@ const workouts = [
     },
     {
         "id": athenasPlaybook(19),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": athenasPlaybook(20),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": athenasPlaybook(21),
@@ -115,13 +115,13 @@ const workouts = [
     },
     {
         "id": athenasPlaybook(22),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": athenasPlaybook(23),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": athenasPlaybook(24),
@@ -130,23 +130,23 @@ const workouts = [
     },
     {
         "id": athenasPlaybook(25),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": athenasPlaybook(26),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": athenasPlaybook(27),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": athenasPlaybook(28),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": athenasPlaybook(29),

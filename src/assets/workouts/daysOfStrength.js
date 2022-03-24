@@ -25,8 +25,8 @@ const workouts = [
     },
     {
         "id": daysOfStrength(4),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": daysOfStrength(5),
@@ -45,13 +45,13 @@ const workouts = [
     },
     {
         "id": daysOfStrength(8),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": daysOfStrength(9),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": daysOfStrength(10),
@@ -65,13 +65,13 @@ const workouts = [
     },
     {
         "id": daysOfStrength(12),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": daysOfStrength(13),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": daysOfStrength(14),
@@ -85,13 +85,13 @@ const workouts = [
     },
     {
         "id": daysOfStrength(16),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": daysOfStrength(17),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": daysOfStrength(18),
@@ -105,8 +105,8 @@ const workouts = [
     },
     {
         "id": daysOfStrength(20),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": daysOfStrength(21),
@@ -125,8 +125,8 @@ const workouts = [
     },
     {
         "id": daysOfStrength(24),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": daysOfStrength(25),
@@ -145,13 +145,13 @@ const workouts = [
     },
     {
         "id": daysOfStrength(28),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": daysOfStrength(29),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": daysOfStrength(30),

@@ -25,8 +25,8 @@ const workouts = [
     },
     {
         "id": spartanTrials(4),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": spartanTrials(5),
@@ -45,8 +45,8 @@ const workouts = [
     },
     {
         "id": spartanTrials(8),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": spartanTrials(9),
@@ -65,8 +65,8 @@ const workouts = [
     },
     {
         "id": spartanTrials(12),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": spartanTrials(13),
@@ -85,8 +85,8 @@ const workouts = [
     },
     {
         "id": spartanTrials(16),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": spartanTrials(17),
@@ -95,8 +95,8 @@ const workouts = [
     },
     {
         "id": spartanTrials(18),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": spartanTrials(19),
@@ -105,8 +105,8 @@ const workouts = [
     },
     {
         "id": spartanTrials(20),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": spartanTrials(21),
@@ -125,8 +125,8 @@ const workouts = [
     },
     {
         "id": spartanTrials(24),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": spartanTrials(25),
@@ -145,8 +145,8 @@ const workouts = [
     },
     {
         "id": spartanTrials(28),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": spartanTrials(29),

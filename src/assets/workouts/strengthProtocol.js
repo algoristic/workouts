@@ -15,8 +15,8 @@ const workouts = [
     },
     {
         "id": strengthProtocol(2),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": strengthProtocol(3),
@@ -25,23 +25,23 @@ const workouts = [
     },
     {
         "id": strengthProtocol(4),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": strengthProtocol(5),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": strengthProtocol(6),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": strengthProtocol(7),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": strengthProtocol(8),
@@ -50,13 +50,13 @@ const workouts = [
     },
     {
         "id": strengthProtocol(9),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": strengthProtocol(10),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": strengthProtocol(11),
@@ -65,8 +65,8 @@ const workouts = [
     },
     {
         "id": strengthProtocol(12),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": strengthProtocol(13),
@@ -75,8 +75,8 @@ const workouts = [
     },
     {
         "id": strengthProtocol(14),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": strengthProtocol(15),
@@ -95,13 +95,13 @@ const workouts = [
     },
     {
         "id": strengthProtocol(18),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": strengthProtocol(19),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": strengthProtocol(20),
@@ -115,13 +115,13 @@ const workouts = [
     },
     {
         "id": strengthProtocol(22),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": strengthProtocol(23),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": strengthProtocol(24),
@@ -135,13 +135,13 @@ const workouts = [
     },
     {
         "id": strengthProtocol(26),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": strengthProtocol(27),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     },
     {
         "id": strengthProtocol(28),
@@ -155,8 +155,8 @@ const workouts = [
     },
     {
         "id": strengthProtocol(30),
-        "types": none,
-        "levels": none
+        "types": [],
+        "levels": []
     }
 ];
 
