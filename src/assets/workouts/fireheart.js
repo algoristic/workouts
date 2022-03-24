@@ -85,8 +85,8 @@ const workouts = [
     },
     {
         "id": fireheart(16),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": normal
     },
     {
         "id": fireheart(17),
@@ -100,8 +100,8 @@ const workouts = [
     },
     {
         "id": fireheart(19),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": normal
     },
     {
         "id": fireheart(20),
@@ -115,8 +115,8 @@ const workouts = [
     },
     {
         "id": fireheart(22),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": normal
     },
     {
         "id": fireheart(23),
@@ -130,8 +130,8 @@ const workouts = [
     },
     {
         "id": fireheart(25),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": normal
     },
     {
         "id": fireheart(26),
@@ -145,8 +145,8 @@ const workouts = [
     },
     {
         "id": fireheart(28),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": normal
     },
     {
         "id": fireheart(29),

@@ -125,8 +125,8 @@ const workouts = [
     },
     {
         "id": athenasPlaybook(24),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": normal
     },
     {
         "id": athenasPlaybook(25),

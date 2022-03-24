@@ -25,8 +25,8 @@ const workouts = [
     },
     {
         "id": militaryFit(4),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": normal
     },
     {
         "id": militaryFit(5),
@@ -35,8 +35,8 @@ const workouts = [
     },
     {
         "id": militaryFit(6),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": normal
     },
     {
         "id": militaryFit(7),
@@ -50,23 +50,23 @@ const workouts = [
     },
     {
         "id": militaryFit(9),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": normal
     },
     {
         "id": militaryFit(10),
-        "types": strength,
+        "types": cardio,
         "levels": normal
     },
     {
         "id": militaryFit(11),
-        "types": none,
-        "levels": none
+        "types": strength,
+        "levels": normal
     },
     {
         "id": militaryFit(12),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": normal
     },
     {
         "id": militaryFit(13),
@@ -80,23 +80,23 @@ const workouts = [
     },
     {
         "id": militaryFit(15),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": normal
     },
     {
         "id": militaryFit(16),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": normal
     },
     {
         "id": militaryFit(17),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": normal
     },
     {
         "id": militaryFit(18),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": normal
     },
     {
         "id": militaryFit(19),
@@ -120,8 +120,8 @@ const workouts = [
     },
     {
         "id": militaryFit(23),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": normal
     },
     {
         "id": militaryFit(24),
@@ -150,8 +150,8 @@ const workouts = [
     },
     {
         "id": militaryFit(29),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": normal
     },
     {
         "id": militaryFit(30),

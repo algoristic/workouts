@@ -100,6 +100,31 @@ const workouts = [
         "id": workout("ninja-warrior-workout"),
         "types": cardio,
         "levels": hard
+    },
+    {
+        "id": workout("street-fighter-workout"),
+        "types": [cardio, fight],
+        "levels": normal
+    },
+    {
+        "id": workout("boxer-workout"),
+        "types": [cardio, fight],
+        "levels": normal
+    },
+    {
+        "id": workout("pro-boxer-workout"),
+        "types": [cardio, fight],
+        "levels": normal
+    },
+    {
+        "id": workout("global-warrior-workout"),
+        "types": [cardio, fight],
+        "levels": normal
+    },
+    {
+        "id": workout("warrior-queen-workout"),
+        "types": [cardio, fight],
+        "levels": normal
     }
 ];
 
