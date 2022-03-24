@@ -48,6 +48,7 @@ const workouts = [
     },
     {
         "id": workout("pt-pyramid-workout"),
+        "name": "PT Pyramid",
         "types": strength,
         "levels": [normal, hard]
     },

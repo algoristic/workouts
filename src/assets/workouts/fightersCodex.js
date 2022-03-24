@@ -20,7 +20,7 @@ const workouts = [
     },
     {
         "id": fightersCodex(3),
-        "types": [strength, figh],
+        "types": [strength, fight],
         "levels": normal
     },
     {

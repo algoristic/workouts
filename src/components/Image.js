@@ -12,7 +12,7 @@ class Image extends Component {
     componentDidMount() {
         let { url, timeout } = this.props;
         const load = () => {
-            if(config.obfuscateUrl) {
+            if(config.obfuscateImageUrl) {
                 const fn = (e) => {
                     let { currentTarget:{ response } } = e;
                     const urlCreator = window.URL || window.webkitURL;

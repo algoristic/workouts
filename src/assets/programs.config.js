@@ -5,7 +5,7 @@ const programs = {
     "avatar-program": 30,
     "boxer-prime": 30,
     "combat-hiit": 30,
-    "fighters-codex": 30
+    "fighters-codex": 30,
     "fireheart-program": 30,
     "military-fit": 30,
     "spartan-trials": 30,

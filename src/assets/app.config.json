@@ -55,7 +55,7 @@
         },
         "forwardTimeout": 1500,
         "galleryTimeout": 100,
-        "obfuscateUrl": true,
+        "obfuscateImageUrl": true,
         "displayExcluded": false,
         "encode": true,
         "mediaBase": "/.media",

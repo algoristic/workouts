@@ -26,6 +26,6 @@ const programs = [
     strengthProtocol
 ];
 
-const all = [programs, workouts].flat();
+const all = [programs, workouts].flat(2);
 
 export default all;
