@@ -2,8 +2,8 @@ import { program } from '../../service/schemaService'
 import { config } from '../app.config.json'
 
 const { values } = config;
-const { types:{ strength, cardio, hiit, fight } } = values;
-const { levels:{ easy, normal, hard, extreme } } = values;
+const { types:{ strength, cardio, fight } } = values;
+const { levels:{ normal, hard, extreme } } = values;
 
 const fightersCodex = (day) => program("fighters-codex", day);
 

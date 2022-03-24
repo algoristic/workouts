@@ -3,7 +3,7 @@ import { config } from '../app.config.json'
 
 const { values } = config;
 const { types:{ strength, cardio, hiit, fight } } = values;
-const { levels:{ easy, normal, hard, extreme } } = values;
+const { levels:{ easy, normal, hard } } = values;
 
 const workouts = [
     {
