@@ -115,8 +115,8 @@ const workouts = [
     },
     {
         "id": militaryFit(22),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": easy
     },
     {
         "id": militaryFit(23),
@@ -130,8 +130,8 @@ const workouts = [
     },
     {
         "id": militaryFit(25),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": easy
     },
     {
         "id": militaryFit(26),

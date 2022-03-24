@@ -90,6 +90,11 @@ const workouts = [
         "id": workout("boxer-hiit-workout"),
         "types": [hiit, fight],
         "levels": easy
+    },
+    {
+        "id": workout("cardio-box-workout"),
+        "types": [cardio, fight],
+        "levels": easy
     }
 ];
 

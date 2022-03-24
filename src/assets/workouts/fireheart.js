@@ -10,8 +10,8 @@ const fireheart = (day) => program("fireheart-program", day);
 const workouts = [
     {
         "id": fireheart(1),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": easy
     },
     {
         "id": fireheart(2),
@@ -25,8 +25,8 @@ const workouts = [
     },
     {
         "id": fireheart(4),
-        "types": none,
-        "levels": none
+        "types": [cardio, fight],
+        "levels": easy
     },
     {
         "id": fireheart(5),
@@ -110,8 +110,8 @@ const workouts = [
     },
     {
         "id": fireheart(21),
-        "types": none,
-        "levels": none
+        "types": cardio,
+        "levels": easy
     },
     {
         "id": fireheart(22),

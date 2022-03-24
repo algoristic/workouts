@@ -1,3 +1,4 @@
+import athenasPlaybook from './workouts/athenasPlaybook'
 import avatar from './workouts/avatar'
 import boxerPrime from './workouts/boxerPrime'
 import combatHiit from './workouts/combatHiit'
@@ -12,6 +13,7 @@ import strengthProtocol from './workouts/strengthProtocol'
 import workouts from './workouts/singleWorkouts'
 
 const programs = [
+    athenasPlaybook,
     avatar,
     boxerPrime,
     combatHiit,
