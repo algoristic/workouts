@@ -21,7 +21,7 @@ const ProgramDays = () => {
     return (
         <>
             <Header>{ name }</Header>
-            <Subtitle text={(<>Wähle einen Starttag<br/>...oder schau dich einfach um🙂</>)} fontSize='5' />
+            <Subtitle text={(<>Wähle einen Starttag...<br/>...oder schau dich einfach um🙂</>)} fontSize='5' />
             <div className='row'>
             {
                 [...Array(days).keys()].map(i => {
