@@ -155,16 +155,58 @@ const categories = {
     ],
     "programs": [
         {
-            "id": "military-fit",
-            "name": "Military Fit",
-            "color": "danger",
-            "subtitle": "Functional Fitness für hohe Performance"
+            "id": "athenas-playbook",
+            "name": "Athenas Playbook",
+            "color": "success",
+            "subtitle": "Gewichtsreduktion und Definition mit Kampfelementen"
+        },
+        {
+            "id": "fireheart-program",
+            "name": "FireHeart Program",
+            "color": "success",
+            "subtitle": "Martials Arts Trainingsprogramm für Definition"
         },
         {
             "id": "spartan-trials",
             "name": "Spartan Trials",
-            "color": "warning",
+            "color": "success",
             "subtitle": "Körpergewichtstraining für Kraft und Definition"
+        },
+        {
+            "id": "combat-hiit",
+            "name": "Combat HIIT",
+            "color": "success",
+            "subtitle": "HIIT Training mit Kampfelementen"
+        },
+        {
+            "id": "fighters-codex",
+            "name": "Fighter's Codex",
+            "color": "success",
+            "subtitle": "Martials Arts Trainingsprogramm für hohe Performance"
+        },
+        {
+            "id": "30-days-of-hiit-advanced",
+            "name": "30 Days of HIIT Advanced",
+            "color": "warning",
+            "subtitle": "30 Tage HIIT mit Fokus auf Gewichtsreduktion"
+        },
+        {
+            "id": "30-days-of-strength",
+            "name": "30 Days of Strength",
+            "color": "warning",
+            "subtitle": "Körpergewichtstraining für Kraft und Wiederstandsfähigkeit"
+        },
+        {
+            "id": "strength-protocol",
+            "name": "Strength Protocol",
+            "color": "warning",
+            "subtitle": "Krafttraining mit Calisthenics"
+        },
+        {
+            "id": "military-fit",
+            "name": "Military Fit",
+            "color": "danger",
+            "subtitle": "Functional Fitness für hohe Performance"
         },
         {
             "id": "avatar-program",
