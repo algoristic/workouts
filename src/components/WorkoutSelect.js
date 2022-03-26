@@ -4,6 +4,7 @@ import ParameterCollector from '../service/parameterCollector'
 import ParameterService from '../service/parameterService'
 import WorkoutService from '../service/workoutService'
 import { encode } from '../service/encodingService'
+import { program as programSlug } from '../service/schemaService'
 import { config } from '../assets/app.config.json'
 import plans from '../assets/plans.config'
 
@@ -31,7 +32,7 @@ const getWorkoutByProgram = (program) => {
         step = 1;
         stepService.value(step);
     }
-    return encode(`p:${program}:${step}`);
+    return encode(programSlug(program, step));
 };
 
 const getWorkoutBySelection = () => {
