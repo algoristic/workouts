@@ -4,8 +4,8 @@ const MainMenu = ({ app }) => {
     return (
         <nav className={`navbar ${config.style.navbarStyleClasses} ${config.style.appContainer}`}>
         <div className={config.style.navbarClasses}>
-            <a href='/' class='navbar-brand'>
-                <img src='/favicon.png' alt='Logo' style={{ width: '40px' }} />
+            <a href='./' class='navbar-brand'>
+                <img src='./favicon.png' alt='Logo' style={{ width: '40px' }} />
             </a>
             <button class='navbar-toggler' type='button'
                 data-bs-toggle='collapse'

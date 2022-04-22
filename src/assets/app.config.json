@@ -58,8 +58,8 @@
         "obfuscateImageUrl": true,
         "displayExcluded": false,
         "encode": true,
-        "mediaBase": "/.media",
-        "programId": "programs/{program}/days/day-{day}",
-        "workoutId": "workouts/{workout}/instructions"
+        "mediaBase": "./.media",
+        "programId": "./programs/{program}/days/day-{day}",
+        "workoutId": "./workouts/{workout}/instructions"
     }
 }
